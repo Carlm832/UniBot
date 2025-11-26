@@ -1,0 +1,10 @@
+# Ignore all node_modules in both folders
+node_modules/
+unibot/node_modules/
+unibot-backend/node_modules/
+
+# Ignore giant binaries
+*.dll
+*.so
+*.dylib
+*.bin
