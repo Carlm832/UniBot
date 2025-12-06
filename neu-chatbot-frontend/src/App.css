@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================
+   SMOOTH MESSAGE ANIMATIONS
+========================================= */
+
+/* Fade-in effect for avatars, icons, mild UI elements */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s ease-out forwards;
+}
+
+/* Slide-in from left (bot messages) */
+@keyframes slideLeft {
+  0% { transform: translateX(-20px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+.animate-slideLeft {
+  animation: slideLeft 0.25s ease-out forwards;
+}
+
+/* Slide-in from right (user messages) */
+@keyframes slideRight {
+  0% { transform: translateX(20px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+.animate-slideRight {
+  animation: slideRight 0.25s ease-out forwards;
+}
+
+/* =========================================
+   CUSTOM CHAT SCROLLBAR
+========================================= */
+.overflow-y-auto::-webkit-scrollbar {
+  width: 8px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb {
+  background: #b91c1c; /* NEU Red */
+  border-radius: 10px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb:hover {
+  background: #991b1b; /* Darker NEU Red */
+}
+
+/* =========================================
+   GLOBAL SMOOTH TRANSITIONS
+========================================= */
+* {
+  transition-property: 
+    color, background-color, border-color, text-decoration-color, fill, stroke,
+    opacity, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}

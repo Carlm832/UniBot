@@ -1,0 +1,367 @@
+{
+  "documents": [
+    {
+      "id": "doc_1764776091431_0",
+      "content": "International Students Office: Located at Faculty of Communications 2nd Floor. Handles all matters regarding international students including registration, accounting, graduation and student permits. Working hours: Monday to Friday 8am to 5pm, closed during holidays.",
+      "metadata": {
+        "category": "campus-navigation",
+        "type": "building",
+        "title": "International Students Office"
+      }
+    },
+    {
+      "id": "doc_1764776091431_1",
+      "content": "Grand Library: Near East University Grand Library is open Monday to Friday from 8am to 8pm. The library provides study spaces, resources, and academic materials for students.",
+      "metadata": {
+        "category": "campus-navigation",
+        "type": "building",
+        "title": "Grand Library"
+      }
+    },
+    {
+      "id": "doc_1764776091431_2",
+      "content": "Student Deanship Office: Located at Ataturk Culture and Congress Center. The Dean of Students Office provides services, programs, and various opportunities to students. Contact: neuogrenci.dekanligi@neu.edu.tr, Phone: +90 (392) 223 64 64",
+      "metadata": {
+        "category": "campus-navigation",
+        "type": "building",
+        "title": "Student Deanship Office"
+      }
+    },
+    {
+      "id": "doc_1764776091431_3",
+      "content": "Near East University Hospital: Full-service hospital facility on campus providing medical care to students and the community.",
+      "metadata": {
+        "category": "campus-navigation",
+        "type": "facility",
+        "title": "Near East University Hospital"
+      }
+    },
+    {
+      "id": "doc_1764776091431_4",
+      "content": "Near East Bank: Banking services available on campus for student convenience.",
+      "metadata": {
+        "category": "campus-navigation",
+        "type": "facility",
+        "title": "Near East Bank"
+      }
+    },
+    {
+      "id": "doc_1764776091431_5",
+      "content": "Main Campus Address: Near East University, Near East Boulevard, 99138 Nicosia / TRNC, Mersin 10 – TURKEY",
+      "metadata": {
+        "category": "campus-navigation",
+        "type": "location",
+        "title": "Main Campus Address"
+      }
+    },
+    {
+      "id": "doc_1764776091431_6",
+      "content": "Application Process: Students can apply online at https://aday.neu.edu.tr. The application system is available for all prospective students.",
+      "metadata": {
+        "category": "admissions",
+        "type": "process",
+        "title": "Application Process"
+      }
+    },
+    {
+      "id": "doc_1764776091431_7",
+      "content": "Accepted Certificates - International Exams: NEU accepts: GCSE, IGCSE, International Baccalaureate, ACT, SAT, and various international high school diplomas. All documents in languages other than English or Turkish require official translation.",
+      "metadata": {
+        "category": "admissions",
+        "type": "requirement",
+        "title": "Accepted Certificates - International Exams"
+      }
+    },
+    {
+      "id": "doc_1764776091431_8",
+      "content": "Accepted Certificates - Regional Exams: NEU accepts: Tawjihi (Jordan/Palestine), Baccalaureate (Lebanon/Iraq/Syria), Diploma Debirestan (Iran), Higher Secondary Certificate (Pakistan/India/Bangladesh), WAEC/NECO (Nigeria), GAOKAO (China), and other High School Diplomas.",
+      "metadata": {
+        "category": "admissions",
+        "type": "requirement",
+        "title": "Accepted Certificates - Regional Exams"
+      }
+    },
+    {
+      "id": "doc_1764776091431_9",
+      "content": "Student Residence Permit: International students must register for residence permit at https://permissions.gov.ct.tr/login. The International Students Office assists with this process.",
+      "metadata": {
+        "category": "admissions",
+        "type": "visa",
+        "title": "Student Residence Permit"
+      }
+    },
+    {
+      "id": "doc_1764776091431_10",
+      "content": "Tuition Fees 2025-2026: Full list of programs and tuition fees available at https://aday.neu.edu.tr. Fees vary by program and faculty.",
+      "metadata": {
+        "category": "admissions",
+        "type": "financial",
+        "title": "Tuition Fees 2025-2026"
+      }
+    },
+    {
+      "id": "doc_1764776091431_11",
+      "content": "Document Translation: All documents submitted in languages other than English or Turkish must have an official translation.",
+      "metadata": {
+        "category": "admissions",
+        "type": "requirement",
+        "title": "Document Translation"
+      }
+    },
+    {
+      "id": "doc_1764776091431_12",
+      "content": "ES - Atatürk Faculty of Education: Offers education and teaching programs preparing students for careers in education.. Prerequisites: None. Credits: null",
+      "metadata": {
+        "category": "courses",
+        "code": "ES",
+        "department": "Education",
+        "title": "Atatürk Faculty of Education"
+      }
+    },
+    {
+      "id": "doc_1764776091431_13",
+      "content": "INV - Faculty of Engineering: Comprehensive engineering programs covering various engineering disciplines.. Prerequisites: None. Credits: null",
+      "metadata": {
+        "category": "courses",
+        "code": "INV",
+        "department": "Engineering",
+        "title": "Faculty of Engineering"
+      }
+    },
+    {
+      "id": "doc_1764776091431_14",
+      "content": " - Faculty of Medicine: Medical education and training programs for aspiring doctors and healthcare professionals.. Prerequisites: None. Credits: null",
+      "metadata": {
+        "category": "courses",
+        "code": "",
+        "department": "Medicine",
+        "title": "Faculty of Medicine"
+      }
+    },
+    {
+      "id": "doc_1764776091431_15",
+      "content": " - Faculty of Dentistry: Dental education programs preparing students for careers in dentistry.. Prerequisites: None. Credits: null",
+      "metadata": {
+        "category": "courses",
+        "code": "",
+        "department": "Dentistry",
+        "title": "Faculty of Dentistry"
+      }
+    },
+    {
+      "id": "doc_1764776091431_16",
+      "content": "ECZ - Faculty of Pharmacy: Pharmaceutical sciences programs for future pharmacists.. Prerequisites: None. Credits: null",
+      "metadata": {
+        "category": "courses",
+        "code": "ECZ",
+        "department": "Pharmacy",
+        "title": "Faculty of Pharmacy"
+      }
+    },
+    {
+      "id": "doc_1764776091431_17",
+      "content": "FE - Faculty of Arts and Sciences: Liberal arts and sciences programs offering diverse academic disciplines.. Prerequisites: None. Credits: null",
+      "metadata": {
+        "category": "courses",
+        "code": "FE",
+        "department": "Arts and Sciences",
+        "title": "Faculty of Arts and Sciences"
+      }
+    },
+    {
+      "id": "doc_1764776091431_18",
+      "content": "II - Faculty of Economics and Administrative Sciences: Business, economics, and administrative programs preparing students for careers in business and management.. Prerequisites: None. Credits: null",
+      "metadata": {
+        "category": "courses",
+        "code": "II",
+        "department": "Economics",
+        "title": "Faculty of Economics and Administrative Sciences"
+      }
+    },
+    {
+      "id": "doc_1764776091431_19",
+      "content": "HK - Faculty of Law: Legal education programs for aspiring lawyers and legal professionals.. Prerequisites: None. Credits: null",
+      "metadata": {
+        "category": "courses",
+        "code": "HK",
+        "department": "Law",
+        "title": "Faculty of Law"
+      }
+    },
+    {
+      "id": "doc_1764776091431_20",
+      "content": "MM - Faculty of Architecture: Architecture and design programs for future architects.. Prerequisites: None. Credits: null",
+      "metadata": {
+        "category": "courses",
+        "code": "MM",
+        "department": "Architecture",
+        "title": "Faculty of Architecture"
+      }
+    },
+    {
+      "id": "doc_1764776091431_21",
+      "content": "IL - Faculty of Communication: Communication, journalism, and media studies programs.. Prerequisites: None. Credits: null",
+      "metadata": {
+        "category": "courses",
+        "code": "IL",
+        "department": "Communication",
+        "title": "Faculty of Communication"
+      }
+    },
+    {
+      "id": "doc_1764776091431_22",
+      "content": "INV - Faculty of Artificial Intelligence and Informatics: AI, computer science, and information technology programs for the digital age.. Prerequisites: None. Credits: null",
+      "metadata": {
+        "category": "courses",
+        "code": "INV",
+        "department": "AI and Informatics",
+        "title": "Faculty of Artificial Intelligence and Informatics"
+      }
+    },
+    {
+      "id": "doc_1764776091431_23",
+      "content": " - Faculty of Fine Arts and Design: Arts, design, and creative programs for aspiring artists and designers.. Prerequisites: None. Credits: null",
+      "metadata": {
+        "category": "courses",
+        "code": "",
+        "department": "Fine Arts",
+        "title": "Faculty of Fine Arts and Design"
+      }
+    },
+    {
+      "id": "doc_1764776091431_24",
+      "content": "What is Near East University's contact information?: Phone: +90 (392) 223 64 64 or +90 (392) 680 20 00. Email: info@neu.edu.tr. WhatsApp: +90 548 818 0818. Extension: 5143. Address: Near East Boulevard, 99138 Nicosia / TRNC, Mersin 10 – TURKEY.",
+      "metadata": {
+        "category": "general",
+        "type": "faq",
+        "title": "What is Near East University's contact information?"
+      }
+    },
+    {
+      "id": "doc_1764776091431_25",
+      "content": "What is the official website?: The official website is https://neu.edu.tr where you can find comprehensive information about the university.",
+      "metadata": {
+        "category": "general",
+        "type": "faq",
+        "title": "What is the official website?"
+      }
+    },
+    {
+      "id": "doc_1764776091431_26",
+      "content": "What are the Grand Library hours?: The Grand Library is open Monday to Friday from 8am to 8pm. It provides study spaces, resources, and academic materials.",
+      "metadata": {
+        "category": "general",
+        "type": "faq",
+        "title": "What are the Grand Library hours?"
+      }
+    },
+    {
+      "id": "doc_1764776091431_27",
+      "content": "Where is the International Students Office?: The International Students Office is located on the 2nd floor of the Faculty of Communications building. They are open Monday to Friday, 8am to 5pm, and closed during holidays.",
+      "metadata": {
+        "category": "general",
+        "type": "faq",
+        "title": "Where is the International Students Office?"
+      }
+    },
+    {
+      "id": "doc_1764776091431_28",
+      "content": "How can I submit petitions?: Students can submit petitions regarding refunds, academic matters, job applications, dormitory matters, and financial matters through the online petition system at petitions@neu.edu.tr.",
+      "metadata": {
+        "category": "general",
+        "type": "faq",
+        "title": "How can I submit petitions?"
+      }
+    },
+    {
+      "id": "doc_1764776091431_29",
+      "content": "Is psychological counseling available?: Yes, NEU provides psychological counseling services through the Psychological Counseling, Guidance, and Research Center. Students can contact them at pdram@neu.edu.tr or through the Dean of Students' Office.",
+      "metadata": {
+        "category": "general",
+        "type": "faq",
+        "title": "Is psychological counseling available?"
+      }
+    },
+    {
+      "id": "doc_1764776091431_30",
+      "content": "What student clubs and activities are available?: The Student Activities Center helps organize events and directs students to clubs and societies. They also represent students in domestic and international events. Contact: yduodkulupleri@neu.edu.tr",
+      "metadata": {
+        "category": "general",
+        "type": "faq",
+        "title": "What student clubs and activities are available?"
+      }
+    },
+    {
+      "id": "doc_1764776091431_31",
+      "content": "Where can I find the academic calendar?: The 2025-2026 academic calendar is available at https://neu.edu.tr/academic/academic-calendar",
+      "metadata": {
+        "category": "general",
+        "type": "faq",
+        "title": "Where can I find the academic calendar?"
+      }
+    },
+    {
+      "id": "doc_1764776091431_32",
+      "content": "Where can I find the university handbook?: The university handbook is available online at https://online.fliphtml5.com/mabep/cfjs/#p=37",
+      "metadata": {
+        "category": "general",
+        "type": "faq",
+        "title": "Where can I find the university handbook?"
+      }
+    },
+    {
+      "id": "doc_1764776091431_33",
+      "content": "What faculties does NEU have?: NEU has 20 faculties including: Education, Engineering, Medicine, Dentistry, Pharmacy, Arts and Sciences, Economics, Law, Architecture, Communication, AI and Informatics, Fine Arts and Design, Nursing, Civil Engineering, Theology, Health Sciences, Sports Sciences, Tourism, Veterinary Medicine, and Agriculture.",
+      "metadata": {
+        "category": "general",
+        "type": "faq",
+        "title": "What faculties does NEU have?"
+      }
+    },
+    {
+      "id": "doc_1764776091431_34",
+      "content": "What services does the Dean of Students Office provide?: The Dean of Students Office provides counseling, student activities, career planning, social responsibility projects, disability support, and alumni services. They also handle student petitions and various student affairs.",
+      "metadata": {
+        "category": "general",
+        "type": "faq",
+        "title": "What services does the Dean of Students Office provide?"
+      }
+    },
+    {
+      "id": "doc_1764776091431_35",
+      "content": "What facilities are available on campus?: Campus facilities include: Grand Library, Near East University Hospital, Near East Bank, International Students Office, Student Deanship Office, and various faculty buildings. The university also features Dorana Tourism and Günsel Electric Vehicle facilities.",
+      "metadata": {
+        "category": "general",
+        "type": "faq",
+        "title": "What facilities are available on campus?"
+      }
+    },
+    {
+      "id": "doc_1764776091431_36",
+      "content": "How do I contact the Student Deanship?: Email: neuogrenci.dekanligi@neu.edu.tr or yduodkulupleri@neu.edu.tr. Phone: +90 (392) 223 64 64, +90 (392) 680 20 00, or +90 (392) 223 64 61. Located at Ataturk Culture and Congress Center.",
+      "metadata": {
+        "category": "general",
+        "type": "faq",
+        "title": "How do I contact the Student Deanship?"
+      }
+    },
+    {
+      "id": "doc_1764776091431_37",
+      "content": "What career services are available?: NEU has a Career Planning Unit under the Dean of Students Office that provides career counseling and planning services to help students prepare for their professional futures.",
+      "metadata": {
+        "category": "general",
+        "type": "faq",
+        "title": "What career services are available?"
+      }
+    },
+    {
+      "id": "doc_1764776091431_38",
+      "content": "Are there services for disabled students?: Yes, the Disabled Students Unit under the Dean of Students Office provides support and accommodations for students with disabilities.",
+      "metadata": {
+        "category": "general",
+        "type": "faq",
+        "title": "Are there services for disabled students?"
+      }
+    }
+  ]
+}
