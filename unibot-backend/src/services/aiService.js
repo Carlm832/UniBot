@@ -8,23 +8,45 @@ const groq = new Groq({
 class AIService {
   async generateResponse(userMessage, category = 'general') {
     try {
-      // Search for relevant context from vector database
+      // Search vector DB
       const relevantDocs = await vectorService.search(userMessage, 5);
-      
-      // Build context from retrieved documents
-      const context = relevantDocs
-        .map(doc => doc.content)
-        .join('\n\n');
 
-      // Create system prompt based on category
+      // Check if any document contains a map iframe
+      const mapDoc = relevantDocs.find(doc => doc.content.includes("<iframe"));
+
+      if (mapDoc) {
+        // Extract map info
+        const [description] = mapDoc.content.split("<iframe");
+
+        const iframeMatch = mapDoc.content.match(/<iframe[^>]*src="([^"]*)"/);
+        const embedUrl = iframeMatch ? iframeMatch[1] : null;
+
+        const coords = mapDoc.metadata.coordinates || null;
+        const mapsUrl = coords
+          ? `https://www.google.com/maps?q=${coords}`
+          : embedUrl;
+
+        return {
+          response: {
+            type: "map",
+            title: mapDoc.metadata.title || "Location",
+            description: description.trim(),
+            embedUrl,
+            mapsUrl,
+          },
+          sources: relevantDocs.map(doc => doc.metadata)
+        };
+      }
+
+      // If no map, use the AI normally
+      const context = relevantDocs.map(doc => doc.content).join("\n\n");
       const systemPrompt = this.getSystemPrompt(category, context);
 
-      // Generate response using Groq (Free & Fast!)
       const completion = await groq.chat.completions.create({
-        model: 'llama-3.3-70b-versatile', // Fast and high quality
+        model: "llama-3.3-70b-versatile",
         messages: [
-          { role: 'system', content: systemPrompt },
-          { role: 'user', content: userMessage }
+          { role: "system", content: systemPrompt },
+          { role: "user", content: userMessage }
         ],
         temperature: 0.7,
         max_tokens: 500,
@@ -34,35 +56,25 @@ class AIService {
         response: completion.choices[0].message.content,
         sources: relevantDocs.map(doc => doc.metadata),
       };
+
     } catch (error) {
-      console.error('Error generating response:', error);
+      console.error("Error generating response:", error);
       throw error;
     }
   }
 
   getSystemPrompt(category, context) {
-    const basePrompt = `You are a helpful university chatbot assistant for Near East University (NEU). Your role is to help students with information about the university.
+    const basePrompt = `You are a helpful university assistant for NEU.
+Use the following context:
 
-Use the following context to answer the student's question. If the context doesn't contain relevant information, politely say so and provide general guidance.
-
-Context:
 ${context}
 
-Guidelines:
-- Be friendly, helpful, and concise
-- Provide accurate information based on the context
-- If you're unsure, admit it and suggest who the student should contact
-- Use bullet points for lists when appropriate
-- Keep responses clear and easy to understand`;
+Rules:
+- If the answer contains location info, but *no iframe was returned*, tell the user what building it is in and its working hours.
+- If no relevant info is found, say so politely.
+- Keep answers very clear and helpful.`;
 
-    const categoryPrompts = {
-      'campus-navigation': `${basePrompt}\n\nFocus on: Building locations, directions, parking, campus facilities, and getting around campus.`,
-      'admissions': `${basePrompt}\n\nFocus on: Admission requirements, application process, deadlines, scholarships, and enrollment information.`,
-      'courses': `${basePrompt}\n\nFocus on: Course information, prerequisites, schedules, registration, and academic programs.`,
-      'general': basePrompt,
-    };
-
-    return categoryPrompts[category] || basePrompt;
+    return basePrompt;
   }
 }
 

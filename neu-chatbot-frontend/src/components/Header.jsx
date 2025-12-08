@@ -28,16 +28,6 @@ export default function Header({ showBack, onBack }) {
               </p>
             </div>
           </div>
-
-          {/* RIGHT SIDE: VISIT WEBSITE + DARK MODE TOGGLE */}
-          <div className="flex items-center space-x-4">
-            <a
-              href="https://neu.edu.tr"
-              className="hidden md:block bg-white text-red-800 dark:bg-gray-700 dark:text-gray-200 px-4 py-2 rounded-lg font-semibold hover:bg-red-50 dark:hover:bg-gray-600"
-            >
-              Visit NEU Website
-            </a>
-          </div>
         </div>
       </div>
     </header>
