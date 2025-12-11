@@ -1,6 +1,6 @@
 # Ignore all node_modules in both folders
 node_modules/
-.env
+unibot-backend/.env
 data/vector_store.json
 unibot/node_modules/
 
