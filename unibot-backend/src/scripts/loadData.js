@@ -38,6 +38,7 @@ async function loadUniversityData() {
             category: 'campus-navigation',
             type: item.type || 'location',
             title: item.title,
+            coordinates: item.coordinates, // Add this!
           }
         });
       });

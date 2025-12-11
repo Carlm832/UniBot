@@ -7,25 +7,76 @@ class ChatController {
     try {
       const { message, category = 'general' } = req.body;
 
+      //INPUT VALIDATION
+      // Check if message exists
       if (!message) {
-        return res.status(400).json({ error: 'Message is required' });
+        return res.status(400).json({ 
+          success: false,
+          error: 'Message is required' 
+        });
+      }
+
+      // Check if message is a string
+      if (typeof message !== 'string') {
+        return res.status(400).json({ 
+          success: false,
+          error: 'Message must be a string' 
+        });
+      }
+
+      // Check if message is not empty after trimming
+      if (message.trim().length === 0) {
+        return res.status(400).json({ 
+          success: false,
+          error: 'Message cannot be empty' 
+        });
+      }
+
+      // Check message length (optional but recommended)
+      if (message.length > 1000) {
+        return res.status(400).json({ 
+          success: false,
+          error: 'Message is too long. Maximum 1000 characters allowed.' 
+        });
+      }
+
+      // Validate category (optional but recommended)
+      const validCategories = ['general', 'admissions', 'courses', 'campus-navigation'];
+      if (!validCategories.includes(category)) {
+        return res.status(400).json({ 
+          success: false,
+          error: `Invalid category. Must be one of: ${validCategories.join(', ')}` 
+        });
       }
 
       // Ensure vector service is initialized
-      if (!vectorService.collection) {
+      if (vectorService.documents.length === 0) {
         await vectorService.initialize();
       }
 
       const result = await aiService.generateResponse(message, category);
 
+      // Format response properly based on type
+      const responseData = {
+        type: result.response.type || "text",
+        message: result.response.message || result.response,
+        category: category,
+        timestamp: new Date().toISOString(),
+      };
+
+      // Add map-specific fields if it's a map response
+      if (result.response.type === "map") {
+        responseData.title = result.response.title;
+        responseData.embedUrl = result.response.embedUrl;
+        responseData.mapsUrl = result.response.mapsUrl;
+        responseData.coordinates = result.response.coordinates;
+      }
+
       res.json({
         success: true,
-        data: {
-          message: result.response,
-          category: category,
-          timestamp: new Date().toISOString(),
-        }
+        data: responseData
       });
+
     } catch (error) {
       console.error('Error in sendMessage:', error);
       res.status(500).json({ 
@@ -40,11 +91,40 @@ class ChatController {
     try {
       const { query, limit = 5 } = req.body;
 
+      // ============ INPUT VALIDATION (ADD THIS) ============
+      
       if (!query) {
-        return res.status(400).json({ error: 'Query is required' });
+        return res.status(400).json({ 
+          success: false,
+          error: 'Query is required' 
+        });
       }
 
-      if (!vectorService.documents) {
+      if (typeof query !== 'string') {
+        return res.status(400).json({ 
+          success: false,
+          error: 'Query must be a string' 
+        });
+      }
+
+      if (query.trim().length === 0) {
+        return res.status(400).json({ 
+          success: false,
+          error: 'Query cannot be empty' 
+        });
+      }
+
+      // Validate limit
+      if (typeof limit !== 'number' || limit < 1 || limit > 20) {
+        return res.status(400).json({ 
+          success: false,
+          error: 'Limit must be a number between 1 and 20' 
+        });
+      }
+
+      // ============ END INPUT VALIDATION ============
+
+      if (vectorService.documents.length === 0) {
         await vectorService.initialize();
       }
 
@@ -57,6 +137,7 @@ class ChatController {
           count: results.length,
         }
       });
+
     } catch (error) {
       console.error('Error in searchKnowledge:', error);
       res.status(500).json({ 

@@ -26,15 +26,33 @@ class AIService {
           ? `https://www.google.com/maps?q=${coords}`
           : embedUrl;
 
+        if (mapDoc) {
+          const [description] = mapDoc.content.split("<iframe");
+          const iframeMatch = mapDoc.content.match(/<iframe[^>]*src="([^"]*)"/);
+          const embedUrl = iframeMatch ? iframeMatch[1] : null;
+          const coords = mapDoc.metadata.coordinates || null;
+          const mapsUrl = coords ? `https://www.google.com/maps?q=${coords}` : embedUrl;
+
+          return {
+            response: {
+              type: "map",
+              message: description.trim(), // Add this!
+              title: mapDoc.metadata.title || "Location",
+              embedUrl,
+              mapsUrl,
+              coordinates: coords,
+            },
+            sources: relevantDocs.map(doc => doc.metadata)
+          };
+        }
+
+        // For text responses, wrap in object for consistency
         return {
           response: {
-            type: "map",
-            title: mapDoc.metadata.title || "Location",
-            description: description.trim(),
-            embedUrl,
-            mapsUrl,
+            type: "text",
+            message: completion.choices[0].message.content,
           },
-          sources: relevantDocs.map(doc => doc.metadata)
+          sources: relevantDocs.map(doc => doc.metadata),
         };
       }
 

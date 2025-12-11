@@ -33,23 +33,33 @@ class VectorService {
       }
 
       const queryLower = query.toLowerCase();
-      const queryWords = queryLower.split(/\s+/);
+      const queryWords = queryLower.split(/\s+/).filter(w => w.length > 2);
       
-      // Score each document based on keyword matches
       const scoredDocs = this.documents.map((doc, idx) => {
         const contentLower = doc.content.toLowerCase();
+        const titleLower = doc.metadata?.title?.toLowerCase() || '';
         let score = 0;
         
-        // Count keyword matches
+        // Exact phrase match (highest priority)
+        if (contentLower.includes(queryLower)) {
+          score += 50;
+        }
+        
+        // Title matches (high priority)
         queryWords.forEach(word => {
-          if (word.length > 2) { // Ignore very short words
-            const matches = (contentLower.match(new RegExp(word, 'g')) || []).length;
-            score += matches;
+          if (titleLower.includes(word)) {
+            score += 10;
           }
         });
         
-        // Boost score if category matches
-        if (doc.metadata && doc.metadata.category) {
+        // Content keyword matches
+        queryWords.forEach(word => {
+          const matches = (contentLower.match(new RegExp(`\\b${word}\\b`, 'g')) || []).length;
+          score += matches * 2;
+        });
+        
+        // Category match boost
+        if (doc.metadata?.category) {
           queryWords.forEach(word => {
             if (doc.metadata.category.includes(word)) {
               score += 5;
@@ -60,7 +70,6 @@ class VectorService {
         return { index: idx, score };
       });
 
-      // Sort by score (highest first) and filter out zero scores
       const results = scoredDocs
         .filter(doc => doc.score > 0)
         .sort((a, b) => b.score - a.score)
