@@ -1,381 +1,603 @@
 {
-  "campusNavigation": [
-    {
-      "title": "International Students Office",
-      "description": "Located at Faculty of Communications 2nd Floor. Handles all matters regarding international students including registration, accounting, graduation and student permits. Working hours: Monday to Friday 8am to 5pm, closed during holidays.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d373.8168140044392!2d33.325172741683765!3d35.22408728250506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2s!4v1761907354063!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
-      "type": "building",
-      "coordinates": "33.325172, 35.224087"
-    },
-    {
-      "title": "Grand Library",
-      "description": "Near East University Grand Library is open Monday to Friday from 8am to 8pm. The library provides study spaces, resources, and academic materials for students.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d652.1944348698642!2d33.32683836385826!3d35.22480021104133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de113d99e4c681%3A0x226adf08639790c9!2sNear%20East%20University%20Grand%20Library!5e1!3m2!1sen!2s!4v1761906914643!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
-      "type": "building",
-      "coordinates": "33.326838, 35.224800"
-    },
-    {
-      "title": "Student Deanship Office",
-      "description": "Located at Ataturk Culture and Congress Center. The Dean of Students Office provides services, programs, and various opportunities to students. Contact: neuogrenci.dekanligi@neu.edu.tr, Phone: +90 (392) 223 64 64\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1536.7807034744471!2d33.32631697304336!3d35.22747736824614!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de113df8d5b0eb%3A0x2362358e74af69e4!2sAtaturk%20Culture%20and%20Congress%20Center!5e1!3m2!1sen!2s!4v1761907984037!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
-      "type": "building",
-      "coordinates": "33.326316, 35.227477"
-    },
-    {
-      "title": "Post Office",
-      "description": "NEU Post Office branch located at Faculty of Administrative and Economics Sciences Ground Floor. Provides postal and mailing services to students and staff.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d407.40445762135255!2d33.3258355!3d35.2255032!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de11783e6dff3d%3A0xbd807d589cc0b53d!2zxLBrdGlzYXQ!5e0!3m2!1sen!2s!4v1761116558953!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
-      "type": "facility",
-      "coordinates": "33.3258355, 35.2255032"
-    },
-    {
-      "title": "Dormitories",
-      "description": "NEU has 12 dormitories on campus (Dormitory 1-12) plus a Guest House. All dormitories are located within the campus area and provide accommodation for students. Dormitory 1 location:\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d559.7349178423044!2d33.32593234277022!3d35.22839176292247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1761893373449!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
-      "type": "accommodation"
-    },
-    {
-      "title": "Laundry Shop",
-      "description": "Campus laundry facility available for students. Located near the dormitory area for convenient access.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!4v1761894236115!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJRGFxOENnTWc.!2m2!1d35.23050002659937!2d33.32500653020724!3f335.26513312853217!4f4.304938608595677!5f0.7820865974627469\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
-      "type": "facility",
-      "coordinates": "33.32500653, 35.23050002"
-    },
-    {
-      "title": "Near East Olympic Swimming Pool",
-      "description": "Full Olympic-size swimming pool facility on campus available for students and staff for recreation and sports activities.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1629.5536208409837!2d33.32415605651555!3d35.22870033066583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de11911f53a211%3A0xe9f82908681846a7!2sNear%20East%20Olympic%20Swimming%20Pool!5e0!3m2!1sen!2s!4v1761895011927!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
-      "type": "sports",
-      "coordinates": "33.324156, 35.228700"
-    },
-    {
-      "title": "Near East Basketball Indoor Stadium",
-      "description": "Indoor basketball stadium for sports events, training, and recreational activities.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!4v1761895175976!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJRGE1N2J5amdF!2m2!1d35.22520571470393!2d33.32219623699034!3f198.576541238397!4f-11.065011035633745!5f0.7820865974627469\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
-      "type": "sports",
-      "coordinates": "33.322196, 35.225205"
-    },
-    {
-      "title": "Near East Sports Complex",
-      "description": "Comprehensive sports complex with various facilities for different sports and physical activities.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!4v1761895403601!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJRE8yN24zWmc.!2m2!1d35.2239767905525!2d33.3247025010822!3f33.1271786304873!4f5.763341344491053!5f0.7820865974627469\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
-      "type": "sports",
-      "coordinates": "33.3247025, 35.2239767"
-    },
-    {
-      "title": "Cyprus Car Museum",
-      "description": "On-campus museum showcasing the history of automobiles in Cyprus. Open to students and visitors.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d814.8120195730729!2d33.32214048249595!3d35.22519404457654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de11170df01dc1%3A0xa99d062bdd5c8d81!2sCyprus%20Car%20Museum!5e0!3m2!1sen!2s!4v1761895254398!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
-      "type": "cultural",
-      "coordinates": "33.322140, 35.225194"
-    },
-    {
-      "title": "Cyprus Modern Art Museum",
-      "description": "Modern art museum on campus featuring contemporary artworks and exhibitions.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d685.1727963024873!2d33.32232483809226!3d35.22515970671901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de11149b5b4595%3A0x60fbe7ec6809e137!2sCyprus%20Modern%20Art%20Museum!5e0!3m2!1sen!2s!4v1761895277411!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
-      "type": "cultural",
-      "coordinates": "33.3223248, 35.2251597"
-    },
-    {
-      "title": "NEU Event Park",
-      "description": "Large outdoor event space used for university events, festivals, and gatherings.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1207.470792459338!2d33.321901307343744!3d35.22314035628258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de110073f17d7f%3A0x1fcb2dedc867c4e3!2sNEU%20Event%20Park!5e1!3m2!1sen!2s!4v1761895566241!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
-      "type": "facility",
-      "coordinates": "33.3219013, 35.2231403"
-    },
-    {
-      "title": "Ataturk Culture and Congress Center",
-      "description": "Major venue for cultural events, conferences, ceremonies, and university gatherings. Houses the Student Deanship Office.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1207.4121114346835!2d33.32525822002892!3d35.22708402973052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de113df8d5b0eb%3A0x2362358e74af69e4!2sAtaturk%20Culture%20and%20Congress%20Center!5e1!3m2!1sen!2s!4v1761895667100!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
-      "type": "cultural",
-      "coordinates": "33.325258, 35.227084"
-    },
-    {
-      "title": "Ikas Supermarket",
-      "description": "On-campus supermarket providing groceries and daily necessities for students.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d853.8022455022771!2d33.32437916205063!3d35.223952044794295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2s!4v1761895508069!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
-      "type": "shopping",
-      "coordinates": "33.324379, 35.223952"
-    },
-    {
-      "title": "Near East University Hospital",
-      "description": "Full-service hospital facility on campus providing medical care to students and the community.",
-      "type": "medical"
-    },
-    {
-      "title": "Near East Bank - Hospital Branch",
-      "description": "Banking services near the hospital for convenient access to financial services.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d853.7683412745542!2d33.31994986542705!3d35.227174354433224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de111138f300db%3A0xbd8e16c85c53c889!2zWWFrxLFuIERvxJ91IEJhbms!5e1!3m2!1sen!2s!4v1761896058766!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
-      "type": "banking",
-      "coordinates": "33.318874, 35.228119"
-    },
-    {
-      "title": "Near East Bank - University Branch",
-      "description": "Main university banking branch providing full banking services to students and staff.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d717.9414971338806!2d33.3257240585799!3d35.22595830229958!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de111621ecbc49%3A0xaa18f1a2ea0e3f01!2sNear%20East%20Bank!5e1!3m2!1sen!2s!4v1761896584478!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
-      "type": "banking",
-      "coordinates": "33.3257240, 35.2259583"
-    },
-    {
-      "title": "Pizza Pizza Restaurant",
-      "description": "On-campus restaurant serving pizza and Italian cuisine.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d853.7727267142494!2d33.32529482644099!3d35.22675756999112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de173688f06ddb%3A0xbf6e9ee00ecdcdbe!2sPizza%20Pizza%20%7C%20Lefko%C5%9Fa!5e1!3m2!1sen!2s!4v1761895808701!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
-      "type": "dining",
-      "coordinates": "33.325294, 35.226757"
-    },
-    {
-      "title": "Gusto Restaurant & Cafe",
-      "description": "Campus restaurant and cafe offering meals and beverages.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d853.7631069842963!2d33.31978747231094!3d35.227671806512916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de1127d05d38d1%3A0x4bde28a1c35710cf!2sGusto%20Restaurant%20%26%20Cafe%20%2F%20NEU!5e1!3m2!1sen!2s!4v1761896087240!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
-      "type": "dining",
-      "coordinates": "33.319787, 35.227671"
-    },
-    {
-      "title": "Patisserie and Bakery Cafe",
-      "description": "Campus cafe offering pastries, baked goods, and coffee.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d507.6740868328564!2d33.3258411!3d35.2239146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de1163f9402e5b%3A0x7470bb92e673557e!2sCafe!5e1!3m2!1sen!2s!4v1761896347176!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
-      "type": "dining",
-      "coordinates": "33.3258411, 35.2239146"
-    },
-    {
-      "title": "NCS Kebap House",
-      "description": "Campus restaurant specializing in kebabs and Turkish cuisine.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d358.97944106238833!2d33.32600376363897!3d35.22399335147537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de116afcc1b865%3A0x50efad7d82dc6665!2sNCS%20Kebab%20House!5e1!3m2!1sen!2s!4v1761896451760!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
-      "type": "dining",
-      "coordinates": "33.326003, 35.223993"
-    },
-    {
-      "title": "Chicken House",
-      "description": "Campus eatery serving chicken dishes and fast food.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d358.96553863665935!2d33.325651498134!3d35.22713596862774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de11cf623244ff%3A0x1ade186135a9e467!2sChicken%20house!5e1!3m2!1sen!2s!4v1761896533007!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
-      "type": "dining",
-      "coordinates": "33.325651, 35.227135"
-    },
-    {
-      "title": "The Kaffo",
-      "description": "Campus coffee shop and cafe for students to relax and study.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d717.9193722288206!2d33.32512662700228!3d35.22845884725125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de113c27d21a13%3A0xf4f376f186042880!2sThe%20Kaffo!5e1!3m2!1sen!2s!4v1761896654735!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
-      "type": "dining",
-      "coordinates": "33.325126, 35.228458"
+  "universityInfo": {
+    "name": "Near East University",
+    "abbreviation": "NEU",
+    "established": 1988,
+    "location": "Nicosia, Northern Cyprus",
+    "mainContact": {
+      "phone": ["+90 (392) 223 64 64", "+90 (392) 680 20 00"],
+      "email": "info@neu.edu.tr",
+      "whatsapp": "+90 548 818 0818",
+      "website": "https://neu.edu.tr",
+      "address": "Near East Boulevard, 99138 Nicosia / TRNC, Mersin 10 – TURKEY"
     }
-  ],
-  "admissions": [
-    {
-      "title": "Application Process",
-      "description": "Students can apply online at https://aday.neu.edu.tr. The application system is available for all prospective students.",
-      "type": "process"
+  },
+
+  "admissions": {
+    "applicationProcess": {
+      "title": "How to Apply",
+      "description": "Students can apply online at https://aday.neu.edu.tr. The application system is available for all prospective students year-round.",
+      "website": "https://aday.neu.edu.tr",
+      "steps": [
+        "Visit online application portal",
+        "Fill out application form",
+        "Upload required documents",
+        "Submit and await confirmation"
+      ]
     },
-    {
-      "title": "Accepted Certificates - International Exams",
-      "description": "NEU accepts: GCSE, IGCSE, International Baccalaureate, ACT, SAT, and various international high school diplomas. All documents in languages other than English or Turkish require official translation.",
-      "type": "requirement"
+    "requirements": {
+      "internationalExams": {
+        "title": "Accepted International Certificates",
+        "description": "NEU accepts: GCSE, IGCSE, International Baccalaureate, ACT, SAT, and various international high school diplomas.",
+        "certificates": ["GCSE", "IGCSE", "IB", "ACT", "SAT", "International High School Diplomas"]
+      },
+      "regionalExams": {
+        "title": "Accepted Regional Certificates",
+        "description": "NEU accepts: Tawjihi (Jordan/Palestine), Baccalaureate (Lebanon/Iraq/Syria), Diploma Debirestan (Iran), Higher Secondary Certificate (Pakistan/India/Bangladesh), WAEC/NECO (Nigeria), GAOKAO (China).",
+        "certificates": ["Tawjihi", "Baccalaureate", "Diploma Debirestan", "HSC", "WAEC", "NECO", "GAOKAO"]
+      },
+      "documentTranslation": {
+        "title": "Document Translation Requirements",
+        "description": "All documents in languages other than English or Turkish must have an official translation."
+      }
     },
-    {
-      "title": "Accepted Certificates - Regional Exams",
-      "description": "NEU accepts: Tawjihi (Jordan/Palestine), Baccalaureate (Lebanon/Iraq/Syria), Diploma Debirestan (Iran), Higher Secondary Certificate (Pakistan/India/Bangladesh), WAEC/NECO (Nigeria), GAOKAO (China), and other High School Diplomas.",
-      "type": "requirement"
-    },
-    {
+    "residencePermit": {
       "title": "Student Residence Permit",
       "description": "International students must register for residence permit at https://permissions.gov.ct.tr/login. The International Students Office assists with this process.",
-      "type": "visa"
+      "website": "https://permissions.gov.ct.tr/login",
+      "assistanceOffice": "International Students Office"
     },
-    {
+    "fees": {
       "title": "Tuition Fees 2025-2026",
       "description": "Full list of programs and tuition fees available at https://aday.neu.edu.tr. Fees vary by program and faculty.",
-      "type": "financial"
+      "website": "https://aday.neu.edu.tr",
+      "note": "Fees range from $3,500 to $10,000 per year depending on program"
     },
-    {
-      "title": "Document Translation",
-      "description": "All documents submitted in languages other than English or Turkish must have an official translation.",
-      "type": "requirement"
-    },
-    {
-      "title": "Freezing Registration",
-      "description": "Students can freeze their registration under certain circumstances. More information available at https://aday.neu.edu.tr/additional-information/freezing-registration/",
-      "type": "process"
+    "registration": {
+      "freezing": {
+        "title": "Freezing Registration",
+        "description": "Students can freeze their registration under certain circumstances.",
+        "website": "https://aday.neu.edu.tr/additional-information/freezing-registration/"
+      }
     }
-  ],
-  "courses": [
-    {
-      "code": "FAC-VT",
-      "name": "Faculty of Veterinary Medicine",
-      "description": "Offers veterinary medicine programs with departments including Basic Veterinary Sciences, Preclinical Sciences, Clinical Sciences, Zootechnics and Animal Nutrition, and Food Hygiene and Technology. Website: https://veterinary.neu.edu.tr/",
-      "department": "Veterinary Medicine",
-      "location": "Veterinary Building",
-      "coordinates": "33.3189793, 35.2274761"
+  },
+
+  "academicBuildings": {
+    "internationalStudentsOffice": {
+      "title": "International Students Office",
+      "description": "Handles all matters regarding international students including registration, accounting, graduation and student permits.",
+      "location": "Faculty of Communications, 2nd Floor",
+      "workingHours": "Monday to Friday, 8:00 AM - 5:00 PM (closed during holidays)",
+      "coordinates": "33.325172, 35.224087",
+      "type": "office",
+      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d373.8168140044392!2d33.325172741683765!3d35.22408728250506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2s!4v1761907354063!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
     },
-    {
-      "code": "FAC-TZ",
-      "name": "Faculty of Tourism",
-      "description": "Offers Tourism and Hotel Management programs (two years and undergraduate) and MSc in Tourism Management. Website: https://turizm.neu.edu.tr/",
-      "department": "Tourism",
-      "location": "Tourism Building",
-      "coordinates": "33.3248376, 35.224214"
+    "grandLibrary": {
+      "title": "Grand Library",
+      "description": "Near East University Grand Library provides study spaces, resources, and academic materials for students.",
+      "workingHours": "Monday to Friday, 8:00 AM - 8:00 PM (24/7 during exam periods)",
+      "coordinates": "33.326838, 35.224800",
+      "type": "library",
+      "facilities": ["Study rooms", "Computer labs", "500,000+ books", "Digital resources"],
+      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d652.1944348698642!2d33.32683836385826!3d35.22480021104133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de113d99e4c681%3A0x226adf08639790c9!2sNear%20East%20University%20Grand%20Library!5e1!3m2!1sen!2s!4v1761906914643!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
     },
-    {
-      "code": "FAC-IH",
-      "name": "Faculty of Theology",
-      "description": "Offers Islamic theology and religious studies programs. Website: https://ilahiyat.neu.edu.tr/",
-      "department": "Theology",
-      "location": "Theology Building",
-      "coordinates": "33.3268386, 35.2240524"
+    "studentDeanshipOffice": {
+      "title": "Student Deanship Office",
+      "description": "The Dean of Students Office provides services, programs, and various opportunities to students.",
+      "location": "Ataturk Culture and Congress Center",
+      "contact": {
+        "email": "neuogrenci.dekanligi@neu.edu.tr",
+        "phone": "+90 (392) 223 64 64"
+      },
+      "coordinates": "33.326316, 35.227477",
+      "type": "office",
+      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1536.7807034744471!2d33.32631697304336!3d35.22747736824614!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de113df8d5b0eb%3A0x2362358e74af69e4!2sAtaturk%20Culture%20and%20Congress%20Center!5e1!3m2!1sen!2s!4v1761907984037!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
     },
-    {
-      "code": "FAC-BE",
-      "name": "Faculty of Sports Sciences",
-      "description": "Departments: Physical Education and Sport Teaching, Sports Management, Coaching Education, Recreation. Website: https://sporbilimleri.neu.edu.tr/",
-      "department": "Sports Sciences",
-      "location": "Sports Sciences Building",
-      "coordinates": "33.3258674, 35.2249852"
+    "postOffice": {
+      "title": "Post Office",
+      "description": "NEU Post Office branch provides postal and mailing services to students and staff.",
+      "location": "Faculty of Administrative and Economics Sciences, Ground Floor",
+      "coordinates": "33.3258355, 35.2255032",
+      "type": "service",
+      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d407.40445762135255!2d33.3258355!3d35.2255032!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de11783e6dff3d%3A0xbd807d589cc0b53d!2zxLBrdGlzYXQ!5e0!3m2!1sen!2s!4v1761116558953!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+    }
+  },
+
+  "accommodation": {
+    "dormitories": {
+      "title": "Student Dormitories",
+      "description": "NEU has 12 dormitories on campus (Dormitory 1-12) plus a Guest House. All dormitories are located within the campus area.",
+      "total": 13,
+      "types": ["Single rooms", "Shared rooms", "WiFi", "Study areas", "Common facilities"],
+      "dormitory1Location": {
+        "coordinates": "33.32593234, 35.22839176",
+        "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d559.7349178423044!2d33.32593234277022!3d35.22839176292247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1761893373449!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+      }
     },
-    {
-      "code": "FAC-EZ",
-      "name": "Faculty of Pharmacy",
-      "description": "Comprehensive pharmacy education with departments in Pharmaceutical Basic Sciences, Pharmaceutical Sciences, and Pharmaceutical Technology. Includes specializations in Analytical Chemistry, Pharmacology, Pharmaceutical Technology, and more. Website: https://eczacilik.neu.edu.tr",
-      "department": "Pharmacy",
-      "location": "Pharmacy Building",
-      "coordinates": "33.321344, 35.2289564"
+    "laundryShop": {
+      "title": "Laundry Shop",
+      "description": "Campus laundry facility available for students.",
+      "location": "Near dormitory area",
+      "coordinates": "33.32500653, 35.23050002",
+      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=!4v1761894236115!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJRGFxOENnTWc.!2m2!1d35.23050002659937!2d33.32500653020724!3f335.26513312853217!4f4.304938608595677!5f0.7820865974627469\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+    }
+  },
+
+  "dining": {
+    "pizzaPizza": {
+      "title": "Pizza Pizza Restaurant",
+      "description": "On-campus restaurant serving pizza and Italian cuisine.",
+      "cuisine": "Italian, Pizza",
+      "coordinates": "33.325294, 35.226757",
+      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d853.7727267142494!2d33.32529482644099!3d35.22675756999112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de173688f06ddb%3A0xbf6e9ee00ecdcdbe!2sPizza%20Pizza%20%7C%20Lefko%C5%9Fa!5e1!3m2!1sen!2s!4v1761895808701!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
     },
-    {
-      "code": "FAC-NURS",
-      "name": "Faculty of Nursing",
-      "description": "Offers nursing education and training programs. Website: https://hemsirelik.neu.edu.tr",
-      "department": "Nursing",
-      "location": "Health Sciences Building",
-      "coordinates": "33.3207096, 35.2297387"
+    "gusto": {
+      "title": "Gusto Restaurant & Cafe",
+      "description": "Campus restaurant and cafe offering meals and beverages.",
+      "cuisine": "International, Cafe",
+      "coordinates": "33.319787, 35.227671",
+      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d853.7631069842963!2d33.31978747231094!3d35.227671806512916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de1127d05d38d1%3A0x4bde28a1c35710cf!2sGusto%20Restaurant%20%26%20Cafe%20%2F%20NEU!5e1!3m2!1sen!2s!4v1761896087240!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
     },
-    {
-      "code": "FAC-MED",
-      "name": "Faculty of Medicine",
-      "description": "Medical education and training programs for aspiring doctors and healthcare professionals. Website: https://medicine.neu.edu.tr/",
-      "department": "Medicine",
-      "location": "TIP Building",
-      "coordinates": "33.319336, 35.2278796"
+    "patisserie": {
+      "title": "Patisserie and Bakery Cafe",
+      "description": "Campus cafe offering pastries, baked goods, and coffee.",
+      "cuisine": "Bakery, Cafe",
+      "coordinates": "33.3258411, 35.2239146",
+      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d507.6740868328564!2d33.3258411!3d35.2239146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de1163f9402e5b%3A0x7470bb92e673557e!2sCafe!5e1!3m2!1sen!2s!4v1761896347176!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
     },
-    {
-      "code": "FAC-HK",
-      "name": "Faculty of Law",
-      "description": "Departments: Law and International Law. Prepares students for legal careers. Website: https://hukuk.neu.edu.tr",
-      "department": "Law",
-      "location": "Law Faculty Building",
-      "coordinates": "33.3263358, 35.2266693"
+    "ncsKebap": {
+      "title": "NCS Kebap House",
+      "description": "Campus restaurant specializing in kebabs and Turkish cuisine.",
+      "cuisine": "Turkish, Kebabs",
+      "coordinates": "33.326003, 35.223993",
+      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d358.97944106238833!2d33.32600376363897!3d35.22399335147537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de116afcc1b865%3A0x50efad7d82dc6665!2sNCS%20Kebab%20House!5e1!3m2!1sen!2s!4v1761896451760!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
     },
-    {
-      "code": "FAC-SBF",
-      "name": "Faculty of Health Sciences",
-      "description": "Departments: Audiology, Nutrition and Dietetics, Physiotherapy and Rehabilitation. Website: https://saglikbilimleri.neu.edu.tr/",
-      "department": "Health Sciences",
-      "location": "Health Sciences Building",
-      "coordinates": "33.320831, 35.229721"
+    "chickenHouse": {
+      "title": "Chicken House",
+      "description": "Campus eatery serving chicken dishes and fast food.",
+      "cuisine": "Fast Food, Chicken",
+      "coordinates": "33.325651, 35.227135",
+      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d358.96553863665935!2d33.325651498134!3d35.22713596862774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de11cf623244ff%3A0x1ade186135a9e467!2sChicken%20house!5e1!3m2!1sen!2s!4v1761896533007!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
     },
+    "theKaffo": {
+      "title": "The Kaffo",
+      "description": "Campus coffee shop and cafe for students to relax and study.",
+      "cuisine": "Coffee, Cafe",
+      "coordinates": "33.325126, 35.228458",
+      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d717.9193722288206!2d33.32512662700228!3d35.22845884725125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de113c27d21a13%3A0xf4f376f186042880!2sThe%20Kaffo!5e1!3m2!1sen!2s!4v1761896654735!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+    }
+  },
+
+  "sportsAndRecreation": {
+    "olympicPool": {
+      "title": "Near East Olympic Swimming Pool",
+      "description": "Full Olympic-size swimming pool facility available for students and staff for recreation and sports activities.",
+      "facilities": ["Olympic pool", "Recreation", "Sports training"],
+      "coordinates": "33.324156, 35.228700",
+      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1629.5536208409837!2d33.32415605651555!3d35.22870033066583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de11911f53a211%3A0xe9f82908681846a7!2sNear%20East%20Olympic%20Swimming%20Pool!5e0!3m2!1sen!2s!4v1761895011927!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+    },
+    "basketballStadium": {
+      "title": "Near East Basketball Indoor Stadium",
+      "description": "Indoor basketball stadium for sports events, training, and recreational activities.",
+      "facilities": ["Basketball court", "Sports events", "Training"],
+      "coordinates": "33.322196, 35.225205",
+      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=!4v1761895175976!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJRGE1N2J5amdF!2m2!1d35.22520571470393!2d33.32219623699034!3f198.576541238397!4f-11.065011035633745!5f0.7820865974627469\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+    },
+    "sportsComplex": {
+      "title": "Near East Sports Complex",
+      "description": "Comprehensive sports complex with various facilities for different sports and physical activities.",
+      "facilities": ["Multi-sport", "Training facilities", "Recreational activities"],
+      "coordinates": "33.3247025, 35.2239767",
+      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=!4v1761895403601!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJRE8yN24zWmc.!2m2!1d35.2239767905525!2d33.3247025010822!3f33.1271786304873!4f5.763341344491053!5f0.7820865974627469\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+    }
+  },
+
+  "culturalAndEvents": {
+    "carMuseum": {
+      "title": "Cyprus Car Museum",
+      "description": "On-campus museum showcasing the history of automobiles in Cyprus. Open to students and visitors.",
+      "type": "Museum",
+      "coordinates": "33.322140, 35.225194",
+      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d814.8120195730729!2d33.32214048249595!3d35.22519404457654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de11170df01dc1%3A0xa99d062bdd5c8d81!2sCyprus%20Car%20Museum!5e0!3m2!1sen!2s!4v1761895254398!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+    },
+    "modernArtMuseum": {
+      "title": "Cyprus Modern Art Museum",
+      "description": "Modern art museum on campus featuring contemporary artworks and exhibitions.",
+      "type": "Museum",
+      "coordinates": "33.3223248, 35.2251597",
+      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d685.1727963024873!2d33.32232483809226!3d35.22515970671901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de11149b5b4595%3A0x60fbe7ec6809e137!2sCyprus%20Modern%20Art%20Museum!5e0!3m2!1sen!2s!4v1761895277411!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+    },
+    "eventPark": {
+      "title": "NEU Event Park",
+      "description": "Large outdoor event space used for university events, festivals, and gatherings.",
+      "type": "Event Venue",
+      "coordinates": "33.3219013, 35.2231403",
+      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1207.470792459338!2d33.321901307343744!3d35.22314035628258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de110073f17d7f%3A0x1fcb2dedc867c4e3!2sNEU%20Event%20Park!5e1!3m2!1sen!2s!4v1761895566241!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+    },
+    "ataturkCenter": {
+      "title": "Ataturk Culture and Congress Center",
+      "description": "Major venue for cultural events, conferences, ceremonies, and university gatherings. Houses the Student Deanship Office.",
+      "type": "Event Venue",
+      "coordinates": "33.325258, 35.227084",
+      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1207.4121114346835!2d33.32525822002892!3d35.22708402973052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de113df8d5b0eb%3A0x2362358e74af69e4!2sAtaturk%20Culture%20and%20Congress%20Center!5e1!3m2!1sen!2s!4v1761895667100!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+    }
+  },
+
+  "banking": {
+    "hospitalBranch": {
+      "title": "Near East Bank - Hospital Branch",
+      "description": "Banking services near the hospital for convenient access to financial services.",
+      "location": "Near Hospital",
+      "coordinates": "33.318874, 35.228119",
+      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d634.4271115932196!2d33.318873999213885!3d35.228119319015605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de111138f300db%3A0xbd8e16c85c53c889!2zWWFrxLFuIERvxJ91IEJhbms!5e1!3m2!1sen!2s!4v1765719477014!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+    },
+    "universityBranch": {
+      "title": "Near East Bank - University Branch",
+      "description": "Main university banking branch providing full banking services to students and staff.",
+      "location": "Main Campus",
+      "coordinates": "33.3257240, 35.2259583",
+      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d717.9414971338806!2d33.3257240585799!3d35.22595830229958!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de111621ecbc49%3A0xaa18f1a2ea0e3f01!2sNear%20East%20Bank!5e1!3m2!1sen!2s!4v1761896584478!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+    }
+  },
+
+  "shopping": {
+    "ikasSupermarket": {
+      "title": "Ikas Supermarket",
+      "description": "On-campus supermarket providing groceries and daily necessities for students.",
+      "type": "Supermarket",
+      "coordinates": "33.324379, 35.223952",
+      "mapEmbed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d853.8022455022771!2d33.32437916205063!3d35.223952044794295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2s!4v1761895508069!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>"
+    }
+  },
+
+  "healthcare": {
+    "neuHospital": {
+      "title": "Near East University Hospital",
+      "description": "Full-service hospital facility on campus providing medical care to students and the community.",
+      "services": ["Emergency care", "Outpatient services", "Specialist consultations", "Laboratory"],
+      "type": "Hospital"
+    }
+  },
+
+  "faculties": [
     {
-      "code": "FAC-GSF",
-      "name": "Faculty of Fine Arts and Design",
-      "description": "Departments: Graphic Design, Plastic Arts, Graphic Design Vocational School. Website: https://guzelsanatlar.neu.edu.tr/",
-      "department": "Fine Arts and Design",
-      "location": "Architecture Building",
-      "coordinates": "33.3262195, 35.2267599"
+      "code": "FAC-AIF",
+      "name": "Faculty of Artificial Intelligence and Informatics",
+      "description": "Leading faculty offering cutting-edge programs in AI, Computer Engineering, Cyber Security, and Data Analytics.",
+      "departments": [
+        "Artificial Intelligence Engineering",
+        "Computer Engineering",
+        "Information Systems Engineering",
+        "Cyber Security Engineering",
+        "Management Information Systems",
+        "Computer Information Systems",
+        "Data Analytics Engineering",
+        "Software Engineering"
+      ],
+      "location": "Innovation Centre (INV)",
+      "website": "https://aif.neu.edu.tr/",
+      "coordinates": "33.3187298, 35.2267596"
     },
     {
       "code": "FAC-ENG",
       "name": "Faculty of Engineering",
-      "description": "Departments include: Industrial Engineering, Mechanical Engineering, Biomedical Engineering, Automotive Engineering, BioEngineering, Mechatronics Engineering, Electrical and Electronic Engineering, Materials Science and Nanotechnology Engineering, Petroleum and Natural Gas Engineering. Website: https://muhendislik.neu.edu.tr/",
-      "department": "Engineering",
+      "description": "Comprehensive engineering programs with modern laboratories and hands-on learning opportunities.",
+      "departments": [
+        "Industrial Engineering",
+        "Mechanical Engineering",
+        "Biomedical Engineering",
+        "Automotive Engineering",
+        "BioEngineering",
+        "Mechatronics Engineering",
+        "Electrical and Electronic Engineering",
+        "Materials Science and Nanotechnology Engineering",
+        "Petroleum and Natural Gas Engineering"
+      ],
       "location": "Innovation Center (INV)",
+      "website": "https://muhendislik.neu.edu.tr/",
       "coordinates": "33.3187298, 35.2267596"
     },
     {
-      "code": "FAC-ES",
-      "name": "Atatürk Faculty of Education",
-      "description": "Comprehensive education programs including Music Education, Social Sciences Teaching, Science Teaching, Pre-school Teaching, English Language Teaching, Classroom Teaching, Mathematics Teaching, Psychological Counselling and Guidance, and many more. Website: https://egitim.neu.edu.tr",
-      "department": "Education",
-      "location": "Eğitim Sarayı",
-      "coordinates": "33.3225289, 35.2296908"
-    },
-    {
-      "code": "FAC-II",
-      "name": "Faculty of Economics and Administrative Sciences",
-      "description": "Departments: European Union Relations, Banking and Accounting, Banking and Finance, Economics, Human Resource Management, Business Administration, Marketing, Public Administration, Political Science, International Relations, International Business. Website: https://iktisat.neu.edu.tr/",
-      "department": "Economics",
-      "location": "Economics Building",
-      "coordinates": "33.3258355, 35.2255032"
+      "code": "FAC-MED",
+      "name": "Faculty of Medicine",
+      "description": "Medical education and training programs for aspiring doctors with teaching hospital facilities.",
+      "location": "TIP Building",
+      "website": "https://medicine.neu.edu.tr/",
+      "accreditation": "International",
+      "coordinates": "33.319336, 35.2278796"
     },
     {
       "code": "FAC-DENT",
       "name": "Faculty of Dentistry",
-      "description": "Departments: Prosthodontics, Oral and Maxillofacial Surgery, Restorative Dentistry, Endodontics, Orthodontics, Pedodontics, Periodontology, Oral and Maxillofacial Radiology. Website: https://dentistry.neu.edu.tr",
-      "department": "Dentistry",
+      "description": "Comprehensive dental education with modern clinics and experienced faculty.",
+      "departments": [
+        "Prosthodontics",
+        "Oral and Maxillofacial Surgery",
+        "Restorative Dentistry",
+        "Endodontics",
+        "Orthodontics",
+        "Pedodontics",
+        "Periodontology",
+        "Oral and Maxillofacial Radiology"
+      ],
       "location": "Dentistry Building",
+      "website": "https://dentistry.neu.edu.tr",
       "coordinates": "33.3212512, 35.228632"
     },
     {
-      "code": "FAC-IL",
-      "name": "Faculty of Communication",
-      "description": "Departments: Cartoon and Animation, Filmmaking and Broadcasting, Journalism, Visual Communication Design, Public Relations and Publicity, Radio, Television and Cinema. Website: https://iletisim.neu.edu.tr/",
-      "department": "Communication",
-      "location": "Communication Building",
-      "coordinates": "33.3250939, 35.2239519"
+      "code": "FAC-EZ",
+      "name": "Faculty of Pharmacy",
+      "description": "Comprehensive pharmacy education with specializations in pharmaceutical sciences and technology.",
+      "departments": [
+        "Pharmaceutical Basic Sciences",
+        "Pharmaceutical Sciences",
+        "Pharmaceutical Technology",
+        "Analytical Chemistry",
+        "Pharmacology"
+      ],
+      "location": "Pharmacy Building",
+      "website": "https://eczacilik.neu.edu.tr",
+      "coordinates": "33.321344, 35.2289564"
     },
     {
-      "code": "FAC-ICE",
-      "name": "Faculty of Civil and Environmental Engineering",
-      "description": "Departments: Civil Engineering, Environmental Engineering, Traffic and Transportation Engineering, Construction Technology, Construction and Technical Drawing Technologies. Website: https://insaatvecevre.neu.edu.tr/",
-      "department": "Civil Engineering",
-      "location": "Tourism Building",
-      "coordinates": "33.3257906, 35.224228"
+      "code": "FAC-HK",
+      "name": "Faculty of Law",
+      "description": "Prepares students for legal careers with emphasis on international law and human rights.",
+      "departments": ["Law", "International Law"],
+      "location": "Law Faculty Building",
+      "website": "https://hukuk.neu.edu.tr",
+      "coordinates": "33.3263358, 35.2266693"
     },
     {
-      "code": "FAC-FE",
-      "name": "Faculty of Arts and Sciences",
-      "description": "Departments: Molecular Biology and Genetics, English Language and Literature, Mathematics, Turkish Language and Literature, Psychology, Translation and Interpretation, Geography, Physics. Website: https://fenedebiyat.neu.edu.tr/",
-      "department": "Arts and Sciences",
-      "location": "Art and Sciences Building",
-      "coordinates": "33.3260621, 35.2246126"
+      "code": "FAC-II",
+      "name": "Faculty of Economics and Administrative Sciences",
+      "description": "Business, economics, and administrative programs preparing students for the corporate world.",
+      "departments": [
+        "European Union Relations",
+        "Banking and Accounting",
+        "Banking and Finance",
+        "Economics",
+        "Human Resource Management",
+        "Business Administration",
+        "Marketing",
+        "Public Administration",
+        "Political Science",
+        "International Relations",
+        "International Business"
+      ],
+      "location": "Economics Building",
+      "website": "https://iktisat.neu.edu.tr/",
+      "coordinates": "33.3258355, 35.2255032"
     },
     {
       "code": "FAC-MM",
       "name": "Faculty of Architecture",
-      "description": "Departments: Architecture and Interior Architecture. Website: https://mimarlik.neu.edu.tr/",
-      "department": "Architecture",
+      "description": "Architecture and Interior Architecture programs with focus on sustainable design.",
+      "departments": ["Architecture", "Interior Architecture"],
       "location": "Architecture Building",
+      "website": "https://mimarlik.neu.edu.tr/",
       "coordinates": "33.3262195, 35.2267599"
     },
     {
-      "code": "FAC-AIF",
-      "name": "Faculty of Artificial Intelligence and Informatics",
-      "description": "Departments: Artificial Intelligence Engineering, Computer Engineering, Information Systems Engineering, Cyber Security Engineering, Management Information Systems, Computer Information Systems, Data Analytics Engineering, Software Engineering. Website: https://aif.neu.edu.tr/",
-      "department": "AI and Informatics",
-      "location": "Innovation Centre (INV)",
-      "coordinates": "33.3187298, 35.2267596"
+      "code": "FAC-IL",
+      "name": "Faculty of Communication",
+      "description": "Media, journalism, and communication programs with modern studios and equipment.",
+      "departments": [
+        "Cartoon and Animation",
+        "Filmmaking and Broadcasting",
+        "Journalism",
+        "Visual Communication Design",
+        "Public Relations and Publicity",
+        "Radio, Television and Cinema"
+      ],
+      "location": "Communication Building",
+      "website": "https://iletisim.neu.edu.tr/",
+      "coordinates": "33.3250939, 35.2239519"
+    },
+    {
+      "code": "FAC-ES",
+      "name": "Atatürk Faculty of Education",
+      "description": "Comprehensive teacher training and education programs.",
+      "departments": [
+        "Music Education",
+        "Social Sciences Teaching",
+        "Science Teaching",
+        "Pre-school Teaching",
+        "English Language Teaching",
+        "Classroom Teaching",
+        "Mathematics Teaching",
+        "Psychological Counselling and Guidance"
+      ],
+      "location": "Eğitim Sarayı",
+      "website": "https://egitim.neu.edu.tr",
+      "coordinates": "33.3225289, 35.2296908"
+    },
+    {
+      "code": "FAC-FE",
+      "name": "Faculty of Arts and Sciences",
+      "description": "Liberal arts and sciences programs covering humanities and natural sciences.",
+      "departments": [
+        "Molecular Biology and Genetics",
+        "English Language and Literature",
+        "Mathematics",
+        "Turkish Language and Literature",
+        "Psychology",
+        "Translation and Interpretation",
+        "Geography",
+        "Physics"
+      ],
+      "location": "Art and Sciences Building",
+      "website": "https://fenedebiyat.neu.edu.tr/",
+      "coordinates": "33.3260621, 35.2246126"
+    },
+    {
+      "code": "FAC-SBF",
+      "name": "Faculty of Health Sciences",
+      "description": "Allied health programs supporting the healthcare system.",
+      "departments": [
+        "Audiology",
+        "Nutrition and Dietetics",
+        "Physiotherapy and Rehabilitation"
+      ],
+      "location": "Health Sciences Building",
+      "website": "https://saglikbilimleri.neu.edu.tr/",
+      "coordinates": "33.320831, 35.229721"
+    },
+    {
+      "code": "FAC-NURS",
+      "name": "Faculty of Nursing",
+      "description": "Professional nursing education and training programs.",
+      "location": "Health Sciences Building",
+      "website": "https://hemsirelik.neu.edu.tr",
+      "coordinates": "33.3207096, 35.2297387"
+    },
+    {
+      "code": "FAC-GSF",
+      "name": "Faculty of Fine Arts and Design",
+      "description": "Creative arts and design programs.",
+      "departments": [
+        "Graphic Design",
+        "Plastic Arts",
+        "Graphic Design Vocational School"
+      ],
+      "location": "Architecture Building",
+      "website": "https://guzelsanatlar.neu.edu.tr/",
+      "coordinates": "33.3262195, 35.2267599"
+    },
+    {
+      "code": "FAC-ICE",
+      "name": "Faculty of Civil and Environmental Engineering",
+      "description": "Civil engineering and environmental programs with focus on sustainability.",
+      "departments": [
+        "Civil Engineering",
+        "Environmental Engineering",
+        "Traffic and Transportation Engineering",
+        "Construction Technology",
+        "Construction and Technical Drawing Technologies"
+      ],
+      "location": "Tourism Building",
+      "website": "https://insaatvecevre.neu.edu.tr/",
+      "coordinates": "33.3257906, 35.224228"
+    },
+    {
+      "code": "FAC-BE",
+      "name": "Faculty of Sports Sciences",
+      "description": "Sports education, management, and coaching programs.",
+      "departments": [
+        "Physical Education and Sport Teaching",
+        "Sports Management",
+        "Coaching Education",
+        "Recreation"
+      ],
+      "location": "Sports Sciences Building",
+      "website": "https://sporbilimleri.neu.edu.tr/",
+      "coordinates": "33.3258674, 35.2249852"
+    },
+    {
+      "code": "FAC-TZ",
+      "name": "Faculty of Tourism",
+      "description": "Tourism and hospitality management programs.",
+      "programs": [
+        "Tourism and Hotel Management (2 years)",
+        "Tourism and Hotel Management (Undergraduate)",
+        "MSc in Tourism Management"
+      ],
+      "location": "Tourism Building",
+      "website": "https://turizm.neu.edu.tr/",
+      "coordinates": "33.3248376, 35.224214"
+    },
+    {
+      "code": "FAC-VT",
+      "name": "Faculty of Veterinary Medicine",
+      "description": "Veterinary medicine programs with comprehensive animal care training.",
+      "departments": [
+        "Basic Veterinary Sciences",
+        "Preclinical Sciences",
+        "Clinical Sciences",
+        "Zootechnics and Animal Nutrition",
+        "Food Hygiene and Technology"
+      ],
+      "location": "Veterinary Building",
+      "website": "https://veterinary.neu.edu.tr/",
+      "coordinates": "33.3189793, 35.2274761"
+    },
+    {
+      "code": "FAC-IH",
+      "name": "Faculty of Theology",
+      "description": "Islamic theology and religious studies programs.",
+      "location": "Theology Building",
+      "website": "https://ilahiyat.neu.edu.tr/",
+      "coordinates": "33.3268386, 35.2240524"
     },
     {
       "code": "FAC-AGR",
       "name": "Faculty of Agriculture",
-      "description": "Departments: Landscape Architecture and Food Engineering. Website: https://ziraat.neu.edu.tr/",
-      "department": "Agriculture",
+      "description": "Agriculture and food engineering programs.",
+      "departments": [
+        "Landscape Architecture",
+        "Food Engineering"
+      ],
       "location": "Law Faculty",
+      "website": "https://ziraat.neu.edu.tr/",
       "coordinates": "33.3262195, 35.2267599"
     }
   ],
-  "generalInfo": [
-    {
-      "title": "University Contact Information",
-      "description": "Phone: +90 (392) 223 64 64 or +90 (392) 680 20 00. Email: info@neu.edu.tr. WhatsApp: +90 548 818 0818. Extension: 5143. Address: Near East Boulevard, 99138 Nicosia / TRNC, Mersin 10 – TURKEY. Website: https://neu.edu.tr",
-      "type": "contact"
-    },
-    {
-      "title": "Student Petitions System",
-      "description": "Students can submit petitions regarding refunds, academic matters, job applications, dormitory matters, and financial matters through the online petition system. Email: petitions@neu.edu.tr",
-      "type": "service"
-    },
-    {
+
+  "studentServices": {
+    "psychologicalCounseling": {
       "title": "Psychological Counseling Services",
-      "description": "NEU provides psychological counseling services through the Psychological Counseling, Guidance, and Research Center. Contact: pdram@neu.edu.tr or through the Dean of Students' Office for appointments and support.",
-      "type": "service"
+      "description": "NEU provides psychological counseling services through the Psychological Counseling, Guidance, and Research Center.",
+      "contact": {
+        "email": "pdram@neu.edu.tr",
+        "office": "Dean of Students Office"
+      },
+      "services": ["Individual counseling", "Group sessions", "Crisis intervention", "Mental health support"]
     },
-    {
-      "title": "Student Activities Center",
-      "description": "Helps organize events, directs students to clubs and societies, and represents students in domestic and international events. Contact: yduodkulupleri@neu.edu.tr",
-      "type": "service"
-    },
-    {
+    "careerPlanning": {
       "title": "Career Planning Services",
-      "description": "The Career Planning Unit under the Dean of Students Office provides career counseling, job preparation, and professional development support for students.",
-      "type": "service"
+      "description": "The Career Planning Unit provides career counseling, job preparation, and professional development support.",
+      "office": "Dean of Students Office",
+      "services": ["Career counseling", "Resume writing", "Interview preparation", "Job search assistance"]
     },
-    {
+    "studentActivities": {
+      "title": "Student Activities Center",
+      "description": "Helps organize events, directs students to clubs and societies, and represents students in domestic and international events.",
+      "contact": {
+        "email": "yduodkulupleri@neu.edu.tr"
+      },
+      "offerings": ["Student clubs", "Cultural events", "Sports competitions", "International exchanges"]
+    },
+    "disabilitySupport": {
       "title": "Disability Support Services",
-      "description": "The Disabled Students Unit provides accommodations and support services for students with disabilities. Contact through the Dean of Students Office.",
-      "type": "service"
+      "description": "The Disabled Students Unit provides accommodations and support services for students with disabilities.",
+      "contact": "Dean of Students Office",
+      "services": ["Academic accommodations", "Accessibility support", "Assistive technology", "Counseling"]
     },
-    {
-      "title": "Academic Calendar and Handbook",
-      "description": "2025-2026 academic calendar available at https://neu.edu.tr/academic/academic-calendar. University handbook available at https://online.fliphtml5.com/mabep/cfjs/#p=37",
-      "type": "academic"
+    "petitionsSystem": {
+      "title": "Student Petitions System",
+      "description": "Students can submit petitions regarding refunds, academic matters, job applications, dormitory matters, and financial matters through the online petition system.",
+      "contact": {
+        "email": "petitions@neu.edu.tr"
+      },
+      "types": ["Academic petitions", "Financial matters", "Housing requests", "Administrative appeals"]
     },
-    {
+    "alumniServices": {
       "title": "Alumni Services",
       "description": "NEU Alumni Unit maintains connections with graduates and provides networking opportunities and continued support after graduation.",
-      "type": "service"
+      "services": ["Alumni network", "Career support", "Events", "Mentorship programs"]
     }
-  ]
+  },
+
+  "academicResources": {
+    "academicCalendar": {
+      "title": "Academic Calendar 2025-2026",
+      "description": "Full academic calendar with important dates for registration, exams, and holidays.",
+      "website": "https://neu.edu.tr/academic/academic-calendar"
+    },
+    "universityHandbook": {
+      "title": "University Handbook",
+      "description": "Comprehensive guide to NEU policies, procedures, and academic regulations.",
+      "website": "https://online.fliphtml5.com/mabep/cfjs/#p=37"
+    }
+  }
 }
