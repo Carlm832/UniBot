@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import MessageBubble from "./MessageBubble";
 import QuickActionsCompact from "./QuickActionsCompact";
 
-const API_URL = "https://YOUR-RAILWAY-URL/api/chat";
+const API_URL = "https://unibot-backend-xzfj.onrender.com/api/chat";
 
 // Suggested questions per category
 const SUGGESTED_QUESTIONS = {
@@ -64,20 +64,36 @@ export default function ChatInterface({ initialCategory = "general" }) {
   /* ---------------- Backend health ---------------- */
 
   useEffect(() => {
-    checkBackendHealth();
-    const interval = setInterval(checkBackendHealth, 30000);
-    return () => clearInterval(interval);
+    const timeout = setTimeout(() => {
+      checkBackendHealth();
+
+      const interval = setInterval(checkBackendHealth, 30000);
+
+      return () => clearInterval(interval);
+    }, 5000); // let Render wake fully
+
+    return () => clearTimeout(timeout);
   }, []);
+
 
   const checkBackendHealth = async () => {
     try {
-      const res = await fetch("http://localhost:5000/health");
+      const res = await fetch(
+        "https://unibot-backend-xzfj.onrender.com/health",
+        { cache: "no-store" }
+      );
+
+      if (!res.ok) throw new Error("Bad response");
+
       const { status } = await res.json();
       setIsOnline(status === "ok");
-    } catch {
-      setIsOnline(false);
+    } catch (err) {
+      console.warn("Health check failed:", err);
+      // IMPORTANT: do NOT immediately set offline
     }
   };
+
+
 
   /* ---------------- Auto scroll ---------------- */
 
