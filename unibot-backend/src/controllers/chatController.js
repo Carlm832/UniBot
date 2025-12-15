@@ -7,7 +7,8 @@ class ChatController {
     try {
       const { message, category = 'general' } = req.body;
 
-      //INPUT VALIDATION
+      // ============ INPUT VALIDATION (ADD THIS) ============
+      
       // Check if message exists
       if (!message) {
         return res.status(400).json({ 
@@ -48,6 +49,8 @@ class ChatController {
           error: `Invalid category. Must be one of: ${validCategories.join(', ')}` 
         });
       }
+
+      // ============ END INPUT VALIDATION ============
 
       // Ensure vector service is initialized
       if (vectorService.documents.length === 0) {
