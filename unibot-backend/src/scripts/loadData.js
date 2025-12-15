@@ -15,6 +15,7 @@ async function loadUniversityData() {
     await vectorService.clearCollection();
     
     // Read university data file
+    // Adjusted for backend/data structure
     const dataPath = path.join(__dirname, '../../data/university-info.json');
     
     if (!fs.existsSync(dataPath)) {
@@ -29,7 +30,7 @@ async function loadUniversityData() {
     // Process and prepare documents
     const documents = [];
     
-    // Process different categories
+    // Process campus navigation with coordinates
     if (universityData.campusNavigation) {
       universityData.campusNavigation.forEach(item => {
         documents.push({
@@ -38,12 +39,14 @@ async function loadUniversityData() {
             category: 'campus-navigation',
             type: item.type || 'location',
             title: item.title,
-            coordinates: item.coordinates, // Add this!
+            coordinates: item.coordinates || null, // IMPORTANT: Include coordinates
           }
         });
       });
+      console.log(`Loaded ${universityData.campusNavigation.length} campus navigation items`);
     }
     
+    // Process admissions
     if (universityData.admissions) {
       universityData.admissions.forEach(item => {
         documents.push({
@@ -55,8 +58,10 @@ async function loadUniversityData() {
           }
         });
       });
+      console.log(`Loaded ${universityData.admissions.length} admission items`);
     }
     
+    // Process courses with coordinates
     if (universityData.courses) {
       universityData.courses.forEach(course => {
         const content = `${course.code} - ${course.name}: ${course.description}. Prerequisites: ${course.prerequisites || 'None'}. Credits: ${course.credits}`;
@@ -67,11 +72,14 @@ async function loadUniversityData() {
             code: course.code,
             department: course.department,
             title: course.name,
+            coordinates: course.coordinates || null, // IMPORTANT: Include coordinates
           }
         });
       });
+      console.log(`Loaded ${universityData.courses.length} courses`);
     }
     
+    // Process general info
     if (universityData.generalInfo) {
       universityData.generalInfo.forEach(item => {
         documents.push({
@@ -83,14 +91,23 @@ async function loadUniversityData() {
           }
         });
       });
+      console.log(`Loaded ${universityData.generalInfo.length} general info items`);
     }
     
     // Add documents to vector database
-    console.log(`Processing ${documents.length} documents...`);
+    console.log(`\nProcessing ${documents.length} total documents...`);
     await vectorService.addDocuments(documents);
     
-    console.log('✅ Data loading completed successfully!');
-    console.log(`Total documents loaded: ${documents.length}`);
+    // Summary
+    console.log('\n✅ Data loading completed successfully!');
+    console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+    console.log(`📚 Total documents loaded: ${documents.length}`);
+    console.log(`📍 Campus locations: ${universityData.campusNavigation?.length || 0}`);
+    console.log(`📝 Admission items: ${universityData.admissions?.length || 0}`);
+    console.log(`🎓 Courses: ${universityData.courses?.length || 0}`);
+    console.log(`ℹ️  General info: ${universityData.generalInfo?.length || 0}`);
+    console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+    
     process.exit(0);
     
   } catch (error) {

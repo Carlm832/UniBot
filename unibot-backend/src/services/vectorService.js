@@ -4,12 +4,12 @@ const path = require('path');
 class VectorService {
   constructor() {
     this.documents = [];
+    // Adjusted for backend/data structure
     this.dataPath = path.join(__dirname, '../../data/vector_store.json');
   }
 
   async initialize() {
     try {
-      // Load existing data if available
       if (fs.existsSync(this.dataPath)) {
         const data = JSON.parse(fs.readFileSync(this.dataPath, 'utf8'));
         this.documents = data.documents || [];
@@ -24,7 +24,7 @@ class VectorService {
     }
   }
 
-  // Simple keyword-based search (no embeddings needed!)
+  // IMPROVED: Much better search algorithm for location queries
   async search(query, nResults = 5) {
     try {
       if (this.documents.length === 0) {
@@ -35,45 +35,86 @@ class VectorService {
       const queryLower = query.toLowerCase();
       const queryWords = queryLower.split(/\s+/).filter(w => w.length > 2);
       
+      // Detect if this is a location query
+      const locationKeywords = ['where', 'location', 'find', 'map', 'office', 'building', 'library', 'faculty', 'department'];
+      const isLocationQuery = locationKeywords.some(kw => queryLower.includes(kw));
+      
       const scoredDocs = this.documents.map((doc, idx) => {
         const contentLower = doc.content.toLowerCase();
         const titleLower = doc.metadata?.title?.toLowerCase() || '';
         let score = 0;
         
-        // Exact phrase match (highest priority)
-        if (contentLower.includes(queryLower)) {
-          score += 50;
+        // EXACT TITLE MATCH (highest priority) - this fixes accuracy!
+        if (titleLower === queryLower) {
+          score += 1000;
         }
         
-        // Title matches (high priority)
+        // Title contains exact phrase
+        if (titleLower.includes(queryLower)) {
+          score += 500;
+        }
+        
+        // Content contains exact phrase
+        if (contentLower.includes(queryLower)) {
+          score += 100;
+        }
+        
+        // BOOST location-related documents if it's a location query
+        if (isLocationQuery) {
+          if (doc.metadata?.category === 'campus-navigation') {
+            score += 50;
+          }
+          if (doc.metadata?.coordinates) {
+            score += 30; // Boost docs that have coordinates
+          }
+        }
+        
+        // Word-by-word matching in title (high priority)
         queryWords.forEach(word => {
           if (titleLower.includes(word)) {
-            score += 10;
+            score += 20;
           }
         });
         
-        // Content keyword matches
+        // Word-by-word matching in content
         queryWords.forEach(word => {
-          const matches = (contentLower.match(new RegExp(`\\b${word}\\b`, 'g')) || []).length;
-          score += matches * 2;
+          // Use word boundaries for more accurate matching
+          const regex = new RegExp(`\\b${word}\\b`, 'g');
+          const matches = (contentLower.match(regex) || []).length;
+          score += matches * 3;
         });
         
-        // Category match boost
+        // Category match
         if (doc.metadata?.category) {
           queryWords.forEach(word => {
             if (doc.metadata.category.includes(word)) {
-              score += 5;
+              score += 10;
             }
           });
+        }
+        
+        // Penalize very short matches for long queries
+        if (queryWords.length > 3 && score < 50) {
+          score *= 0.5;
         }
         
         return { index: idx, score };
       });
 
+      // Sort by score and filter
       const results = scoredDocs
         .filter(doc => doc.score > 0)
         .sort((a, b) => b.score - a.score)
         .slice(0, nResults);
+
+      // Logging for debugging
+      console.log(`\n🔍 Search for "${query}": Found ${results.length} results`);
+      if (results.length > 0) {
+        console.log(`   Top result: "${this.documents[results[0].index].metadata.title}" (score: ${results[0].score})`);
+        console.log(`   Category: ${this.documents[results[0].index].metadata.category}`);
+      } else {
+        console.log(`   ⚠️ No matching documents found`);
+      }
 
       return results.map(result => ({
         content: this.documents[result.index].content,
@@ -98,7 +139,6 @@ class VectorService {
         });
       });
 
-      // Save to file
       this.save();
       
       console.log(`✅ Successfully added ${documents.length} documents to vector store`);

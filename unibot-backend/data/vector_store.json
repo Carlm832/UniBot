@@ -1,214 +1,237 @@
 {
   "documents": [
     {
-      "id": "doc_1765054019486_0",
+      "id": "doc_1765719688162_0",
       "content": "International Students Office: Located at Faculty of Communications 2nd Floor. Handles all matters regarding international students including registration, accounting, graduation and student permits. Working hours: Monday to Friday 8am to 5pm, closed during holidays.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d373.8168140044392!2d33.325172741683765!3d35.22408728250506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2s!4v1761907354063!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
       "metadata": {
         "category": "campus-navigation",
         "type": "building",
-        "title": "International Students Office"
+        "title": "International Students Office",
+        "coordinates": "33.325172, 35.224087"
       }
     },
     {
-      "id": "doc_1765054019486_1",
+      "id": "doc_1765719688162_1",
       "content": "Grand Library: Near East University Grand Library is open Monday to Friday from 8am to 8pm. The library provides study spaces, resources, and academic materials for students.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d652.1944348698642!2d33.32683836385826!3d35.22480021104133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de113d99e4c681%3A0x226adf08639790c9!2sNear%20East%20University%20Grand%20Library!5e1!3m2!1sen!2s!4v1761906914643!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
       "metadata": {
         "category": "campus-navigation",
         "type": "building",
-        "title": "Grand Library"
+        "title": "Grand Library",
+        "coordinates": "33.326838, 35.224800"
       }
     },
     {
-      "id": "doc_1765054019486_2",
+      "id": "doc_1765719688162_2",
       "content": "Student Deanship Office: Located at Ataturk Culture and Congress Center. The Dean of Students Office provides services, programs, and various opportunities to students. Contact: neuogrenci.dekanligi@neu.edu.tr, Phone: +90 (392) 223 64 64\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1536.7807034744471!2d33.32631697304336!3d35.22747736824614!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de113df8d5b0eb%3A0x2362358e74af69e4!2sAtaturk%20Culture%20and%20Congress%20Center!5e1!3m2!1sen!2s!4v1761907984037!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
       "metadata": {
         "category": "campus-navigation",
         "type": "building",
-        "title": "Student Deanship Office"
+        "title": "Student Deanship Office",
+        "coordinates": "33.326316, 35.227477"
       }
     },
     {
-      "id": "doc_1765054019486_3",
+      "id": "doc_1765719688162_3",
       "content": "Post Office: NEU Post Office branch located at Faculty of Administrative and Economics Sciences Ground Floor. Provides postal and mailing services to students and staff.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d407.40445762135255!2d33.3258355!3d35.2255032!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de11783e6dff3d%3A0xbd807d589cc0b53d!2zxLBrdGlzYXQ!5e0!3m2!1sen!2s!4v1761116558953!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
       "metadata": {
         "category": "campus-navigation",
         "type": "facility",
-        "title": "Post Office"
+        "title": "Post Office",
+        "coordinates": "33.3258355, 35.2255032"
       }
     },
     {
-      "id": "doc_1765054019486_4",
+      "id": "doc_1765719688162_4",
       "content": "Dormitories: NEU has 12 dormitories on campus (Dormitory 1-12) plus a Guest House. All dormitories are located within the campus area and provide accommodation for students. Dormitory 1 location:\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d559.7349178423044!2d33.32593234277022!3d35.22839176292247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1761893373449!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
       "metadata": {
         "category": "campus-navigation",
         "type": "accommodation",
-        "title": "Dormitories"
+        "title": "Dormitories",
+        "coordinates": null
       }
     },
     {
-      "id": "doc_1765054019486_5",
+      "id": "doc_1765719688162_5",
       "content": "Laundry Shop: Campus laundry facility available for students. Located near the dormitory area for convenient access.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!4v1761894236115!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJRGFxOENnTWc.!2m2!1d35.23050002659937!2d33.32500653020724!3f335.26513312853217!4f4.304938608595677!5f0.7820865974627469\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
       "metadata": {
         "category": "campus-navigation",
         "type": "facility",
-        "title": "Laundry Shop"
+        "title": "Laundry Shop",
+        "coordinates": "33.32500653, 35.23050002"
       }
     },
     {
-      "id": "doc_1765054019486_6",
+      "id": "doc_1765719688162_6",
       "content": "Near East Olympic Swimming Pool: Full Olympic-size swimming pool facility on campus available for students and staff for recreation and sports activities.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1629.5536208409837!2d33.32415605651555!3d35.22870033066583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de11911f53a211%3A0xe9f82908681846a7!2sNear%20East%20Olympic%20Swimming%20Pool!5e0!3m2!1sen!2s!4v1761895011927!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
       "metadata": {
         "category": "campus-navigation",
         "type": "sports",
-        "title": "Near East Olympic Swimming Pool"
+        "title": "Near East Olympic Swimming Pool",
+        "coordinates": "33.324156, 35.228700"
       }
     },
     {
-      "id": "doc_1765054019486_7",
+      "id": "doc_1765719688162_7",
       "content": "Near East Basketball Indoor Stadium: Indoor basketball stadium for sports events, training, and recreational activities.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!4v1761895175976!6m8!1m7!1sCAoSF0NJSE0wb2dLRUlDQWdJRGE1N2J5amdF!2m2!1d35.22520571470393!2d33.32219623699034!3f198.576541238397!4f-11.065011035633745!5f0.7820865974627469\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
       "metadata": {
         "category": "campus-navigation",
         "type": "sports",
-        "title": "Near East Basketball Indoor Stadium"
+        "title": "Near East Basketball Indoor Stadium",
+        "coordinates": "33.322196, 35.225205"
       }
     },
     {
-      "id": "doc_1765054019486_8",
+      "id": "doc_1765719688162_8",
       "content": "Near East Sports Complex: Comprehensive sports complex with various facilities for different sports and physical activities.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!4v1761895403601!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJRE8yN24zWmc.!2m2!1d35.2239767905525!2d33.3247025010822!3f33.1271786304873!4f5.763341344491053!5f0.7820865974627469\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
       "metadata": {
         "category": "campus-navigation",
         "type": "sports",
-        "title": "Near East Sports Complex"
+        "title": "Near East Sports Complex",
+        "coordinates": "33.3247025, 35.2239767"
       }
     },
     {
-      "id": "doc_1765054019486_9",
+      "id": "doc_1765719688162_9",
       "content": "Cyprus Car Museum: On-campus museum showcasing the history of automobiles in Cyprus. Open to students and visitors.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d814.8120195730729!2d33.32214048249595!3d35.22519404457654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de11170df01dc1%3A0xa99d062bdd5c8d81!2sCyprus%20Car%20Museum!5e0!3m2!1sen!2s!4v1761895254398!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
       "metadata": {
         "category": "campus-navigation",
         "type": "cultural",
-        "title": "Cyprus Car Museum"
+        "title": "Cyprus Car Museum",
+        "coordinates": "33.322140, 35.225194"
       }
     },
     {
-      "id": "doc_1765054019486_10",
+      "id": "doc_1765719688163_10",
       "content": "Cyprus Modern Art Museum: Modern art museum on campus featuring contemporary artworks and exhibitions.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d685.1727963024873!2d33.32232483809226!3d35.22515970671901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de11149b5b4595%3A0x60fbe7ec6809e137!2sCyprus%20Modern%20Art%20Museum!5e0!3m2!1sen!2s!4v1761895277411!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
       "metadata": {
         "category": "campus-navigation",
         "type": "cultural",
-        "title": "Cyprus Modern Art Museum"
+        "title": "Cyprus Modern Art Museum",
+        "coordinates": "33.3223248, 35.2251597"
       }
     },
     {
-      "id": "doc_1765054019486_11",
+      "id": "doc_1765719688163_11",
       "content": "NEU Event Park: Large outdoor event space used for university events, festivals, and gatherings.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1207.470792459338!2d33.321901307343744!3d35.22314035628258!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de110073f17d7f%3A0x1fcb2dedc867c4e3!2sNEU%20Event%20Park!5e1!3m2!1sen!2s!4v1761895566241!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
       "metadata": {
         "category": "campus-navigation",
         "type": "facility",
-        "title": "NEU Event Park"
+        "title": "NEU Event Park",
+        "coordinates": "33.3219013, 35.2231403"
       }
     },
     {
-      "id": "doc_1765054019486_12",
+      "id": "doc_1765719688163_12",
       "content": "Ataturk Culture and Congress Center: Major venue for cultural events, conferences, ceremonies, and university gatherings. Houses the Student Deanship Office.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1207.4121114346835!2d33.32525822002892!3d35.22708402973052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de113df8d5b0eb%3A0x2362358e74af69e4!2sAtaturk%20Culture%20and%20Congress%20Center!5e1!3m2!1sen!2s!4v1761895667100!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
       "metadata": {
         "category": "campus-navigation",
         "type": "cultural",
-        "title": "Ataturk Culture and Congress Center"
+        "title": "Ataturk Culture and Congress Center",
+        "coordinates": "33.325258, 35.227084"
       }
     },
     {
-      "id": "doc_1765054019486_13",
+      "id": "doc_1765719688163_13",
       "content": "Ikas Supermarket: On-campus supermarket providing groceries and daily necessities for students.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d853.8022455022771!2d33.32437916205063!3d35.223952044794295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2s!4v1761895508069!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
       "metadata": {
         "category": "campus-navigation",
         "type": "shopping",
-        "title": "Ikas Supermarket"
+        "title": "Ikas Supermarket",
+        "coordinates": "33.324379, 35.223952"
       }
     },
     {
-      "id": "doc_1765054019486_14",
+      "id": "doc_1765719688163_14",
       "content": "Near East University Hospital: Full-service hospital facility on campus providing medical care to students and the community.",
       "metadata": {
         "category": "campus-navigation",
         "type": "medical",
-        "title": "Near East University Hospital"
+        "title": "Near East University Hospital",
+        "coordinates": null
       }
     },
     {
-      "id": "doc_1765054019486_15",
+      "id": "doc_1765719688163_15",
       "content": "Near East Bank - Hospital Branch: Banking services near the hospital for convenient access to financial services.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d853.7683412745542!2d33.31994986542705!3d35.227174354433224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de111138f300db%3A0xbd8e16c85c53c889!2zWWFrxLFuIERvxJ91IEJhbms!5e1!3m2!1sen!2s!4v1761896058766!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
       "metadata": {
         "category": "campus-navigation",
         "type": "banking",
-        "title": "Near East Bank - Hospital Branch"
+        "title": "Near East Bank - Hospital Branch",
+        "coordinates": "33.318874, 35.228119"
       }
     },
     {
-      "id": "doc_1765054019486_16",
+      "id": "doc_1765719688163_16",
       "content": "Near East Bank - University Branch: Main university banking branch providing full banking services to students and staff.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d717.9414971338806!2d33.3257240585799!3d35.22595830229958!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de111621ecbc49%3A0xaa18f1a2ea0e3f01!2sNear%20East%20Bank!5e1!3m2!1sen!2s!4v1761896584478!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
       "metadata": {
         "category": "campus-navigation",
         "type": "banking",
-        "title": "Near East Bank - University Branch"
+        "title": "Near East Bank - University Branch",
+        "coordinates": "33.3257240, 35.2259583"
       }
     },
     {
-      "id": "doc_1765054019486_17",
+      "id": "doc_1765719688163_17",
       "content": "Pizza Pizza Restaurant: On-campus restaurant serving pizza and Italian cuisine.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d853.7727267142494!2d33.32529482644099!3d35.22675756999112!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de173688f06ddb%3A0xbf6e9ee00ecdcdbe!2sPizza%20Pizza%20%7C%20Lefko%C5%9Fa!5e1!3m2!1sen!2s!4v1761895808701!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
       "metadata": {
         "category": "campus-navigation",
         "type": "dining",
-        "title": "Pizza Pizza Restaurant"
+        "title": "Pizza Pizza Restaurant",
+        "coordinates": "33.325294, 35.226757"
       }
     },
     {
-      "id": "doc_1765054019486_18",
+      "id": "doc_1765719688163_18",
       "content": "Gusto Restaurant & Cafe: Campus restaurant and cafe offering meals and beverages.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d853.7631069842963!2d33.31978747231094!3d35.227671806512916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de1127d05d38d1%3A0x4bde28a1c35710cf!2sGusto%20Restaurant%20%26%20Cafe%20%2F%20NEU!5e1!3m2!1sen!2s!4v1761896087240!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
       "metadata": {
         "category": "campus-navigation",
         "type": "dining",
-        "title": "Gusto Restaurant & Cafe"
+        "title": "Gusto Restaurant & Cafe",
+        "coordinates": "33.319787, 35.227671"
       }
     },
     {
-      "id": "doc_1765054019486_19",
+      "id": "doc_1765719688163_19",
       "content": "Patisserie and Bakery Cafe: Campus cafe offering pastries, baked goods, and coffee.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d507.6740868328564!2d33.3258411!3d35.2239146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de1163f9402e5b%3A0x7470bb92e673557e!2sCafe!5e1!3m2!1sen!2s!4v1761896347176!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
       "metadata": {
         "category": "campus-navigation",
         "type": "dining",
-        "title": "Patisserie and Bakery Cafe"
+        "title": "Patisserie and Bakery Cafe",
+        "coordinates": "33.3258411, 35.2239146"
       }
     },
     {
-      "id": "doc_1765054019486_20",
+      "id": "doc_1765719688163_20",
       "content": "NCS Kebap House: Campus restaurant specializing in kebabs and Turkish cuisine.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d358.97944106238833!2d33.32600376363897!3d35.22399335147537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de116afcc1b865%3A0x50efad7d82dc6665!2sNCS%20Kebab%20House!5e1!3m2!1sen!2s!4v1761896451760!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
       "metadata": {
         "category": "campus-navigation",
         "type": "dining",
-        "title": "NCS Kebap House"
+        "title": "NCS Kebap House",
+        "coordinates": "33.326003, 35.223993"
       }
     },
     {
-      "id": "doc_1765054019486_21",
+      "id": "doc_1765719688163_21",
       "content": "Chicken House: Campus eatery serving chicken dishes and fast food.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d358.96553863665935!2d33.325651498134!3d35.22713596862774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de11cf623244ff%3A0x1ade186135a9e467!2sChicken%20house!5e1!3m2!1sen!2s!4v1761896533007!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
       "metadata": {
         "category": "campus-navigation",
         "type": "dining",
-        "title": "Chicken House"
+        "title": "Chicken House",
+        "coordinates": "33.325651, 35.227135"
       }
     },
     {
-      "id": "doc_1765054019486_22",
+      "id": "doc_1765719688163_22",
       "content": "The Kaffo: Campus coffee shop and cafe for students to relax and study.\n\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d717.9193722288206!2d33.32512662700228!3d35.22845884725125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14de113c27d21a13%3A0xf4f376f186042880!2sThe%20Kaffo!5e1!3m2!1sen!2s!4v1761896654735!5m2!1sen!2s\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
       "metadata": {
         "category": "campus-navigation",
         "type": "dining",
-        "title": "The Kaffo"
+        "title": "The Kaffo",
+        "coordinates": "33.325126, 35.228458"
       }
     },
     {
-      "id": "doc_1765054019486_23",
+      "id": "doc_1765719688163_23",
       "content": "Application Process: Students can apply online at https://aday.neu.edu.tr. The application system is available for all prospective students.",
       "metadata": {
         "category": "admissions",
@@ -217,7 +240,7 @@
       }
     },
     {
-      "id": "doc_1765054019486_24",
+      "id": "doc_1765719688163_24",
       "content": "Accepted Certificates - International Exams: NEU accepts: GCSE, IGCSE, International Baccalaureate, ACT, SAT, and various international high school diplomas. All documents in languages other than English or Turkish require official translation.",
       "metadata": {
         "category": "admissions",
@@ -226,7 +249,7 @@
       }
     },
     {
-      "id": "doc_1765054019486_25",
+      "id": "doc_1765719688163_25",
       "content": "Accepted Certificates - Regional Exams: NEU accepts: Tawjihi (Jordan/Palestine), Baccalaureate (Lebanon/Iraq/Syria), Diploma Debirestan (Iran), Higher Secondary Certificate (Pakistan/India/Bangladesh), WAEC/NECO (Nigeria), GAOKAO (China), and other High School Diplomas.",
       "metadata": {
         "category": "admissions",
@@ -235,7 +258,7 @@
       }
     },
     {
-      "id": "doc_1765054019486_26",
+      "id": "doc_1765719688163_26",
       "content": "Student Residence Permit: International students must register for residence permit at https://permissions.gov.ct.tr/login. The International Students Office assists with this process.",
       "metadata": {
         "category": "admissions",
@@ -244,7 +267,7 @@
       }
     },
     {
-      "id": "doc_1765054019486_27",
+      "id": "doc_1765719688163_27",
       "content": "Tuition Fees 2025-2026: Full list of programs and tuition fees available at https://aday.neu.edu.tr. Fees vary by program and faculty.",
       "metadata": {
         "category": "admissions",
@@ -253,7 +276,7 @@
       }
     },
     {
-      "id": "doc_1765054019486_28",
+      "id": "doc_1765719688163_28",
       "content": "Document Translation: All documents submitted in languages other than English or Turkish must have an official translation.",
       "metadata": {
         "category": "admissions",
@@ -262,7 +285,7 @@
       }
     },
     {
-      "id": "doc_1765054019486_29",
+      "id": "doc_1765719688163_29",
       "content": "Freezing Registration: Students can freeze their registration under certain circumstances. More information available at https://aday.neu.edu.tr/additional-information/freezing-registration/",
       "metadata": {
         "category": "admissions",
@@ -271,207 +294,227 @@
       }
     },
     {
-      "id": "doc_1765054019486_30",
+      "id": "doc_1765719688163_30",
       "content": "FAC-VT - Faculty of Veterinary Medicine: Offers veterinary medicine programs with departments including Basic Veterinary Sciences, Preclinical Sciences, Clinical Sciences, Zootechnics and Animal Nutrition, and Food Hygiene and Technology. Website: https://veterinary.neu.edu.tr/. Prerequisites: None. Credits: undefined",
       "metadata": {
         "category": "courses",
         "code": "FAC-VT",
         "department": "Veterinary Medicine",
-        "title": "Faculty of Veterinary Medicine"
+        "title": "Faculty of Veterinary Medicine",
+        "coordinates": "33.3189793, 35.2274761"
       }
     },
     {
-      "id": "doc_1765054019486_31",
+      "id": "doc_1765719688163_31",
       "content": "FAC-TZ - Faculty of Tourism: Offers Tourism and Hotel Management programs (two years and undergraduate) and MSc in Tourism Management. Website: https://turizm.neu.edu.tr/. Prerequisites: None. Credits: undefined",
       "metadata": {
         "category": "courses",
         "code": "FAC-TZ",
         "department": "Tourism",
-        "title": "Faculty of Tourism"
+        "title": "Faculty of Tourism",
+        "coordinates": "33.3248376, 35.224214"
       }
     },
     {
-      "id": "doc_1765054019486_32",
+      "id": "doc_1765719688163_32",
       "content": "FAC-IH - Faculty of Theology: Offers Islamic theology and religious studies programs. Website: https://ilahiyat.neu.edu.tr/. Prerequisites: None. Credits: undefined",
       "metadata": {
         "category": "courses",
         "code": "FAC-IH",
         "department": "Theology",
-        "title": "Faculty of Theology"
+        "title": "Faculty of Theology",
+        "coordinates": "33.3268386, 35.2240524"
       }
     },
     {
-      "id": "doc_1765054019486_33",
+      "id": "doc_1765719688163_33",
       "content": "FAC-BE - Faculty of Sports Sciences: Departments: Physical Education and Sport Teaching, Sports Management, Coaching Education, Recreation. Website: https://sporbilimleri.neu.edu.tr/. Prerequisites: None. Credits: undefined",
       "metadata": {
         "category": "courses",
         "code": "FAC-BE",
         "department": "Sports Sciences",
-        "title": "Faculty of Sports Sciences"
+        "title": "Faculty of Sports Sciences",
+        "coordinates": "33.3258674, 35.2249852"
       }
     },
     {
-      "id": "doc_1765054019486_34",
+      "id": "doc_1765719688163_34",
       "content": "FAC-EZ - Faculty of Pharmacy: Comprehensive pharmacy education with departments in Pharmaceutical Basic Sciences, Pharmaceutical Sciences, and Pharmaceutical Technology. Includes specializations in Analytical Chemistry, Pharmacology, Pharmaceutical Technology, and more. Website: https://eczacilik.neu.edu.tr. Prerequisites: None. Credits: undefined",
       "metadata": {
         "category": "courses",
         "code": "FAC-EZ",
         "department": "Pharmacy",
-        "title": "Faculty of Pharmacy"
+        "title": "Faculty of Pharmacy",
+        "coordinates": "33.321344, 35.2289564"
       }
     },
     {
-      "id": "doc_1765054019486_35",
+      "id": "doc_1765719688163_35",
       "content": "FAC-NURS - Faculty of Nursing: Offers nursing education and training programs. Website: https://hemsirelik.neu.edu.tr. Prerequisites: None. Credits: undefined",
       "metadata": {
         "category": "courses",
         "code": "FAC-NURS",
         "department": "Nursing",
-        "title": "Faculty of Nursing"
+        "title": "Faculty of Nursing",
+        "coordinates": "33.3207096, 35.2297387"
       }
     },
     {
-      "id": "doc_1765054019486_36",
+      "id": "doc_1765719688163_36",
       "content": "FAC-MED - Faculty of Medicine: Medical education and training programs for aspiring doctors and healthcare professionals. Website: https://medicine.neu.edu.tr/. Prerequisites: None. Credits: undefined",
       "metadata": {
         "category": "courses",
         "code": "FAC-MED",
         "department": "Medicine",
-        "title": "Faculty of Medicine"
+        "title": "Faculty of Medicine",
+        "coordinates": "33.319336, 35.2278796"
       }
     },
     {
-      "id": "doc_1765054019486_37",
+      "id": "doc_1765719688163_37",
       "content": "FAC-HK - Faculty of Law: Departments: Law and International Law. Prepares students for legal careers. Website: https://hukuk.neu.edu.tr. Prerequisites: None. Credits: undefined",
       "metadata": {
         "category": "courses",
         "code": "FAC-HK",
         "department": "Law",
-        "title": "Faculty of Law"
+        "title": "Faculty of Law",
+        "coordinates": "33.3263358, 35.2266693"
       }
     },
     {
-      "id": "doc_1765054019486_38",
+      "id": "doc_1765719688163_38",
       "content": "FAC-SBF - Faculty of Health Sciences: Departments: Audiology, Nutrition and Dietetics, Physiotherapy and Rehabilitation. Website: https://saglikbilimleri.neu.edu.tr/. Prerequisites: None. Credits: undefined",
       "metadata": {
         "category": "courses",
         "code": "FAC-SBF",
         "department": "Health Sciences",
-        "title": "Faculty of Health Sciences"
+        "title": "Faculty of Health Sciences",
+        "coordinates": "33.320831, 35.229721"
       }
     },
     {
-      "id": "doc_1765054019486_39",
+      "id": "doc_1765719688163_39",
       "content": "FAC-GSF - Faculty of Fine Arts and Design: Departments: Graphic Design, Plastic Arts, Graphic Design Vocational School. Website: https://guzelsanatlar.neu.edu.tr/. Prerequisites: None. Credits: undefined",
       "metadata": {
         "category": "courses",
         "code": "FAC-GSF",
         "department": "Fine Arts and Design",
-        "title": "Faculty of Fine Arts and Design"
+        "title": "Faculty of Fine Arts and Design",
+        "coordinates": "33.3262195, 35.2267599"
       }
     },
     {
-      "id": "doc_1765054019486_40",
+      "id": "doc_1765719688163_40",
       "content": "FAC-ENG - Faculty of Engineering: Departments include: Industrial Engineering, Mechanical Engineering, Biomedical Engineering, Automotive Engineering, BioEngineering, Mechatronics Engineering, Electrical and Electronic Engineering, Materials Science and Nanotechnology Engineering, Petroleum and Natural Gas Engineering. Website: https://muhendislik.neu.edu.tr/. Prerequisites: None. Credits: undefined",
       "metadata": {
         "category": "courses",
         "code": "FAC-ENG",
         "department": "Engineering",
-        "title": "Faculty of Engineering"
+        "title": "Faculty of Engineering",
+        "coordinates": "33.3187298, 35.2267596"
       }
     },
     {
-      "id": "doc_1765054019486_41",
+      "id": "doc_1765719688163_41",
       "content": "FAC-ES - Atatürk Faculty of Education: Comprehensive education programs including Music Education, Social Sciences Teaching, Science Teaching, Pre-school Teaching, English Language Teaching, Classroom Teaching, Mathematics Teaching, Psychological Counselling and Guidance, and many more. Website: https://egitim.neu.edu.tr. Prerequisites: None. Credits: undefined",
       "metadata": {
         "category": "courses",
         "code": "FAC-ES",
         "department": "Education",
-        "title": "Atatürk Faculty of Education"
+        "title": "Atatürk Faculty of Education",
+        "coordinates": "33.3225289, 35.2296908"
       }
     },
     {
-      "id": "doc_1765054019486_42",
+      "id": "doc_1765719688163_42",
       "content": "FAC-II - Faculty of Economics and Administrative Sciences: Departments: European Union Relations, Banking and Accounting, Banking and Finance, Economics, Human Resource Management, Business Administration, Marketing, Public Administration, Political Science, International Relations, International Business. Website: https://iktisat.neu.edu.tr/. Prerequisites: None. Credits: undefined",
       "metadata": {
         "category": "courses",
         "code": "FAC-II",
         "department": "Economics",
-        "title": "Faculty of Economics and Administrative Sciences"
+        "title": "Faculty of Economics and Administrative Sciences",
+        "coordinates": "33.3258355, 35.2255032"
       }
     },
     {
-      "id": "doc_1765054019486_43",
+      "id": "doc_1765719688163_43",
       "content": "FAC-DENT - Faculty of Dentistry: Departments: Prosthodontics, Oral and Maxillofacial Surgery, Restorative Dentistry, Endodontics, Orthodontics, Pedodontics, Periodontology, Oral and Maxillofacial Radiology. Website: https://dentistry.neu.edu.tr. Prerequisites: None. Credits: undefined",
       "metadata": {
         "category": "courses",
         "code": "FAC-DENT",
         "department": "Dentistry",
-        "title": "Faculty of Dentistry"
+        "title": "Faculty of Dentistry",
+        "coordinates": "33.3212512, 35.228632"
       }
     },
     {
-      "id": "doc_1765054019486_44",
+      "id": "doc_1765719688163_44",
       "content": "FAC-IL - Faculty of Communication: Departments: Cartoon and Animation, Filmmaking and Broadcasting, Journalism, Visual Communication Design, Public Relations and Publicity, Radio, Television and Cinema. Website: https://iletisim.neu.edu.tr/. Prerequisites: None. Credits: undefined",
       "metadata": {
         "category": "courses",
         "code": "FAC-IL",
         "department": "Communication",
-        "title": "Faculty of Communication"
+        "title": "Faculty of Communication",
+        "coordinates": "33.3250939, 35.2239519"
       }
     },
     {
-      "id": "doc_1765054019486_45",
+      "id": "doc_1765719688163_45",
       "content": "FAC-ICE - Faculty of Civil and Environmental Engineering: Departments: Civil Engineering, Environmental Engineering, Traffic and Transportation Engineering, Construction Technology, Construction and Technical Drawing Technologies. Website: https://insaatvecevre.neu.edu.tr/. Prerequisites: None. Credits: undefined",
       "metadata": {
         "category": "courses",
         "code": "FAC-ICE",
         "department": "Civil Engineering",
-        "title": "Faculty of Civil and Environmental Engineering"
+        "title": "Faculty of Civil and Environmental Engineering",
+        "coordinates": "33.3257906, 35.224228"
       }
     },
     {
-      "id": "doc_1765054019486_46",
+      "id": "doc_1765719688163_46",
       "content": "FAC-FE - Faculty of Arts and Sciences: Departments: Molecular Biology and Genetics, English Language and Literature, Mathematics, Turkish Language and Literature, Psychology, Translation and Interpretation, Geography, Physics. Website: https://fenedebiyat.neu.edu.tr/. Prerequisites: None. Credits: undefined",
       "metadata": {
         "category": "courses",
         "code": "FAC-FE",
         "department": "Arts and Sciences",
-        "title": "Faculty of Arts and Sciences"
+        "title": "Faculty of Arts and Sciences",
+        "coordinates": "33.3260621, 35.2246126"
       }
     },
     {
-      "id": "doc_1765054019486_47",
+      "id": "doc_1765719688163_47",
       "content": "FAC-MM - Faculty of Architecture: Departments: Architecture and Interior Architecture. Website: https://mimarlik.neu.edu.tr/. Prerequisites: None. Credits: undefined",
       "metadata": {
         "category": "courses",
         "code": "FAC-MM",
         "department": "Architecture",
-        "title": "Faculty of Architecture"
+        "title": "Faculty of Architecture",
+        "coordinates": "33.3262195, 35.2267599"
       }
     },
     {
-      "id": "doc_1765054019486_48",
+      "id": "doc_1765719688163_48",
       "content": "FAC-AIF - Faculty of Artificial Intelligence and Informatics: Departments: Artificial Intelligence Engineering, Computer Engineering, Information Systems Engineering, Cyber Security Engineering, Management Information Systems, Computer Information Systems, Data Analytics Engineering, Software Engineering. Website: https://aif.neu.edu.tr/. Prerequisites: None. Credits: undefined",
       "metadata": {
         "category": "courses",
         "code": "FAC-AIF",
         "department": "AI and Informatics",
-        "title": "Faculty of Artificial Intelligence and Informatics"
+        "title": "Faculty of Artificial Intelligence and Informatics",
+        "coordinates": "33.3187298, 35.2267596"
       }
     },
     {
-      "id": "doc_1765054019486_49",
+      "id": "doc_1765719688163_49",
       "content": "FAC-AGR - Faculty of Agriculture: Departments: Landscape Architecture and Food Engineering. Website: https://ziraat.neu.edu.tr/. Prerequisites: None. Credits: undefined",
       "metadata": {
         "category": "courses",
         "code": "FAC-AGR",
         "department": "Agriculture",
-        "title": "Faculty of Agriculture"
+        "title": "Faculty of Agriculture",
+        "coordinates": "33.3262195, 35.2267599"
       }
     },
     {
-      "id": "doc_1765054019486_50",
+      "id": "doc_1765719688163_50",
       "content": "undefined: undefined",
       "metadata": {
         "category": "general",
@@ -479,7 +522,7 @@
       }
     },
     {
-      "id": "doc_1765054019486_51",
+      "id": "doc_1765719688163_51",
       "content": "undefined: undefined",
       "metadata": {
         "category": "general",
@@ -487,7 +530,7 @@
       }
     },
     {
-      "id": "doc_1765054019486_52",
+      "id": "doc_1765719688163_52",
       "content": "undefined: undefined",
       "metadata": {
         "category": "general",
@@ -495,7 +538,7 @@
       }
     },
     {
-      "id": "doc_1765054019486_53",
+      "id": "doc_1765719688163_53",
       "content": "undefined: undefined",
       "metadata": {
         "category": "general",
@@ -503,7 +546,7 @@
       }
     },
     {
-      "id": "doc_1765054019486_54",
+      "id": "doc_1765719688163_54",
       "content": "undefined: undefined",
       "metadata": {
         "category": "general",
@@ -511,7 +554,7 @@
       }
     },
     {
-      "id": "doc_1765054019486_55",
+      "id": "doc_1765719688163_55",
       "content": "undefined: undefined",
       "metadata": {
         "category": "general",
@@ -519,7 +562,7 @@
       }
     },
     {
-      "id": "doc_1765054019486_56",
+      "id": "doc_1765719688163_56",
       "content": "undefined: undefined",
       "metadata": {
         "category": "general",
@@ -527,7 +570,7 @@
       }
     },
     {
-      "id": "doc_1765054019486_57",
+      "id": "doc_1765719688163_57",
       "content": "undefined: undefined",
       "metadata": {
         "category": "general",
