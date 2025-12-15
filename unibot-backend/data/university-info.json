@@ -9,7 +9,7 @@
       "email": "info@neu.edu.tr",
       "whatsapp": "+90 548 818 0818",
       "website": "https://neu.edu.tr",
-      "address": "Near East Boulevard, 99138 Nicosia / TRNC, Mersin 10 – TURKEY"
+      "address": "Near East Boulevard, 99138 Nicosia / TRNC, Mersin 10 â€“ TURKEY"
     }
   },
 
@@ -396,7 +396,7 @@
     },
     {
       "code": "FAC-ES",
-      "name": "Atatürk Faculty of Education",
+      "name": "AtatÃ¼rk Faculty of Education",
       "description": "Comprehensive teacher training and education programs.",
       "departments": [
         "Music Education",
@@ -408,7 +408,7 @@
         "Mathematics Teaching",
         "Psychological Counselling and Guidance"
       ],
-      "location": "Eğitim Sarayı",
+      "location": "EÄŸitim SarayÄ±",
       "website": "https://egitim.neu.edu.tr",
       "coordinates": "33.3225289, 35.2296908"
     },
