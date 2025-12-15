@@ -8,13 +8,17 @@
     "start": "node src/app.js",
     "dev": "nodemon src/app.js",
     "load-data": "node src/scripts/loadData.js",
+    "build": "npm install && npm run load-data",
     "test": "node src/scripts/testConnection.js"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   },
   "keywords": [
     "chatbot",
     "rag",
-    "openai",
-    "chromadb"
+    "groq",
+    "neu"
   ],
   "author": "",
   "license": "ISC",
