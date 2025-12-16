@@ -7,9 +7,8 @@ class ChatController {
     try {
       const { message, category = 'general' } = req.body;
 
-      // ============ INPUT VALIDATION (ADD THIS) ============
+      // ============ INPUT VALIDATION ============
       
-      // Check if message exists
       if (!message) {
         return res.status(400).json({ 
           success: false,
@@ -17,7 +16,6 @@ class ChatController {
         });
       }
 
-      // Check if message is a string
       if (typeof message !== 'string') {
         return res.status(400).json({ 
           success: false,
@@ -25,7 +23,6 @@ class ChatController {
         });
       }
 
-      // Check if message is not empty after trimming
       if (message.trim().length === 0) {
         return res.status(400).json({ 
           success: false,
@@ -33,7 +30,6 @@ class ChatController {
         });
       }
 
-      // Check message length (optional but recommended)
       if (message.length > 1000) {
         return res.status(400).json({ 
           success: false,
@@ -41,8 +37,22 @@ class ChatController {
         });
       }
 
-      // Validate category (optional but recommended)
-      const validCategories = ['general', 'admissions', 'courses', 'campus-navigation'];
+      const validCategories = [
+        'general', 
+        'admissions', 
+        'faculties',
+        'academic-buildings',
+        'accommodation',
+        'dining',
+        'sports-recreation',
+        'cultural-events',
+        'banking',
+        'shopping',
+        'healthcare',
+        'student-services',
+        'academic-resources'
+      ];
+      
       if (!validCategories.includes(category)) {
         return res.status(400).json({ 
           success: false,
@@ -94,7 +104,7 @@ class ChatController {
     try {
       const { query, limit = 5 } = req.body;
 
-      // ============ INPUT VALIDATION (ADD THIS) ============
+      // ============ INPUT VALIDATION ============
       
       if (!query) {
         return res.status(400).json({ 
@@ -146,6 +156,40 @@ class ChatController {
       res.status(500).json({ 
         success: false,
         error: 'Failed to search knowledge base',
+        message: error.message 
+      });
+    }
+  }
+
+  // New endpoint to get all categories
+  async getCategories(req, res) {
+    try {
+      const categories = [
+        { id: 'general', name: 'General Information', icon: 'info' },
+        { id: 'admissions', name: 'Admissions', icon: 'school' },
+        { id: 'faculties', name: 'Faculties & Programs', icon: 'academic' },
+        { id: 'academic-buildings', name: 'Academic Buildings', icon: 'building' },
+        { id: 'accommodation', name: 'Accommodation', icon: 'home' },
+        { id: 'dining', name: 'Dining', icon: 'restaurant' },
+        { id: 'sports-recreation', name: 'Sports & Recreation', icon: 'sports' },
+        { id: 'cultural-events', name: 'Cultural & Events', icon: 'event' },
+        { id: 'banking', name: 'Banking', icon: 'bank' },
+        { id: 'shopping', name: 'Shopping', icon: 'shopping' },
+        { id: 'healthcare', name: 'Healthcare', icon: 'health' },
+        { id: 'student-services', name: 'Student Services', icon: 'services' },
+        { id: 'academic-resources', name: 'Academic Resources', icon: 'library' }
+      ];
+
+      res.json({
+        success: true,
+        data: categories
+      });
+
+    } catch (error) {
+      console.error('Error in getCategories:', error);
+      res.status(500).json({ 
+        success: false,
+        error: 'Failed to get categories',
         message: error.message 
       });
     }
