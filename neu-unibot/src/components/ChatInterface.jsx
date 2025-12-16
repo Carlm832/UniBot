@@ -4,35 +4,25 @@ import QuickActionsCompact from "./QuickActionsCompact";
 
 const API_URL = "https://unibot-backend-xzfj.onrender.com/api/chat";
 
-// Suggested questions per category
+// Updated suggested questions matching your new database structure
 const SUGGESTED_QUESTIONS = {
   admissions: [
-    "What are the admission requirements?",
     "How do I apply to NEU?",
-    "What certificates are accepted?",
+    "What are the admission requirements?",
     "Tell me about tuition fees",
     "How do I get a student residence permit?",
   ],
   "campus-navigation": [
     "Where is the International Students Office?",
-    "Where is the Grand Library?",
-    "Show me the dormitories location",
-    "Where can I find restaurants on campus?",
+    "Show me the Grand Library location",
+    "Find the Near East Bank on campus",
     "Where is the Post Office?",
-  ],
-  courses: [
-    "What faculties does NEU have?",
-    "Tell me about the Faculty of Engineering",
-    "What programs are available in AI and Informatics?",
-    "Show me the Faculty of Medicine",
-    "What is the Faculty of Law?",
   ],
   general: [
     "What student services are available?",
     "How can I contact the university?",
-    "Tell me about psychological counseling",
-    "What clubs and activities are there?",
-    "Where can I submit petitions?",
+    "Tell me about NEU",
+    "What faculties does NEU have?",
   ],
 };
 
@@ -70,11 +60,10 @@ export default function ChatInterface({ initialCategory = "general" }) {
       const interval = setInterval(checkBackendHealth, 30000);
 
       return () => clearInterval(interval);
-    }, 5000); // let Render wake fully
+    }, 5000);
 
     return () => clearTimeout(timeout);
   }, []);
-
 
   const checkBackendHealth = async () => {
     try {
@@ -89,11 +78,8 @@ export default function ChatInterface({ initialCategory = "general" }) {
       setIsOnline(status === "ok");
     } catch (err) {
       console.warn("Health check failed:", err);
-      // IMPORTANT: do NOT immediately set offline
     }
   };
-
-
 
   /* ---------------- Auto scroll ---------------- */
 
@@ -118,8 +104,7 @@ export default function ChatInterface({ initialCategory = "general" }) {
     const labels = {
       admissions: "Admissions",
       "campus-navigation": "Campus Navigation",
-      courses: "Academics",
-      general: "General Info",
+      general: "Services & General Info",
     };
 
     setMessages((prev) => [
@@ -135,7 +120,7 @@ export default function ChatInterface({ initialCategory = "general" }) {
     ]);
   };
 
-  /* ---------------- Send message ---------------- */
+  /* ---------------- Send message with improved error handling ---------------- */
 
   const sendMessage = async (text, category = selectedCategory) => {
     const trimmed = text.trim();
@@ -153,17 +138,31 @@ export default function ChatInterface({ initialCategory = "general" }) {
 
     setInput("");
     setIsTyping(true);
-    setLastSuggestionCategory(null); // allow future category suggestions
+    setLastSuggestionCategory(null);
 
     try {
+      // Increased timeout for map queries (60 seconds)
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 60000);
+
       const res = await fetch(`${API_URL}/message`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: trimmed, category }),
+        signal: controller.signal,
       });
 
+      clearTimeout(timeoutId);
+
+      if (!res.ok) {
+        throw new Error(`Server error: ${res.status}`);
+      }
+
       const data = await res.json();
-      if (!data.success) throw new Error("Backend error");
+      
+      if (!data.success) {
+        throw new Error(data.error || "Backend error");
+      }
 
       setMessages((prev) => [
         ...prev,
@@ -178,13 +177,25 @@ export default function ChatInterface({ initialCategory = "general" }) {
           timestamp: formatTime(),
         },
       ]);
-    } catch {
+    } catch (error) {
+      console.error("Error sending message:", error);
+      
+      let errorMessage = "❌ Unable to reach the server. ";
+      
+      if (error.name === 'AbortError') {
+        errorMessage = "⏱️ The request took too long. The server might be waking up (this can take 50+ seconds on Render free tier). Please try again in a moment.";
+      } else if (error.message.includes('Server error')) {
+        errorMessage = "❌ Server error. The backend might be processing your request. Please wait a moment and try again.";
+      } else {
+        errorMessage += "Make sure the backend is running or wait for it to wake up.";
+      }
+
       setMessages((prev) => [
         ...prev,
         {
           sender: "bot",
           type: "text",
-          text: "❌ Unable to reach the server. Make sure the backend is running.",
+          text: errorMessage,
           timestamp: formatTime(),
         },
       ]);
@@ -235,7 +246,7 @@ export default function ChatInterface({ initialCategory = "general" }) {
             <div>
               <h2 className="font-bold">NEU UniBot</h2>
               <span className="text-xs opacity-80">
-                {isOnline ? "Online" : "Offline"}
+                {isOnline ? "Online" : "Connecting..."}
               </span>
             </div>
           </div>
@@ -259,20 +270,22 @@ export default function ChatInterface({ initialCategory = "general" }) {
         {messages.map((msg, i) =>
           msg.type === "suggestions" ? (
             <div key={i} className="flex gap-2">
-              <div className="w-8 h-8 bg-red-700 text-white rounded-full flex items-center justify-center">
+              <div className="w-8 h-8 bg-red-700 text-white rounded-full flex items-center justify-center flex-shrink-0">
                 🎓
               </div>
               <div className="bg-white dark:bg-gray-800 p-4 rounded-xl border max-w-2xl">
                 <p className="font-medium mb-3">{msg.text}</p>
-                {msg.suggestions.map((s, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => handleSuggestionClick(s)}
-                    className="block w-full text-left px-4 py-2 mb-2 rounded-lg bg-red-50 dark:bg-gray-700 hover:bg-red-100"
-                  >
-                    💬 {s}
-                  </button>
-                ))}
+                <div className="space-y-2">
+                  {msg.suggestions.map((s, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => handleSuggestionClick(s)}
+                      className="block w-full text-left px-4 py-2 rounded-lg bg-red-50 dark:bg-gray-700 hover:bg-red-100 dark:hover:bg-gray-600 transition-colors"
+                    >
+                      💬 {s}
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           ) : (
@@ -281,8 +294,13 @@ export default function ChatInterface({ initialCategory = "general" }) {
         )}
 
         {isTyping && (
-          <div className="text-sm text-gray-500 animate-pulse">
-            UniBot is typing…
+          <div className="flex items-center gap-2 text-sm text-gray-500">
+            <div className="flex gap-1">
+              <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></span>
+              <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></span>
+              <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></span>
+            </div>
+            <span>UniBot is typing...</span>
           </div>
         )}
 
@@ -292,20 +310,20 @@ export default function ChatInterface({ initialCategory = "general" }) {
       {/* Input */}
       <form
         onSubmit={handleSubmit}
-        className="flex-shrink-0 p-4 border-t border-gray-200 dark:border-gray-700"
+        className="flex-shrink-0 p-4 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900"
       >
         <div className="flex gap-2">
           <input
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Type your question here…"
-            className="flex-1 px-4 py-3 rounded-xl border dark:bg-gray-800"
+            placeholder="Type your question here..."
+            className="flex-1 px-4 py-3 rounded-xl border dark:bg-gray-800 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-red-500"
             disabled={!isOnline}
           />
           <button
             type="submit"
             disabled={!input.trim() || !isOnline}
-            className="bg-red-700 text-white px-6 py-3 rounded-xl"
+            className="bg-red-700 text-white px-6 py-3 rounded-xl hover:bg-red-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
           >
             Send
           </button>
