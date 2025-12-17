@@ -5,7 +5,21 @@ const db = require('../../data/university-info.json');
 class ChatController {
   async sendMessage(req, res) {
     try {
-      const { message, category = 'general' } = req.body;
+      let { message, category = 'general' } = req.body;
+
+      // ============ CATEGORY MAPPING ============
+      // Map frontend-friendly categories to backend categories
+      const categoryMap = {
+        'campus-navigation': 'academic-buildings',
+      };
+      
+      // Store original category for response
+      const originalCategory = category;
+      
+      // Apply mapping if exists
+      if (categoryMap[category]) {
+        category = categoryMap[category];
+      }
 
       // ============ INPUT VALIDATION ============
       
@@ -73,7 +87,7 @@ class ChatController {
       const responseData = {
         type: result.response.type || "text",
         message: result.response.message || result.response,
-        category: category,
+        category: originalCategory, // Return original category to frontend
         timestamp: new Date().toISOString(),
       };
 
@@ -167,6 +181,7 @@ class ChatController {
       const categories = [
         { id: 'general', name: 'General Information', icon: 'info' },
         { id: 'admissions', name: 'Admissions', icon: 'school' },
+        { id: 'campus-navigation', name: 'Campus Navigation', icon: 'map' }, // Added campus-navigation
         { id: 'faculties', name: 'Faculties & Programs', icon: 'academic' },
         { id: 'academic-buildings', name: 'Academic Buildings', icon: 'building' },
         { id: 'accommodation', name: 'Accommodation', icon: 'home' },

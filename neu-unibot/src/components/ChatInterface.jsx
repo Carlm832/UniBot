@@ -4,7 +4,7 @@ import QuickActionsCompact from "./QuickActionsCompact";
 
 const API_URL = "https://unibot-backend-xzfj.onrender.com/api/chat";
 
-// Updated suggested questions matching your new database structure
+// Updated SUGGESTED_QUESTIONS - back to original names
 const SUGGESTED_QUESTIONS = {
   admissions: [
     "How do I apply to NEU?",
@@ -12,13 +12,13 @@ const SUGGESTED_QUESTIONS = {
     "Tell me about tuition fees",
     "How do I get a student residence permit?",
   ],
-  "campus-navigation": [
+  "campus-navigation": [ // ← Back to campus-navigation
     "Where is the International Students Office?",
     "Show me the Grand Library location",
     "Find the Near East Bank on campus",
     "Where is the Post Office?",
   ],
-  general: [
+  general: [ // ← Back to general
     "What student services are available?",
     "How can I contact the university?",
     "Tell me about NEU",
@@ -97,13 +97,14 @@ export default function ChatInterface({ initialCategory = "general" }) {
     setLastSuggestionCategory(selectedCategory);
   }, [selectedCategory]);
 
+ // Update the labels in showCategorySuggestions:
   const showCategorySuggestions = (category) => {
     const suggestions =
       SUGGESTED_QUESTIONS[category] || SUGGESTED_QUESTIONS.general;
 
     const labels = {
       admissions: "Admissions",
-      "campus-navigation": "Campus Navigation",
+      "campus-navigation": "Campus Navigation", // ← Back to campus-navigation
       general: "Services & General Info",
     };
 

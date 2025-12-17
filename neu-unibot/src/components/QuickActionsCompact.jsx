@@ -8,7 +8,7 @@ export default function QuickActionsCompact({ onActionClick }) {
     {
       icon: "🗺️",
       label: "Campus",
-      category: "campus-navigation",
+      category: "campus-navigation", // ← Back to campus-navigation
     },
     {
       icon: "ℹ️",
