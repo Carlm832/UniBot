@@ -3,7 +3,7 @@ const path = require('path');
 
 /**
  * This script adds Google Maps embed code to locations that have coordinates
- * but are missing map embeds. Your current data already has maps, so this is 
+ * but are missing map embeds. The current data already has maps, so this is 
  * mainly for maintenance/updates.
  */
 
