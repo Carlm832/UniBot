@@ -119,7 +119,30 @@ export default function ChatInterface({ initialCategory = "general" }) {
     ]);
   };
 
-  /* ---------------- Send message with improved error handling ---------------- */
+  /* ---------------- Fetch helper (shared by both attempts) ---------------- */
+
+  const fetchMessage = async (trimmed, category, timeoutMs) => {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+    try {
+      const res = await fetch(`${API_URL}/message`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: trimmed, category }),
+        signal: controller.signal,
+      });
+      clearTimeout(timeoutId);
+      if (!res.ok) throw new Error(`Server error: ${res.status}`);
+      const data = await res.json();
+      if (!data.success) throw new Error(data.error || "Backend error");
+      return data;
+    } catch (err) {
+      clearTimeout(timeoutId);
+      throw err;
+    }
+  };
+
+  /* ---------------- Send message with cold-start auto-retry ---------------- */
 
   const sendMessage = async (text, category = selectedCategory) => {
     const trimmed = text.trim();
@@ -127,12 +150,7 @@ export default function ChatInterface({ initialCategory = "general" }) {
 
     setMessages((prev) => [
       ...prev,
-      {
-        sender: "user",
-        type: "text",
-        text: trimmed,
-        timestamp: formatTime(),
-      },
+      { sender: "user", type: "text", text: trimmed, timestamp: formatTime() },
     ]);
 
     setInput("");
@@ -140,27 +158,28 @@ export default function ChatInterface({ initialCategory = "general" }) {
     setLastSuggestionCategory(null);
 
     try {
-      // Increased timeout for map queries (60 seconds)
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 60000);
-
-      const res = await fetch(`${API_URL}/message`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: trimmed, category }),
-        signal: controller.signal,
-      });
-
-      clearTimeout(timeoutId);
-
-      if (!res.ok) {
-        throw new Error(`Server error: ${res.status}`);
-      }
-
-      const data = await res.json();
-
-      if (!data.success) {
-        throw new Error(data.error || "Backend error");
+      let data;
+      try {
+        // First attempt — 60s timeout
+        data = await fetchMessage(trimmed, category, 60000);
+      } catch (firstErr) {
+        if (firstErr.name === "AbortError") {
+          // Cold start detected — inform user and retry automatically
+          setMessages((prev) => [
+            ...prev,
+            {
+              sender: "bot",
+              type: "text",
+              text: "⏳ The server is waking up (Render free tier sleeps after inactivity). Retrying automatically in 5 seconds...",
+              timestamp: formatTime(),
+            },
+          ]);
+          await new Promise((r) => setTimeout(r, 5000));
+          // Second attempt — 90s timeout
+          data = await fetchMessage(trimmed, category, 90000);
+        } else {
+          throw firstErr;
+        }
       }
 
       setMessages((prev) => [
@@ -178,25 +197,17 @@ export default function ChatInterface({ initialCategory = "general" }) {
       ]);
     } catch (error) {
       console.error("Error sending message:", error);
-
-      let errorMessage = "❌ Unable to reach the server. ";
-
-      if (error.name === 'AbortError') {
-        errorMessage = "⏱️ The request took too long. The server might be waking up (this can take 50+ seconds on Render free tier). Please try again in a moment.";
-      } else if (error.message.includes('Server error')) {
-        errorMessage = "❌ Server error. The backend might be processing your request. Please wait a moment and try again.";
+      let errorMessage;
+      if (error.name === "AbortError") {
+        errorMessage = "❌ The server is taking too long to respond. Please wait a minute and try again.";
+      } else if (error.message.includes("Server error")) {
+        errorMessage = "❌ Server error. Please wait a moment and try again.";
       } else {
-        errorMessage += "Make sure the backend is running or wait for it to wake up.";
+        errorMessage = "❌ Unable to reach the server. Make sure the backend is running.";
       }
-
       setMessages((prev) => [
         ...prev,
-        {
-          sender: "bot",
-          type: "text",
-          text: errorMessage,
-          timestamp: formatTime(),
-        },
+        { sender: "bot", type: "text", text: errorMessage, timestamp: formatTime() },
       ]);
     } finally {
       setIsTyping(false);

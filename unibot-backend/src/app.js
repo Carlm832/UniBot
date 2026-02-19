@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const chatRoutes = require('./routes/chatRoutes');
+const searchService = require('./services/searchService');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -74,8 +75,18 @@ app.get('/', (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-  console.log(`Health check: http://localhost:${PORT}/health`);
-  console.log(`CORS origin: ${allowedOrigin}`);
-});
+// Eagerly load the search index so it's ready before the first request
+searchService.initialize()
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT}`);
+      console.log(`Health check: http://localhost:${PORT}/health`);
+      console.log(`CORS origin: ${allowedOrigin}`);
+    });
+  })
+  .catch((err) => {
+    console.error('⚠️  Failed to load search index, starting anyway:', err.message);
+    app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT} (without search data)`);
+    });
+  });
