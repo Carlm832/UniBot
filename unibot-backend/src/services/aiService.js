@@ -1,5 +1,5 @@
 const Groq = require('groq-sdk');
-const vectorService = require('./vectorService');
+const vectorService = require('./searchService');
 
 const groq = new Groq({
   apiKey: process.env.GROQ_API_KEY,
@@ -22,8 +22,8 @@ class AIService {
       }
 
       // Check if ANY relevant document has map data
-      const mapDoc = relevantDocs.find(doc => 
-        doc.content.includes("<iframe") || 
+      const mapDoc = relevantDocs.find(doc =>
+        doc.content.includes("<iframe") ||
         (doc.metadata.coordinates && this.isLocationCategory(doc.metadata.category))
       );
 
@@ -38,7 +38,7 @@ class AIService {
         'hospital', 'clinic', 'medical', 'health',
         'pharmacy', 'post', 'laundry', 'shop', 'shopping', 'supermarket', 'store'
       ];
-      const isLocationQuery = locationKeywords.some(kw => 
+      const isLocationQuery = locationKeywords.some(kw =>
         userMessage.toLowerCase().includes(kw)
       );
 
@@ -47,11 +47,11 @@ class AIService {
         // Extract description (everything before iframe)
         let description = mapDoc.content;
         let embedUrl = null;
-        
+
         if (mapDoc.content.includes("<iframe")) {
           const parts = mapDoc.content.split("<iframe");
           description = parts[0].trim();
-          
+
           // Extract iframe src
           const iframeMatch = mapDoc.content.match(/<iframe[^>]*src="([^"]*)"/);
           embedUrl = iframeMatch ? iframeMatch[1] : null;
@@ -59,7 +59,7 @@ class AIService {
 
         // Get coordinates from metadata
         const coords = mapDoc.metadata.coordinates || null;
-        
+
         // Create proper Google Maps URL
         let mapsUrl = null;
         if (coords) {
@@ -71,11 +71,11 @@ class AIService {
         if (mapDoc.metadata.workingHours) {
           description += `\n\nWorking Hours: ${mapDoc.metadata.workingHours}`;
         }
-        
+
         if (mapDoc.metadata.location) {
           description += `\nLocation: ${mapDoc.metadata.location}`;
         }
-        
+
         if (mapDoc.metadata.contact) {
           if (mapDoc.metadata.contact.email) {
             description += `\nEmail: ${mapDoc.metadata.contact.email}`;

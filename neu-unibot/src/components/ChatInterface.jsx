@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import MessageBubble from "./MessageBubble";
 import QuickActionsCompact from "./QuickActionsCompact";
 
-const API_URL = "https://unibot-backend-xzfj.onrender.com/api/chat";
+const API_URL = import.meta.env.VITE_API_URL || "https://unibot-backend-xzfj.onrender.com/api/chat";
 
 //SUGGESTED_QUESTIONS
 const SUGGESTED_QUESTIONS = {
@@ -67,10 +67,8 @@ export default function ChatInterface({ initialCategory = "general" }) {
 
   const checkBackendHealth = async () => {
     try {
-      const res = await fetch(
-        "https://unibot-backend-xzfj.onrender.com/health",
-        { cache: "no-store" }
-      );
+      const baseUrl = (import.meta.env.VITE_API_URL || "http://localhost:5000/api/chat").replace(/\/api\/chat.*/, "");
+      const res = await fetch(`${baseUrl}/health`, { cache: "no-store" });
 
       if (!res.ok) throw new Error("Bad response");
 
@@ -97,7 +95,7 @@ export default function ChatInterface({ initialCategory = "general" }) {
     setLastSuggestionCategory(selectedCategory);
   }, [selectedCategory]);
 
- // Update the labels in showCategorySuggestions:
+  // Update the labels in showCategorySuggestions:
   const showCategorySuggestions = (category) => {
     const suggestions =
       SUGGESTED_QUESTIONS[category] || SUGGESTED_QUESTIONS.general;
@@ -160,7 +158,7 @@ export default function ChatInterface({ initialCategory = "general" }) {
       }
 
       const data = await res.json();
-      
+
       if (!data.success) {
         throw new Error(data.error || "Backend error");
       }
@@ -180,9 +178,9 @@ export default function ChatInterface({ initialCategory = "general" }) {
       ]);
     } catch (error) {
       console.error("Error sending message:", error);
-      
+
       let errorMessage = "❌ Unable to reach the server. ";
-      
+
       if (error.name === 'AbortError') {
         errorMessage = "⏱️ The request took too long. The server might be waking up (this can take 50+ seconds on Render free tier). Please try again in a moment.";
       } else if (error.message.includes('Server error')) {

@@ -1,5 +1,5 @@
 const aiService = require('../services/aiService');
-const vectorService = require('../services/vectorService');
+const vectorService = require('../services/searchService');
 const db = require('../../data/university-info.json');
 
 class ChatController {
@@ -12,48 +12,48 @@ class ChatController {
       const categoryMap = {
         'campus-navigation': 'academic-buildings',
       };
-      
+
       // Store original category for response
       const originalCategory = category;
-      
+
       // Apply mapping if exists
       if (categoryMap[category]) {
         category = categoryMap[category];
       }
 
       // ============ INPUT VALIDATION ============
-      
+
       if (!message) {
-        return res.status(400).json({ 
+        return res.status(400).json({
           success: false,
-          error: 'Message is required' 
+          error: 'Message is required'
         });
       }
 
       if (typeof message !== 'string') {
-        return res.status(400).json({ 
+        return res.status(400).json({
           success: false,
-          error: 'Message must be a string' 
+          error: 'Message must be a string'
         });
       }
 
       if (message.trim().length === 0) {
-        return res.status(400).json({ 
+        return res.status(400).json({
           success: false,
-          error: 'Message cannot be empty' 
+          error: 'Message cannot be empty'
         });
       }
 
       if (message.length > 1000) {
-        return res.status(400).json({ 
+        return res.status(400).json({
           success: false,
-          error: 'Message is too long. Maximum 1000 characters allowed.' 
+          error: 'Message is too long. Maximum 1000 characters allowed.'
         });
       }
 
       const validCategories = [
-        'general', 
-        'admissions', 
+        'general',
+        'admissions',
         'faculties',
         'academic-buildings',
         'accommodation',
@@ -66,11 +66,11 @@ class ChatController {
         'student-services',
         'academic-resources'
       ];
-      
+
       if (!validCategories.includes(category)) {
-        return res.status(400).json({ 
+        return res.status(400).json({
           success: false,
-          error: `Invalid category. Must be one of: ${validCategories.join(', ')}` 
+          error: `Invalid category. Must be one of: ${validCategories.join(', ')}`
         });
       }
 
@@ -106,10 +106,10 @@ class ChatController {
 
     } catch (error) {
       console.error('Error in sendMessage:', error);
-      res.status(500).json({ 
+      res.status(500).json({
         success: false,
         error: 'Failed to generate response',
-        message: error.message 
+        message: error.message
       });
     }
   }
@@ -119,33 +119,33 @@ class ChatController {
       const { query, limit = 5 } = req.body;
 
       // ============ INPUT VALIDATION ============
-      
+
       if (!query) {
-        return res.status(400).json({ 
+        return res.status(400).json({
           success: false,
-          error: 'Query is required' 
+          error: 'Query is required'
         });
       }
 
       if (typeof query !== 'string') {
-        return res.status(400).json({ 
+        return res.status(400).json({
           success: false,
-          error: 'Query must be a string' 
+          error: 'Query must be a string'
         });
       }
 
       if (query.trim().length === 0) {
-        return res.status(400).json({ 
+        return res.status(400).json({
           success: false,
-          error: 'Query cannot be empty' 
+          error: 'Query cannot be empty'
         });
       }
 
       // Validate limit
       if (typeof limit !== 'number' || limit < 1 || limit > 20) {
-        return res.status(400).json({ 
+        return res.status(400).json({
           success: false,
-          error: 'Limit must be a number between 1 and 20' 
+          error: 'Limit must be a number between 1 and 20'
         });
       }
 
@@ -167,10 +167,10 @@ class ChatController {
 
     } catch (error) {
       console.error('Error in searchKnowledge:', error);
-      res.status(500).json({ 
+      res.status(500).json({
         success: false,
         error: 'Failed to search knowledge base',
-        message: error.message 
+        message: error.message
       });
     }
   }
@@ -202,10 +202,10 @@ class ChatController {
 
     } catch (error) {
       console.error('Error in getCategories:', error);
-      res.status(500).json({ 
+      res.status(500).json({
         success: false,
         error: 'Failed to get categories',
-        message: error.message 
+        message: error.message
       });
     }
   }
