@@ -1,0 +1,48 @@
+# Fly.io configuration for UniBot Backend
+# Generated for Fly.io deployment
+
+app = "unibot-backend"
+primary_region = "sjc"
+
+[env]
+  GROQ_API_KEY = "your_groq_api_key_here"
+  PORT = "5000"
+
+[http_service]
+  internal_port = 5000
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 1
+  processes = ["app"]
+
+[checks]
+  [checks.http]
+    grace_period = "10s"
+    interval = "30s"
+    method = "get"
+    path = "/health"
+    protocol = "http"
+    timeout = "5s"
+    tls_skip_verify = false
+
+[[services]]
+  protocol = "tcp"
+  internal_port = 5000
+  
+  [services.concurrency]
+    type = "connections"
+    hard_limit = 1000
+    soft_limit = 900
+
+  [[services.ports]]
+    port = 80
+    handlers = ["http"]
+    force_https = true
+
+  [[services.ports]]
+    port = 443
+    handlers = ["tls", "http"]
+
+[build]
+  builder = "paas"
