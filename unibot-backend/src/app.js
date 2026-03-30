@@ -78,15 +78,21 @@ app.get('/', (req, res) => {
 // Eagerly load the search index so it's ready before the first request
 searchService.initialize()
   .then(() => {
-    app.listen(PORT, () => {
-      console.log(`Server is running on port ${PORT}`);
-      console.log(`Health check: http://localhost:${PORT}/health`);
-      console.log(`CORS origin: ${allowedOrigin}`);
-    });
+    if (process.env.NODE_ENV !== 'production') {
+      app.listen(PORT, () => {
+        console.log(`Server is running on port ${PORT}`);
+        console.log(`Health check: http://localhost:${PORT}/health`);
+        console.log(`CORS origin: ${allowedOrigin}`);
+      });
+    }
   })
   .catch((err) => {
     console.error('⚠️  Failed to load search index, starting anyway:', err.message);
-    app.listen(PORT, () => {
-      console.log(`Server is running on port ${PORT} (without search data)`);
-    });
+    if (process.env.NODE_ENV !== 'production') {
+      app.listen(PORT, () => {
+        console.log(`Server is running on port ${PORT} (without search data)`);
+      });
+    }
   });
+
+module.exports = app;

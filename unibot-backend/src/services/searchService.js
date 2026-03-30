@@ -4,7 +4,7 @@ const path = require('path');
 class SearchService {
     constructor() {
         this.documents = [];
-        this.dataPath = path.join(__dirname, '../../data/vector_store.json');
+        this.dataPath = path.join(process.cwd(), 'data', 'vector_store.json');
     }
 
     async initialize() {
