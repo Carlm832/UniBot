@@ -2,7 +2,9 @@ import { useState, useEffect, useRef } from "react";
 import MessageBubble from "./MessageBubble";
 import QuickActionsCompact from "./QuickActionsCompact";
 
-const API_URL = import.meta.env.VITE_API_URL || "https://unibot-backend-xzfj.onrender.com/api/chat";
+// Use environment variable for API URL, or default to Fly.io backend
+// Set VITE_API_URL during build: npm run build -- --define VITE_API_URL=...
+const API_URL = import.meta.env.VITE_API_URL || "https://unibot-backend.fly.dev/api/chat";
 
 //SUGGESTED_QUESTIONS
 const SUGGESTED_QUESTIONS = {
