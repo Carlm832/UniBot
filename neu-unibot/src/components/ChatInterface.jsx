@@ -153,7 +153,7 @@ export default function ChatInterface({ initialCategory = "general" }) {
              <QuickActionsCompact onActionClick={setSelectedCategory} activeCategory={selectedCategory} />
           </div>
           <div className={`px-3 py-1 rounded-full text-[9px] font-bold uppercase tracking-widest ${isOnline ? "text-green-500 bg-green-500/10" : "text-red-500 bg-red-500/10"}`}>
-            {isOnline ? "Neural Linked" : "Offline"}
+            {isOnline ? "System Online" : "Connecting..."}
           </div>
         </div>
       </div>
@@ -193,6 +193,7 @@ export default function ChatInterface({ initialCategory = "general" }) {
                 <div className="w-1.5 h-1.5 bg-[#a81c1c] rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
                 <div className="w-1.5 h-1.5 bg-[#a81c1c] rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
               </div>
+              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">UniBot is thinking...</span>
             </div>
           )}
 
