@@ -35,9 +35,7 @@ export default function Header({ showBack, onBack }) {
                 <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">System Status</span>
                 <span className="text-[9px] font-bold text-green-500 uppercase tracking-tighter">Verified Link</span>
              </div>
-             <div className="glass p-1 rounded-xl shadow-lg border border-white/20">
-                <DarkToggle />
-             </div>
+             <DarkToggle />
           </div>
         </div>
       </div>
