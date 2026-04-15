@@ -35,23 +35,18 @@ function App() {
   };
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden transition-colors duration-500">
+    <div className="relative h-screen flex flex-col transition-colors duration-500 overflow-hidden">
       
       {/* Premium Mesh Background */}
       <div className="mesh-gradient" />
 
-      {/* Dark Mode Toggle */}
-      <div className="fixed top-6 right-6 z-50">
-        <div className="glass p-1 rounded-2xl shadow-xl">
-          <DarkToggle />
-        </div>
-      </div>
 
       <Header showBack={view === "chat"} onBack={goHome} />
 
-      {/* HOME SCREEN */}
-      {view === "home" && (
-        <main className="container mx-auto px-4 py-10 md:py-16 text-center">
+      <main className="flex-1 overflow-y-auto relative z-10">
+        {/* HOME SCREEN */}
+        {view === "home" && (
+          <div className="container mx-auto px-4 py-10 md:py-16 text-center">
           
           <div className="max-w-4xl mx-auto animate-fadeIn">
             {/* Premium Icon Surround */}
@@ -140,15 +135,13 @@ function App() {
             </p>
           </div>
 
-        </main>
-      )}
-
-      {/* CHAT SCREEN - FULL PAGE */}
-      {view === "chat" && (
-        <div className="animate-fadeIn">
-          <ChatInterface initialCategory={selectedCategory} />
-        </div>
-      )}
+        {/* CHAT SCREEN */}
+        {view === "chat" && (
+          <div className="h-full animate-fadeIn">
+            <ChatInterface initialCategory={selectedCategory} />
+          </div>
+        )}
+      </main>
     </div>
   );
 }

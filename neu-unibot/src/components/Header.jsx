@@ -1,6 +1,8 @@
+import DarkToggle from "./DarkToggle";
+
 export default function Header({ showBack, onBack }) {
   return (
-    <header className="sticky top-0 z-50 glass shadow-2xl transition-all duration-300">
+    <header className="sticky top-0 z-[100] glass shadow-2xl transition-all duration-300">
       <div className="container mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
@@ -28,10 +30,13 @@ export default function Header({ showBack, onBack }) {
             </div>
           </div>
 
-          <div className="flex items-center gap-2">
-             <div className="hidden md:flex flex-col items-end">
+          <div className="flex items-center gap-4">
+             <div className="hidden md:flex flex-col items-end mr-2">
                 <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">System Status</span>
                 <span className="text-[9px] font-bold text-green-500 uppercase tracking-tighter">Verified Link</span>
+             </div>
+             <div className="glass p-1 rounded-xl shadow-lg border border-white/20">
+                <DarkToggle />
              </div>
           </div>
         </div>

@@ -144,7 +144,7 @@ export default function ChatInterface({ initialCategory = "general" }) {
   };
 
   return (
-    <div className="flex flex-col h-screen bg-transparent">
+    <div className="flex flex-col h-full bg-transparent">
       
       {/* Category Tabs Section */}
       <div className="flex-shrink-0 z-10 px-4 py-2 mt-2">
