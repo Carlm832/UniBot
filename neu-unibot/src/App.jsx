@@ -35,102 +35,119 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
+    <div className="relative min-h-screen overflow-x-hidden transition-colors duration-500">
+      
+      {/* Premium Mesh Background */}
+      <div className="mesh-gradient" />
 
       {/* Dark Mode Toggle */}
-      <div className="fixed top-4 right-4 z-50">
-        <DarkToggle />
+      <div className="fixed top-6 right-6 z-50">
+        <div className="glass p-1 rounded-2xl shadow-xl">
+          <DarkToggle />
+        </div>
       </div>
 
       <Header showBack={view === "chat"} onBack={goHome} />
 
       {/* HOME SCREEN */}
       {view === "home" && (
-        <main className="container mx-auto px-4 py-12 text-center animate-fadeIn">
-
-          {/* Icon */}
-          <div className="flex justify-center mb-8">
-            <div className="w-20 h-20 bg-gradient-to-br from-red-600 to-red-800 dark:from-red-500 dark:to-red-700 rounded-3xl flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300">
-              <span className="text-4xl text-white">🎓</span>
+        <main className="container mx-auto px-4 py-16 md:py-24 text-center">
+          
+          <div className="max-w-5xl mx-auto animate-fadeIn">
+            {/* Premium Icon Surround */}
+            <div className="flex justify-center mb-10">
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-red-900 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                <div className="relative w-24 h-24 bg-gradient-to-br from-[#a81c1c] to-[#7a1212] rounded-3xl flex items-center justify-center shadow-2xl hover:scale-105 transition-transform duration-500 cursor-default">
+                  <span className="text-5xl drop-shadow-lg">🎓</span>
+                </div>
+              </div>
             </div>
-          </div>
 
-          {/* Title */}
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-red-700 to-red-900 dark:from-red-400 dark:to-red-600 bg-clip-text text-transparent">
-              Welcome to NEU
-            </span>
-            <br />
-            <span className="text-gray-900 dark:text-gray-100">
-              Campus Assistant
-            </span>
-          </h1>
+            {/* Title */}
+            <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight leading-tight">
+              <span className="bg-gradient-to-r from-[#a81c1c] via-[#d63232] to-[#7a1212] bg-clip-text text-transparent">
+                Near East University
+              </span>
+              <br />
+              <span className="text-gray-900 dark:text-white drop-shadow-sm">
+                Campus Assistant
+              </span>
+            </h1>
 
-          {/* Subtitle */}
-          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12">
-            Your 24/7 intelligent assistant for Near East University.
-            <br />
-            Get instant answers about campus, courses, and student life.
-          </p>
-
-          {/* Quick Actions Grid */}
-          <div className="max-w-4xl mx-auto mb-12">
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-4 font-medium">
-              Choose a topic:
+            {/* Subtitle */}
+            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-16 leading-relaxed font-medium">
+              Your intelligent companion for student life, 
+              <span className="text-[#a81c1c] dark:text-red-400 font-bold"> simplified.</span>
             </p>
-            <QuickActions onActionClick={goToChat} />
+
+            {/* Quick Actions Grid */}
+            <div className="max-w-5xl mx-auto mb-20 animate-slideUp" style={{ animationDelay: '200ms' }}>
+              <div className="glass rounded-[2rem] p-8 md:p-12">
+                <p className="text-sm text-gray-400 dark:text-gray-500 mb-8 font-bold uppercase tracking-widest">
+                  Quick Topics
+                </p>
+                <QuickActions onActionClick={goToChat} />
+              </div>
+            </div>
+
+            {/* Search Input Upgrade */}
+            <div className="max-w-3xl mx-auto mb-24 animate-slideUp" style={{ animationDelay: '400ms' }}>
+              <div className="relative cursor-text group" onClick={() => goToChat("general")}>
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-red-500/50 to-red-900/50 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                <div className="relative flex items-center">
+                  <input
+                    readOnly
+                    placeholder="Ask me anything about NEU..."
+                    className="w-full p-6 bg-white dark:bg-gray-900 rounded-2xl shadow-xl text-xl text-gray-700 dark:text-gray-200 border border-gray-100 dark:border-gray-800 focus:outline-none transition-all duration-300"
+                  />
+                  <div className="absolute right-4 p-3 bg-[#a81c1c] rounded-xl text-white shadow-lg">
+                    <span>⚡ Ask AI</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Premium Stat-like features */}
+            <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 animate-slideUp" style={{ animationDelay: '600ms' }}>
+              <div className="glass p-8 rounded-[2rem] hover:scale-[1.02] transition-transform duration-300">
+                <div className="w-14 h-14 bg-red-100 dark:bg-red-900/30 rounded-2xl flex items-center justify-center text-3xl mb-6 mx-auto">🚀</div>
+                <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">Smart Engine</h3>
+                <p className="text-gray-500 dark:text-gray-400 leading-relaxed font-medium">
+                  Instant, context-aware answers to all your university queries.
+                </p>
+              </div>
+
+              <div className="glass p-8 rounded-[2rem] hover:scale-[1.02] transition-transform duration-300 border-red-200/50 dark:border-red-900/50">
+                <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-3xl mb-6 mx-auto">📍</div>
+                <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">Live Maps</h3>
+                <p className="text-gray-500 dark:text-gray-400 leading-relaxed font-medium">
+                  Interactive directions to every building, faculty, and dorm.
+                </p>
+              </div>
+
+              <div className="glass p-8 rounded-[2rem] hover:scale-[1.02] transition-transform duration-300">
+                <div className="w-14 h-14 bg-green-100 dark:bg-green-900/30 rounded-2xl flex items-center justify-center text-3xl mb-6 mx-auto">✨</div>
+                <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">Reliable Info</h3>
+                <p className="text-gray-500 dark:text-gray-400 leading-relaxed font-medium">
+                  Verified data synced directly from the university database.
+                </p>
+              </div>
+            </div>
+
+            <p className="mt-20 text-sm text-gray-400 dark:text-gray-600 font-medium tracking-wide">
+              POWERED BY ADVANCED NEURAL AI • NEAR EAST UNIVERSITY 2026
+            </p>
           </div>
-
-          {/* Search Input */}
-          <div className="max-w-3xl mx-auto">
-            <div className="relative group">
-              <input
-                onFocus={() => goToChat("general")}
-                placeholder="🔍 Type your question or click a topic above..."
-                className="w-full p-5 bg-white dark:bg-gray-800 rounded-2xl shadow-lg text-gray-700 dark:text-gray-200 border-2 border-gray-200 dark:border-gray-700 
-                hover:border-red-300 dark:hover:border-red-600 focus:border-red-600 dark:focus:border-red-500 
-                focus:ring-4 focus:ring-red-100 dark:focus:ring-red-900/30 outline-none transition-all duration-300 text-center md:text-left"
-              />
-            </div>
-          </div>
-
-          {/* Features */}
-          <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-6 mt-16">
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-xl transition-all hover:-translate-y-1">
-              <div className="text-4xl mb-3">⚡</div>
-              <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">Instant Answers</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                Get accurate responses powered by AI.
-              </p>
-            </div>
-
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-xl transition-all hover:-translate-y-1">
-              <div className="text-4xl mb-3">🗺️</div>
-              <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">Interactive Maps</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                Visual directions to any campus location.
-              </p>
-            </div>
-
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-md hover:shadow-xl transition-all hover:-translate-y-1">
-              <div className="text-4xl mb-3">🌙</div>
-              <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">Always Available</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                Here to help day or night.
-              </p>
-            </div>
-          </div>
-
-          <p className="mt-12 text-sm text-gray-500 dark:text-gray-500">
-            💡 Try asking “Where is the library?” or “Tell me about admissions”
-          </p>
 
         </main>
       )}
 
       {/* CHAT SCREEN - FULL PAGE */}
       {view === "chat" && (
-        <ChatInterface initialCategory={selectedCategory} />
+        <div className="animate-fadeIn">
+          <ChatInterface initialCategory={selectedCategory} />
+        </div>
       )}
     </div>
   );

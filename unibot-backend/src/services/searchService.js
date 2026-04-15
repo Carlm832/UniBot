@@ -7,8 +7,11 @@ class SearchService {
         this.possiblePaths = [
             path.join(process.cwd(), 'unibot-backend', 'data', 'vector_store.json'),
             path.join(process.cwd(), 'data', 'vector_store.json'),
-            path.join(__dirname, '..', '..', 'data', 'vector_store.json'),
-            path.join(__dirname, '..', 'data', 'vector_store.json')
+            path.resolve(__dirname, '../../data/vector_store.json'),
+            path.resolve(__dirname, '../data/vector_store.json'),
+            path.resolve(__dirname, '../../../data/vector_store.json'),
+            '/var/task/unibot-backend/data/vector_store.json',
+            '/var/task/data/vector_store.json'
         ];
         this.dataPath = this.possiblePaths[0]; // Primary fallback
     }
@@ -39,8 +42,14 @@ class SearchService {
 
     async search(query, nResults = 5) {
         try {
+            // Runtime retry if store is empty (common on serverless cold starts)
             if (this.documents.length === 0) {
-                console.log('⚠️  No documents in search store');
+                console.log('🔄 Attemping runtime search store initialization...');
+                await this.initialize();
+            }
+
+            if (this.documents.length === 0) {
+                console.log('⚠️  Search store remains empty after initialization');
                 return [];
             }
 

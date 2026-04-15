@@ -1,7 +1,6 @@
 export default function MessageBubble({ sender, type, text, data, timestamp }) {
   const isUser = sender === "user";
 
-  // Format text with hyperlinks
   const formatText = (text) => {
     if (!text) return "";
     const urlRegex = /(https?:\/\/[^\s]+)/g;
@@ -15,7 +14,7 @@ export default function MessageBubble({ sender, type, text, data, timestamp }) {
               href={part}
               target="_blank"
               rel="noopener noreferrer"
-              className="underline text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 break-all font-medium transition-colors"
+              className="text-[#a81c1c] dark:text-red-400 font-bold hover:underline decoration-2 transition-all underline-offset-4"
             >
               {part}
             </a>
@@ -31,36 +30,35 @@ export default function MessageBubble({ sender, type, text, data, timestamp }) {
   // MAP MESSAGE RENDERING
   if (type === "map" && data) {
     return (
-      <div className="flex justify-start animate-slideLeft">
-        {/* Bot avatar */}
-        <div className="w-8 h-8 bg-red-700 dark:bg-red-600 rounded-full flex items-center justify-center mr-2 flex-shrink-0 shadow-md">
-          <span className="text-white text-sm">🗺️</span>
+      <div className="flex justify-start animate-fadeIn">
+        <div className="flex flex-col items-center mr-3 mt-2">
+          <div className="w-10 h-10 glass rounded-2xl flex items-center justify-center shadow-lg border-white/40">
+            <span className="text-xl">📍</span>
+          </div>
+          <div className="w-0.5 h-full bg-gradient-to-b from-red-500/20 to-transparent mt-2"></div>
         </div>
 
-        {/* Map Card */}
-        <div className="max-w-2xl">
-          <div className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl rounded-bl-none shadow-lg overflow-hidden">
-            
-            {/* Location Header */}
-            <div className="bg-gradient-to-r from-red-700 to-red-800 dark:from-red-600 dark:to-red-700 text-white px-4 py-3">
-              <h3 className="font-bold text-lg flex items-center">
-                <span className="mr-2">📍</span>
-                {data.title || "Location"}
+        <div className="max-w-xl flex-1">
+          <div className="glass rounded-[2rem] overflow-hidden shadow-2xl border-white/20 dark:border-white/5 group hover:scale-[1.01] transition-all duration-500">
+            {/* Header */}
+            <div className="bg-gradient-to-r from-[#a81c1c] to-[#7a1212] p-5">
+              <h3 className="text-white font-extrabold text-lg tracking-tight uppercase flex items-center gap-2">
+                {data.title || "Location Found"}
               </h3>
             </div>
 
-            {/* Description */}
+            {/* Content segment */}
             {(data.message || data.description) && (
-              <div className="px-4 py-3 border-b border-gray-200 dark:border-gray-700">
-                <p className="text-gray-800 dark:text-gray-200 text-sm leading-relaxed whitespace-pre-wrap">
-                  {data.message || data.description}
+              <div className="px-6 py-5">
+                <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed font-medium">
+                  {formatText(data.message || data.description)}
                 </p>
               </div>
             )}
 
-            {/* Embedded Google Map */}
+            {/* Map Frame */}
             {data.embedUrl && (
-              <div className="relative w-full h-64 bg-gray-100 dark:bg-gray-700">
+              <div className="relative h-72 m-2 rounded-2xl overflow-hidden shadow-inner grayscale-[0.2] hover:grayscale-0 transition-all duration-1000">
                 <iframe
                   src={data.embedUrl}
                   width="100%"
@@ -68,100 +66,78 @@ export default function MessageBubble({ sender, type, text, data, timestamp }) {
                   style={{ border: 0 }}
                   allowFullScreen=""
                   loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Location Map"
+                  title="Campus Map"
                   className="w-full h-full"
                 ></iframe>
               </div>
             )}
 
-            {/* Action Buttons */}
-            <div className="px-4 py-3 bg-gray-50 dark:bg-gray-700/50 flex gap-2">
-              {data.mapsUrl && (
-                <a
-                  href={data.mapsUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all flex items-center justify-center gap-2 hover:scale-105 active:scale-95"
-                >
-                  <span>🗺️</span>
-                  <span>Open in Google Maps</span>
-                </a>
-              )}
-
-              {data.coordinates && (
-                <button
-                  onClick={() => {
-                    const [lng, lat] = data.coordinates.split(',').map(c => c.trim());
-                    navigator.clipboard.writeText(`${lat}, ${lng}`);
-                    
-                    // Show a temporary toast notification
-                    const toast = document.createElement('div');
-                    toast.textContent = '✓ Coordinates copied!';
-                    toast.className = 'fixed top-4 right-4 bg-green-600 text-white px-4 py-2 rounded-lg shadow-lg z-50 animate-fadeIn';
-                    document.body.appendChild(toast);
-                    setTimeout(() => toast.remove(), 2000);
-                  }}
-                  className="px-4 py-2 bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 text-gray-800 dark:text-gray-200 rounded-lg text-sm font-medium transition-all hover:scale-105 active:scale-95"
-                  title="Copy coordinates"
-                >
-                  📋
-                </button>
-              )}
+            {/* Actions */}
+            <div className="p-4 bg-gray-50/50 dark:bg-gray-800/20 flex gap-2">
+              <a
+                href={data.mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 btn-premium bg-[#1a56db] text-white flex items-center justify-center gap-2 text-xs font-bold uppercase tracking-widest hover:bg-blue-700"
+              >
+                <span>🚀</span> Open Navigator
+              </a>
+              <button
+                onClick={() => {
+                  navigator.clipboard.writeText(data.coordinates || data.title);
+                  const toast = document.createElement('div');
+                  toast.className = 'fixed top-10 left-1/2 -translate-x-1/2 glass p-4 rounded-2xl text-sm font-bold shadow-2xl z-[999] animate-fadeIn';
+                  toast.innerHTML = '📋 Copied to clipboard!';
+                  document.body.appendChild(toast);
+                  setTimeout(() => toast.remove(), 2000);
+                }}
+                className="p-4 glass rounded-2xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                title="Copy Details"
+              >
+                📋
+              </button>
             </div>
           </div>
-
-          {/* Timestamp */}
-          <span className="text-xs text-gray-500 mt-1 px-1 block">
-            {timestamp}
+          <span className="text-[10px] uppercase tracking-widest font-bold text-gray-400 mt-2 px-2 block">
+            {timestamp} • DATABASE SOURCE
           </span>
         </div>
       </div>
     );
   }
 
-  // STANDARD TEXT MESSAGE
+  // TEXT MESSAGE RENDERING
   return (
-    <div
-      className={`flex ${
-        isUser ? "justify-end animate-slideRight" : "justify-start animate-slideLeft"
-      }`}
-    >
-      {/* Bot avatar */}
+    <div className={`flex ${isUser ? "justify-end" : "justify-start"} animate-fadeIn`}>
       {!isUser && (
-        <div className="w-8 h-8 bg-red-700 dark:bg-red-600 rounded-full flex items-center justify-center mr-2 flex-shrink-0 shadow-md">
-          <span className="text-white text-sm">🎓</span>
+        <div className="flex flex-col items-center mr-3 mt-2">
+          <div className="w-10 h-10 glass rounded-2xl flex items-center justify-center shadow-lg border-white/40">
+            <span className="text-xl">🎓</span>
+          </div>
+          <div className="w-0.5 h-full bg-gradient-to-b from-gray-200 dark:from-gray-800 to-transparent mt-2"></div>
         </div>
       )}
 
-      {/* Message Bubble */}
-      <div className="max-w-2xl">
-        <div
-          className={`px-4 py-3 rounded-2xl shadow-md ${
-            isUser
-              ? "bg-red-700 dark:bg-red-600 text-white rounded-br-none"
-              : "bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-700 rounded-bl-none"
-          }`}
-        >
-          <div className="whitespace-pre-wrap break-words text-sm leading-relaxed">
+      <div className={`max-w-[85%] md:max-w-2xl group`}>
+        <div className={`relative px-6 py-4 rounded-[2rem] shadow-xl ${
+            isUser 
+              ? "bg-gradient-to-br from-[#a81c1c] to-[#7a1212] text-white rounded-br-none" 
+              : "glass text-gray-800 dark:text-gray-100 border-white/20 dark:border-white/5 rounded-bl-none"
+          }`}>
+          <div className="text-sm md:text-base leading-relaxed font-medium whitespace-pre-wrap">
             {formatText(text)}
           </div>
         </div>
-
-        {/* Timestamp */}
-        <span
-          className={`text-xs text-gray-500 mt-1 px-1 block ${
-            isUser ? "text-right" : "text-left"
-          }`}
-        >
-          {timestamp}
+        <span className={`text-[10px] uppercase tracking-widest font-bold text-gray-400 mt-2 px-2 block ${isUser ? "text-right" : "text-left"}`}>
+          {timestamp} {isUser ? "• SENT" : "• UNIBOT"}
         </span>
       </div>
 
-      {/* User avatar */}
       {isUser && (
-        <div className="w-8 h-8 bg-blue-600 dark:bg-blue-500 rounded-full flex items-center justify-center ml-2 flex-shrink-0 shadow-md">
-          <span className="text-white text-sm">👤</span>
+        <div className="flex flex-col items-center ml-3 mt-2">
+          <div className="w-10 h-10 bg-gray-200 dark:bg-gray-800 rounded-2xl flex items-center justify-center shadow-md">
+            <span className="text-xl">👤</span>
+          </div>
         </div>
       )}
     </div>

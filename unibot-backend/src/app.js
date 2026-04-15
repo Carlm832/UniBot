@@ -64,6 +64,25 @@ app.get('/health', (req, res) => {
   res.json({ status: 'ok', message: 'University Chatbot API is running' });
 });
 
+// Diagnostics endpoint to debug Vercel file paths
+app.get('/api/health/diagnostics', async (req, res) => {
+  const fs = require('fs');
+  const path = require('path');
+  
+  const diagnostics = {
+    cwd: process.cwd(),
+    dirname: __dirname,
+    node_version: process.version,
+    store_docs_count: searchService.documents.length,
+    paths_checked: searchService.possiblePaths.map(p => ({
+      path: p,
+      exists: fs.existsSync(p)
+    }))
+  };
+
+  res.json(diagnostics);
+});
+
 // Root route
 app.get('/', (req, res) => {
   res.json({
