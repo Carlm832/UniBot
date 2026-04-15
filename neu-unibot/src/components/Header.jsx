@@ -1,32 +1,38 @@
 export default function Header({ showBack, onBack }) {
   return (
-    <header className="bg-red-800 dark:bg-gray-900 text-white shadow-lg">
-      <div className="container mx-auto px-4 py-4">
+    <header className="sticky top-0 z-50 glass shadow-2xl transition-all duration-300">
+      <div className="container mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
-
-          {/* LEFT SIDE */}
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-4">
             {showBack && (
               <button
                 onClick={onBack}
-                className="text-white bg-red-700 dark:bg-gray-700 px-3 py-1 rounded-lg hover:bg-red-600 dark:hover:bg-gray-600"
+                className="group flex items-center gap-2 text-white bg-gradient-to-r from-[#a81c1c] to-[#7a1212] px-4 py-2 rounded-xl hover:scale-105 active:scale-95 transition-all shadow-lg"
               >
-                ← Home
+                <span className="group-hover:-translate-x-1 transition-transform">←</span>
+                <span className="text-xs font-bold uppercase tracking-wider">Home</span>
               </button>
             )}
 
-            <div className="w-12 h-12 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center shadow-sm">
-              <span className="text-2xl">🎓</span>
+            <div className="w-9 h-9 bg-white dark:bg-gray-800 rounded-xl flex items-center justify-center shadow-inner">
+              <span className="text-lg">🎓</span>
             </div>
 
             <div>
-              <h1 className="text-xl font-bold text-white dark:text-red-300">
-                NEU Campus Assistant
+              <h1 className="text-sm md:text-base font-extrabold text-[#a81c1c] dark:text-white leading-none tracking-tight">
+                UniBot <span className="hidden md:inline text-gray-400">Assistant</span>
               </h1>
-              <p className="text-xs text-red-100 dark:text-gray-400">
+              <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest block mt-1">
                 Near East University
-              </p>
+              </span>
             </div>
+          </div>
+
+          <div className="flex items-center gap-2">
+             <div className="hidden md:flex flex-col items-end">
+                <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">System Status</span>
+                <span className="text-[9px] font-bold text-green-500 uppercase tracking-tighter">Verified Link</span>
+             </div>
           </div>
         </div>
       </div>

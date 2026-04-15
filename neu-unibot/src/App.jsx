@@ -51,32 +51,32 @@ function App() {
 
       {/* HOME SCREEN */}
       {view === "home" && (
-        <main className="container mx-auto px-4 py-16 md:py-24 text-center">
+        <main className="container mx-auto px-4 py-10 md:py-16 text-center">
           
-          <div className="max-w-5xl mx-auto animate-fadeIn">
+          <div className="max-w-4xl mx-auto animate-fadeIn">
             {/* Premium Icon Surround */}
-            <div className="flex justify-center mb-10">
+            <div className="flex justify-center mb-8">
               <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-red-900 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-                <div className="relative w-24 h-24 bg-gradient-to-br from-[#a81c1c] to-[#7a1212] rounded-3xl flex items-center justify-center shadow-2xl hover:scale-105 transition-transform duration-500 cursor-default">
-                  <span className="text-5xl drop-shadow-lg">🎓</span>
+                <div className="absolute -inset-1 bg-red-600 to-red-900 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                <div className="relative w-20 h-20 bg-gradient-to-br from-[#a81c1c] to-[#7a1212] rounded-2xl flex items-center justify-center shadow-2xl hover:scale-105 transition-transform duration-500 cursor-default">
+                  <span className="text-4xl drop-shadow-lg">🎓</span>
                 </div>
               </div>
             </div>
 
             {/* Title */}
-            <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight leading-tight">
+            <h1 className="text-4xl md:text-6xl font-extrabold mb-5 tracking-tight leading-tight">
               <span className="bg-gradient-to-r from-[#a81c1c] via-[#d63232] to-[#7a1212] bg-clip-text text-transparent">
                 Near East University
               </span>
               <br />
-              <span className="text-gray-900 dark:text-white drop-shadow-sm">
+              <span className="text-gray-900 dark:text-white drop-shadow-sm text-3xl md:text-5xl">
                 Campus Assistant
               </span>
             </h1>
 
             {/* Subtitle */}
-            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-16 leading-relaxed font-medium">
+            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-xl mx-auto mb-12 leading-relaxed font-medium">
               Your intelligent companion for student life, 
               <span className="text-[#a81c1c] dark:text-red-400 font-bold"> simplified.</span>
             </p>
@@ -109,27 +109,27 @@ function App() {
             </div>
 
             {/* Premium Stat-like features */}
-            <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 animate-slideUp" style={{ animationDelay: '600ms' }}>
-              <div className="glass p-8 rounded-[2rem] hover:scale-[1.02] transition-transform duration-300">
-                <div className="w-14 h-14 bg-red-100 dark:bg-red-900/30 rounded-2xl flex items-center justify-center text-3xl mb-6 mx-auto">🚀</div>
-                <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">Smart Engine</h3>
-                <p className="text-gray-500 dark:text-gray-400 leading-relaxed font-medium">
+            <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 animate-slideUp" style={{ animationDelay: '600ms' }}>
+              <div className="glass p-6 rounded-[1.5rem] hover:scale-[1.02] transition-transform duration-300">
+                <div className="w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-xl flex items-center justify-center text-2xl mb-4 mx-auto">🚀</div>
+                <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white">Smart Engine</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed font-medium">
                   Instant, context-aware answers to all your university queries.
                 </p>
               </div>
 
-              <div className="glass p-8 rounded-[2rem] hover:scale-[1.02] transition-transform duration-300 border-red-200/50 dark:border-red-900/50">
-                <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center text-3xl mb-6 mx-auto">📍</div>
-                <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">Live Maps</h3>
-                <p className="text-gray-500 dark:text-gray-400 leading-relaxed font-medium">
+              <div className="glass p-6 rounded-[1.5rem] hover:scale-[1.02] transition-transform duration-300 border-red-200/50 dark:border-red-900/50">
+                <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center text-2xl mb-4 mx-auto">📍</div>
+                <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white">Live Maps</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed font-medium">
                   Interactive directions to every building, faculty, and dorm.
                 </p>
               </div>
 
-              <div className="glass p-8 rounded-[2rem] hover:scale-[1.02] transition-transform duration-300">
-                <div className="w-14 h-14 bg-green-100 dark:bg-green-900/30 rounded-2xl flex items-center justify-center text-3xl mb-6 mx-auto">✨</div>
-                <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white">Reliable Info</h3>
-                <p className="text-gray-500 dark:text-gray-400 leading-relaxed font-medium">
+              <div className="glass p-6 rounded-[1.5rem] hover:scale-[1.02] transition-transform duration-300">
+                <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-xl flex items-center justify-center text-2xl mb-4 mx-auto">✨</div>
+                <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white">Reliable Info</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed font-medium">
                   Verified data synced directly from the university database.
                 </p>
               </div>

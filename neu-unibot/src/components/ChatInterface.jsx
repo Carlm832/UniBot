@@ -83,7 +83,7 @@ export default function ChatInterface({ initialCategory = "general" }) {
     const labels = {
       admissions: "Admissions",
       "campus-navigation": "Campus Navigation",
-      general: "General Services",
+      general: "General Info",
     };
 
     setMessages((prev) => [
@@ -97,24 +97,6 @@ export default function ChatInterface({ initialCategory = "general" }) {
         timestamp: formatTime(),
       },
     ]);
-  };
-
-  const fetchMessage = async (trimmed, category, timeoutMs) => {
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
-    try {
-      const res = await fetch(`${API_URL}/message`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: trimmed, category }),
-        signal: controller.signal,
-      });
-      clearTimeout(timeoutId);
-      return await res.json();
-    } catch (err) {
-      clearTimeout(timeoutId);
-      throw err;
-    }
   };
 
   const sendMessage = async (text, category = selectedCategory) => {
@@ -131,19 +113,18 @@ export default function ChatInterface({ initialCategory = "general" }) {
     setLastSuggestionCategory(null);
 
     try {
-      let data;
-      try {
-        data = await fetchMessage(trimmed, category, 60000);
-      } catch (err) {
-        if (err.name === "AbortError") {
-          setMessages((prev) => [
-            ...prev,
-            { sender: "bot", type: "text", text: "⏳ Waking up the server... Please hold for a few seconds.", timestamp: formatTime() },
-          ]);
-          await new Promise(r => setTimeout(r, 4000));
-          data = await fetchMessage(trimmed, category, 90000);
-        } else throw err;
-      }
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 60000);
+      
+      const res = await fetch(`${API_URL}/message`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: trimmed, category }),
+        signal: controller.signal,
+      });
+      
+      clearTimeout(timeoutId);
+      const data = await res.json();
 
       setMessages((prev) => [
         ...prev,
@@ -156,10 +137,7 @@ export default function ChatInterface({ initialCategory = "general" }) {
         },
       ]);
     } catch (error) {
-      setMessages((prev) => [
-        ...prev,
-        { sender: "bot", type: "text", text: "❌ Connection error. The brain is taking a nap or the system is updating. Try again in a minute!", timestamp: formatTime() },
-      ]);
+       console.error("Chat error:", error);
     } finally {
       setIsTyping(false);
     }
@@ -168,104 +146,83 @@ export default function ChatInterface({ initialCategory = "general" }) {
   return (
     <div className="flex flex-col h-screen bg-transparent">
       
-      {/* Floating Glass Header */}
-      <div className="flex-shrink-0 z-10 px-6 py-4">
-        <div className="glass rounded-[2rem] p-4 flex justify-between items-center shadow-2xl border-white/20 dark:border-white/5">
-          <div className="flex items-center gap-4">
-            <div className="relative group">
-              <div className="absolute -inset-1 bg-red-500 rounded-full blur opacity-25"></div>
-              <div className="relative w-12 h-12 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center shadow-inner">
-                <span className="text-2xl">🤖</span>
-              </div>
-            </div>
-            <div>
-              <h2 className="font-bold text-lg text-gray-900 dark:text-white leading-tight">UniBot Assistant</h2>
-              <div className="flex items-center gap-2">
-                <span className={`w-2 h-2 rounded-full ${isOnline ? "bg-green-500 animate-pulse" : "bg-red-500"}`}></span>
-                <span className="text-xs font-bold text-gray-500 uppercase tracking-tighter">
-                  {isOnline ? "Neural Linked" : "Connecting..."}
-                </span>
-              </div>
-            </div>
+      {/* Category Tabs Section */}
+      <div className="flex-shrink-0 z-10 px-4 py-2 mt-2">
+        <div className="max-w-4xl mx-auto glass rounded-2xl p-2 flex items-center justify-between shadow-lg">
+          <div className="overflow-x-auto flex-1 mr-4">
+             <QuickActionsCompact onActionClick={setSelectedCategory} activeCategory={selectedCategory} />
           </div>
-
-          <button
-            onClick={() => setMessages([{ sender: "bot", type: "text", text: "Session reset! How can I assist you?", timestamp: formatTime() }])}
-            className="p-3 bg-gray-100 dark:bg-gray-800 rounded-2xl hover:bg-red-50 dark:hover:bg-red-900/40 text-gray-500 dark:text-gray-400 hover:text-[#a81c1c] transition-all"
-            title="Clear Chat"
-          >
-            🗑️
-          </button>
+          <div className={`px-3 py-1 rounded-full text-[9px] font-bold uppercase tracking-widest ${isOnline ? "text-green-500 bg-green-500/10" : "text-red-500 bg-red-500/10"}`}>
+            {isOnline ? "Neural Linked" : "Offline"}
+          </div>
         </div>
       </div>
 
-      {/* Quick Category Selector */}
-      <div className="flex-shrink-0 px-6 py-2 overflow-x-auto">
-        <QuickActionsCompact onActionClick={setSelectedCategory} activeCategory={selectedCategory} />
-      </div>
-
-      {/* Messages Container */}
-      <div className="flex-1 overflow-y-auto px-6 py-4 space-y-6">
-        {messages.map((msg, i) =>
-          msg.type === "suggestions" ? (
-            <div key={i} className="animate-fadeIn">
-              <div className="glass rounded-3xl p-6 border-red-100/30 dark:border-white/5 max-w-2xl mx-auto md:mx-0">
-                <p className="font-bold text-gray-900 dark:text-white mb-4 text-center md:text-left flex items-center gap-2">
-                  <span className="text-xl">✨</span> {msg.text}
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  {msg.suggestions.map((s, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => sendMessage(s)}
-                      className="px-4 py-3 rounded-2xl bg-white/50 dark:bg-gray-800/50 hover:bg-[#a81c1c] dark:hover:bg-[#a81c1c] text-gray-700 dark:text-gray-300 hover:text-white text-sm font-semibold transition-all border border-gray-100 dark:border-white/5 text-left active:scale-95 shadow-sm"
-                    >
-                      {s}
-                    </button>
-                  ))}
+      {/* Messages Scroll Area */}
+      <div className="flex-1 overflow-y-auto px-4 py-6 space-y-6">
+        <div className="max-w-4xl mx-auto space-y-8">
+          {messages.map((msg, i) =>
+            msg.type === "suggestions" ? (
+              <div key={i} className="animate-fadeIn">
+                <div className="glass rounded-[2rem] p-6 border-white/10 max-w-2xl">
+                  <p className="font-bold text-gray-900 dark:text-white mb-4 text-sm flex items-center gap-2">
+                    <span className="text-xl">✨</span> {msg.text}
+                  </p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {msg.suggestions.map((s, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => sendMessage(s)}
+                        className="px-4 py-3 rounded-2xl bg-white/40 dark:bg-gray-800/40 hover:bg-[#a81c1c] dark:hover:bg-[#a81c1c] text-gray-700 dark:text-gray-300 hover:text-white text-xs font-bold transition-all border border-black/5 dark:border-white/5 text-left active:scale-95"
+                      >
+                        {s}
+                      </button>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          ) : (
-            <MessageBubble key={i} {...msg} />
-          )
-        )}
+            ) : (
+              <MessageBubble key={i} {...msg} />
+            )
+          )}
 
-        {isTyping && (
-          <div className="flex items-center gap-4 px-4 py-2 animate-fadeIn">
-            <div className="flex gap-1.5 p-3 glass rounded-2xl">
-              <span className="w-2 h-2 bg-[#a81c1c] rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></span>
-              <span className="w-2 h-2 bg-[#a81c1c] rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></span>
-              <span className="w-2 h-2 bg-[#a81c1c] rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></span>
+          {isTyping && (
+            <div className="flex items-center gap-4 px-4 py-2 animate-fadeIn">
+              <div className="flex gap-1.5 p-3 glass rounded-2xl">
+                <div className="w-1.5 h-1.5 bg-[#a81c1c] rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+                <div className="w-1.5 h-1.5 bg-[#a81c1c] rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+                <div className="w-1.5 h-1.5 bg-[#a81c1c] rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+              </div>
             </div>
-            <span className="text-xs font-bold text-[#a81c1c] uppercase tracking-widest opacity-70">UniBot is processing...</span>
-          </div>
-        )}
+          )}
 
-        <div ref={messagesEndRef} />
+          <div ref={messagesEndRef} />
+        </div>
       </div>
 
-      {/* Premium Input Area */}
-      <div className="flex-shrink-0 p-6">
-        <form onSubmit={(e) => { e.preventDefault(); if (input.trim()) sendMessage(input); }} className="relative group animate-slideUp">
-          <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-red-900 rounded-[2.5rem] blur opacity-10 group-focus-within:opacity-30 transition duration-500"></div>
-          <div className="relative glass rounded-[2.5rem] p-2 flex gap-2">
-            <input
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              placeholder="Ask anything about NEU..."
-              className="flex-1 px-6 py-4 bg-transparent text-gray-800 dark:text-white focus:outline-none placeholder-gray-400 font-medium"
-              disabled={!isOnline}
-            />
-            <button
-              type="submit"
-              disabled={!input.trim() || !isOnline}
-              className="bg-gradient-to-br from-[#a81c1c] to-[#7a1212] text-white px-8 py-4 rounded-[2rem] font-bold text-sm shadow-xl hover:scale-[1.02] active:scale-95 transition-all disabled:opacity-50"
-            >
-              SEND 🚀
-            </button>
-          </div>
-        </form>
+      {/* Modern Floating Input Area */}
+      <div className="flex-shrink-0 p-4 md:p-6 pb-8">
+        <div className="max-w-4xl mx-auto">
+          <form onSubmit={(e) => { e.preventDefault(); if (input.trim()) sendMessage(input); }} className="relative group animate-slideUp">
+            <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-red-900 rounded-[2.5rem] blur opacity-10 group-focus-within:opacity-25 transition duration-500"></div>
+            <div className="relative glass rounded-[2.5rem] p-2 flex gap-2">
+              <input
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                placeholder="Ask anything about NEU..."
+                className="flex-1 px-6 py-3 bg-transparent text-gray-800 dark:text-white focus:outline-none placeholder-gray-400 font-semibold text-sm md:text-base"
+                disabled={!isOnline}
+              />
+              <button
+                type="submit"
+                disabled={!input.trim() || !isOnline}
+                className="bg-gradient-to-br from-[#a81c1c] to-[#7a1212] text-white px-6 md:px-10 py-3 rounded-[2rem] font-extrabold text-[10px] md:text-sm tracking-widest shadow-xl hover:scale-[1.02] active:scale-95 transition-all disabled:opacity-50 uppercase"
+              >
+                Send 🚀
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );
