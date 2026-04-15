@@ -4,19 +4,33 @@ const path = require('path');
 class SearchService {
     constructor() {
         this.documents = [];
-        this.dataPath = path.join(process.cwd(), 'data', 'vector_store.json');
+        this.possiblePaths = [
+            path.join(process.cwd(), 'unibot-backend', 'data', 'vector_store.json'),
+            path.join(process.cwd(), 'data', 'vector_store.json'),
+            path.join(__dirname, '..', '..', 'data', 'vector_store.json'),
+            path.join(__dirname, '..', 'data', 'vector_store.json')
+        ];
+        this.dataPath = this.possiblePaths[0]; // Primary fallback
     }
 
     async initialize() {
         try {
-            if (fs.existsSync(this.dataPath)) {
+            console.log('--- 🔍 Search Service Diagnostics ---');
+            console.log(`Working Dir: ${process.cwd()}`);
+            console.log(`Dirname: ${__dirname}`);
+
+            const foundPath = this.possiblePaths.find(p => fs.existsSync(p));
+            
+            if (foundPath) {
+                this.dataPath = foundPath;
                 const data = JSON.parse(fs.readFileSync(this.dataPath, 'utf8'));
                 this.documents = data.documents || [];
-                console.log(`✅ Loaded ${this.documents.length} documents from storage`);
+                console.log(`✅ Loaded ${this.documents.length} docs from: ${this.dataPath}`);
             } else {
-                console.log('⚠️  No existing search store found, starting fresh');
+                console.log('⚠️  No search store found in any candidate path:');
+                this.possiblePaths.forEach(p => console.log(`   - ${p}`));
             }
-            console.log('🚀 Search service initialized');
+            console.log('-----------------------------------');
         } catch (error) {
             console.error('❌ Error initializing search service:', error);
             throw error;
@@ -107,8 +121,14 @@ class SearchService {
 
                     if (titleMatches > 0 || contentMatches > 0) {
                         uniqueMatches++;
-                        score += titleMatches * 150; // Increased from 50
-                        score += contentMatches * 20; // Increased from 10
+                        score += titleMatches * 150;
+                        score += contentMatches * 20;
+                    } else {
+                        // Fallback: Partial match (no word boundary)
+                        if (titleLower.includes(word) || contentLower.includes(word)) {
+                            uniqueMatches += 0.5; // Partial unique match
+                            score += 50; 
+                        }
                     }
                 });
 
