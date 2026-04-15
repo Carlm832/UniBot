@@ -64,6 +64,25 @@ app.get('/health', (req, res) => {
   res.json({ status: 'ok', message: 'University Chatbot API is running' });
 });
 
+// Diagnostics endpoint to debug Vercel file paths
+app.get('/api/health/diagnostics', async (req, res) => {
+  const fs = require('fs');
+  const path = require('path');
+  
+  const diagnostics = {
+    cwd: process.cwd(),
+    dirname: __dirname,
+    node_version: process.version,
+    store_docs_count: searchService.documents.length,
+    paths_checked: searchService.possiblePaths.map(p => ({
+      path: p,
+      exists: fs.existsSync(p)
+    }))
+  };
+
+  res.json(diagnostics);
+});
+
 // Root route
 app.get('/', (req, res) => {
   res.json({
@@ -78,15 +97,21 @@ app.get('/', (req, res) => {
 // Eagerly load the search index so it's ready before the first request
 searchService.initialize()
   .then(() => {
-    app.listen(PORT, () => {
-      console.log(`Server is running on port ${PORT}`);
-      console.log(`Health check: http://localhost:${PORT}/health`);
-      console.log(`CORS origin: ${allowedOrigin}`);
-    });
+    if (process.env.NODE_ENV !== 'production') {
+      app.listen(PORT, () => {
+        console.log(`Server is running on port ${PORT}`);
+        console.log(`Health check: http://localhost:${PORT}/health`);
+        console.log(`CORS origin: ${allowedOrigin}`);
+      });
+    }
   })
   .catch((err) => {
     console.error('⚠️  Failed to load search index, starting anyway:', err.message);
-    app.listen(PORT, () => {
-      console.log(`Server is running on port ${PORT} (without search data)`);
-    });
+    if (process.env.NODE_ENV !== 'production') {
+      app.listen(PORT, () => {
+        console.log(`Server is running on port ${PORT} (without search data)`);
+      });
+    }
   });
+
+module.exports = app;

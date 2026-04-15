@@ -4,19 +4,36 @@ const path = require('path');
 class SearchService {
     constructor() {
         this.documents = [];
-        this.dataPath = path.join(__dirname, '../../data/vector_store.json');
+        this.possiblePaths = [
+            path.join(process.cwd(), 'unibot-backend', 'data', 'vector_store.json'),
+            path.join(process.cwd(), 'data', 'vector_store.json'),
+            path.resolve(__dirname, '../../data/vector_store.json'),
+            path.resolve(__dirname, '../data/vector_store.json'),
+            path.resolve(__dirname, '../../../data/vector_store.json'),
+            '/var/task/unibot-backend/data/vector_store.json',
+            '/var/task/data/vector_store.json'
+        ];
+        this.dataPath = this.possiblePaths[0]; // Primary fallback
     }
 
     async initialize() {
         try {
-            if (fs.existsSync(this.dataPath)) {
+            console.log('--- 🔍 Search Service Diagnostics ---');
+            console.log(`Working Dir: ${process.cwd()}`);
+            console.log(`Dirname: ${__dirname}`);
+
+            const foundPath = this.possiblePaths.find(p => fs.existsSync(p));
+            
+            if (foundPath) {
+                this.dataPath = foundPath;
                 const data = JSON.parse(fs.readFileSync(this.dataPath, 'utf8'));
                 this.documents = data.documents || [];
-                console.log(`✅ Loaded ${this.documents.length} documents from storage`);
+                console.log(`✅ Loaded ${this.documents.length} docs from: ${this.dataPath}`);
             } else {
-                console.log('⚠️  No existing search store found, starting fresh');
+                console.log('⚠️  No search store found in any candidate path:');
+                this.possiblePaths.forEach(p => console.log(`   - ${p}`));
             }
-            console.log('🚀 Search service initialized');
+            console.log('-----------------------------------');
         } catch (error) {
             console.error('❌ Error initializing search service:', error);
             throw error;
@@ -25,13 +42,23 @@ class SearchService {
 
     async search(query, nResults = 5) {
         try {
+            // Runtime retry if store is empty (common on serverless cold starts)
             if (this.documents.length === 0) {
-                console.log('⚠️  No documents in search store');
+                console.log('🔄 Attemping runtime search store initialization...');
+                await this.initialize();
+            }
+
+            if (this.documents.length === 0) {
+                console.log('⚠️  Search store remains empty after initialization');
                 return [];
             }
 
             const queryLower = query.toLowerCase().trim();
-            const queryWords = queryLower.split(/\s+/).filter(w => w.length > 2);
+            const stopwords = ['the', 'is', 'at', 'on', 'in', 'to', 'for', 'of', 'and', 'a', 'an', 'where', 'what', 'how', 'show', 'tell', 'me', 'about'];
+            const queryWords = queryLower.split(/\s+/).filter(w => w.length >= 2 && !stopwords.includes(w));
+            
+            // If all words were stopwords, fallback to all words >= 2
+            const effectiveWords = queryWords.length > 0 ? queryWords : queryLower.split(/\s+/).filter(w => w.length >= 2);
 
             // Enhanced location keyword detection
             const locationKeywords = [
@@ -73,7 +100,7 @@ class SearchService {
 
                 // Content contains exact phrase
                 if (contentLower.includes(queryLower)) {
-                    score += 200;
+                    score += 300; // Increased from 200
                 }
 
                 // BOOST location documents for location queries
@@ -95,14 +122,29 @@ class SearchService {
                 }
 
                 // Word-by-word matching
-                queryWords.forEach(word => {
-                    const regex = new RegExp(`\\b${word}\\b`, 'g');
+                let uniqueMatches = 0;
+                effectiveWords.forEach(word => {
+                    const regex = new RegExp(`\\b${word}\\b`, 'gi');
                     const titleMatches = (titleLower.match(regex) || []).length;
                     const contentMatches = (contentLower.match(regex) || []).length;
 
-                    score += titleMatches * 50;
-                    score += contentMatches * 10;
+                    if (titleMatches > 0 || contentMatches > 0) {
+                        uniqueMatches++;
+                        score += titleMatches * 150;
+                        score += contentMatches * 20;
+                    } else {
+                        // Fallback: Partial match (no word boundary)
+                        if (titleLower.includes(word) || contentLower.includes(word)) {
+                            uniqueMatches += 0.5; // Partial unique match
+                            score += 50; 
+                        }
+                    }
                 });
+
+                // Multi-word bonus: Huge boost if multiple unique query words match
+                if (uniqueMatches > 1) {
+                    score += (uniqueMatches * 500); 
+                }
 
                 // Category and type matching
                 if (categoryLower) {
@@ -139,13 +181,10 @@ class SearchService {
             console.log(`   Results: ${results.length}`);
 
             if (results.length > 0) {
-                console.log(`   🥇 Top: "${results[0].doc.metadata.title}" (score: ${results[0].score})`);
-                console.log(`      Category: ${results[0].doc.metadata.category}`);
-                console.log(`      Type: ${results[0].doc.metadata.type}`);
-                console.log(`      Has coords: ${!!results[0].doc.metadata.coordinates}`);
-                console.log(`      Has map: ${results[0].doc.content.includes('<iframe')}`);
+                console.log(`   🥇 Top: "${results[0].doc.metadata.title}" (score: ${results[0].score.toFixed(1)})`);
+                console.log(`      Matches: ${effectiveWords.filter(w => results[0].doc.content.toLowerCase().includes(w)).join(', ')}`);
             } else {
-                console.log(`   ⚠️  No matches found`);
+                console.log(`   ⚠️  No matches found for query words: ${effectiveWords.join(', ')}`);
             }
 
             return results.map(result => ({

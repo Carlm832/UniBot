@@ -1,3 +1,99 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --neu-crimson: #a81c1c;
+  --neu-crimson-dark: #7a1212;
+  --neu-crimson-light: #d63232;
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-bg-dark: rgba(17, 24, 39, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-border-dark: rgba(255, 255, 255, 0.1);
+}
+
+@layer base {
+  body {
+    @apply font-sans antialiased text-gray-900 bg-gray-50 transition-colors duration-500;
+    font-family: 'Outfit', 'Inter', sans-serif;
+  }
+  
+  .dark body {
+    @apply text-gray-100 bg-gray-950;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply backdrop-blur-xl bg-white/70 border border-white/20 shadow-xl;
+  }
+
+  .dark .glass {
+    @apply bg-gray-900/70 border-white/10;
+  }
+
+  .btn-premium {
+    @apply px-6 py-3 rounded-2xl font-semibold transition-all duration-300 
+           active:scale-95 shadow-lg relative overflow-hidden;
+  }
+
+  .btn-crimson {
+    @apply bg-gradient-to-br from-[#a81c1c] to-[#7a1212] text-white hover:shadow-red-500/20 hover:scale-[1.02];
+  }
+
+  .mesh-gradient {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: #f8fafc;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(168, 28, 28, 0.05) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(220, 38, 38, 0.05) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(168, 28, 28, 0.05) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, rgba(220, 38, 38, 0.05) 0px, transparent 50%);
+  }
+
+  .dark .mesh-gradient {
+    background-color: #030712;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(168, 28, 28, 0.1) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(30, 41, 59, 0.2) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(168, 28, 28, 0.1) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, rgba(30, 41, 59, 0.2) 0px, transparent 50%);
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slideUp {
+  animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-700 rounded-full hover:bg-gray-400 dark:hover:bg-gray-600 transition-colors;
+}
