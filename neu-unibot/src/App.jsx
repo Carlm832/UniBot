@@ -134,6 +134,7 @@ function App() {
               POWERED BY ADVANCED NEURAL AI • NEAR EAST UNIVERSITY 2026
             </p>
           </div>
+        )}
 
         {/* CHAT SCREEN */}
         {view === "chat" && (
