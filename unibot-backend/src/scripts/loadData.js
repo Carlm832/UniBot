@@ -454,6 +454,43 @@ async function loadUniversityData() {
 
     await vectorService.addDocuments(documents);
 
+    // ===== IMPORT EXTRA DATA FROM GitHub REPO =====
+    try {
+      const dbPath = path.join(process.cwd(), 'temp_db');
+      if (fs.existsSync(dbPath)) {
+        console.log('\n📂 Importing extra data from temp_db...');
+        const extraDocs = [];
+        const files = fs.readdirSync(dbPath).filter(f => !f.startsWith('.'));
+        
+        for (const file of files) {
+          const fileContent = fs.readFileSync(path.join(dbPath, file), 'utf8');
+          if (file.startsWith('faculty_')) {
+            const titleMatch = fileContent.match(/^# (.*)/);
+            const title = titleMatch ? titleMatch[1] : file.replace('faculty_', '').replace('_', ' ');
+            extraDocs.push({
+              content: fileContent.trim(),
+              metadata: { category: 'faculties', type: 'faculty', title: title, source: 'unibot-database' }
+            });
+          } else if (file === 'additional_Info') {
+            const sections = fileContent.split('---');
+            for (const section of sections) {
+              const trimmed = section.trim();
+              if (!trimmed) continue;
+              const title = trimmed.split('\n')[0].replace(/#|[\*\*_]/g, '').trim();
+              extraDocs.push({
+                content: trimmed,
+                metadata: { category: 'general', type: 'info', title: title, source: 'unibot-database' }
+              });
+            }
+          }
+        }
+        await vectorService.addDocuments(extraDocs);
+        console.log(`✅ Successfully merged ${extraDocs.length} extra documents`);
+      }
+    } catch (e) {
+      console.warn('⚠️  Could not import extra data (ignoring):', e.message);
+    }
+
     console.log('\n✅ Data loading completed successfully!');
     console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
     console.log(`📚 Total documents loaded: ${documents.length}`);

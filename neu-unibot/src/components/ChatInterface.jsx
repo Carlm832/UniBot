@@ -4,7 +4,7 @@ import QuickActionsCompact from "./QuickActionsCompact";
 
 // Use environment variable for API URL, or default to Fly.io backend
 // Set VITE_API_URL during build: npm run build -- --define VITE_API_URL=...
-const API_URL = import.meta.env.VITE_API_URL || "https://unibot-backend.fly.dev/api/chat";
+const API_URL = import.meta.env.VITE_API_URL || "/api/chat";
 
 //SUGGESTED_QUESTIONS
 const SUGGESTED_QUESTIONS = {

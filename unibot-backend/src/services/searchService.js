@@ -31,7 +31,11 @@ class SearchService {
             }
 
             const queryLower = query.toLowerCase().trim();
-            const queryWords = queryLower.split(/\s+/).filter(w => w.length > 2);
+            const stopwords = ['the', 'is', 'at', 'on', 'in', 'to', 'for', 'of', 'and', 'a', 'an', 'where', 'what', 'how', 'show', 'tell', 'me', 'about'];
+            const queryWords = queryLower.split(/\s+/).filter(w => w.length >= 2 && !stopwords.includes(w));
+            
+            // If all words were stopwords, fallback to all words >= 2
+            const effectiveWords = queryWords.length > 0 ? queryWords : queryLower.split(/\s+/).filter(w => w.length >= 2);
 
             // Enhanced location keyword detection
             const locationKeywords = [
@@ -73,7 +77,7 @@ class SearchService {
 
                 // Content contains exact phrase
                 if (contentLower.includes(queryLower)) {
-                    score += 200;
+                    score += 300; // Increased from 200
                 }
 
                 // BOOST location documents for location queries
@@ -95,14 +99,23 @@ class SearchService {
                 }
 
                 // Word-by-word matching
-                queryWords.forEach(word => {
-                    const regex = new RegExp(`\\b${word}\\b`, 'g');
+                let uniqueMatches = 0;
+                effectiveWords.forEach(word => {
+                    const regex = new RegExp(`\\b${word}\\b`, 'gi');
                     const titleMatches = (titleLower.match(regex) || []).length;
                     const contentMatches = (contentLower.match(regex) || []).length;
 
-                    score += titleMatches * 50;
-                    score += contentMatches * 10;
+                    if (titleMatches > 0 || contentMatches > 0) {
+                        uniqueMatches++;
+                        score += titleMatches * 150; // Increased from 50
+                        score += contentMatches * 20; // Increased from 10
+                    }
                 });
+
+                // Multi-word bonus: Huge boost if multiple unique query words match
+                if (uniqueMatches > 1) {
+                    score += (uniqueMatches * 500); 
+                }
 
                 // Category and type matching
                 if (categoryLower) {
@@ -139,13 +152,10 @@ class SearchService {
             console.log(`   Results: ${results.length}`);
 
             if (results.length > 0) {
-                console.log(`   🥇 Top: "${results[0].doc.metadata.title}" (score: ${results[0].score})`);
-                console.log(`      Category: ${results[0].doc.metadata.category}`);
-                console.log(`      Type: ${results[0].doc.metadata.type}`);
-                console.log(`      Has coords: ${!!results[0].doc.metadata.coordinates}`);
-                console.log(`      Has map: ${results[0].doc.content.includes('<iframe')}`);
+                console.log(`   🥇 Top: "${results[0].doc.metadata.title}" (score: ${results[0].score.toFixed(1)})`);
+                console.log(`      Matches: ${effectiveWords.filter(w => results[0].doc.content.toLowerCase().includes(w)).join(', ')}`);
             } else {
-                console.log(`   ⚠️  No matches found`);
+                console.log(`   ⚠️  No matches found for query words: ${effectiveWords.join(', ')}`);
             }
 
             return results.map(result => ({
