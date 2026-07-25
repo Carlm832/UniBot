@@ -1,13 +1,29 @@
 const Groq = require('groq-sdk');
 const vectorService = require('./searchService');
 
-const groq = new Groq({
-  apiKey: process.env.GROQ_API_KEY,
-});
-
 class AIService {
+  getGroqClient() {
+    if (!this.groq) {
+      this.groq = new Groq({
+        apiKey: process.env.GROQ_API_KEY || 'missing_key',
+      });
+    }
+    return this.groq;
+  }
+
   async generateResponse(userMessage, category = 'general') {
     try {
+      if (!process.env.GROQ_API_KEY) {
+        // Return a friendly message instead of throwing an error
+        return {
+          response: {
+            type: "text",
+            message: "The chatbot service is currently unavailable because the required API key is not configured. Please try again later or contact support.",
+          },
+          sources: [],
+        };
+      }
+      const groq = this.getGroqClient();
       // Search vector DB
       const relevantDocs = await vectorService.search(userMessage, 5);
 
