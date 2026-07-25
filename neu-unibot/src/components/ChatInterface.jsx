@@ -152,7 +152,7 @@ export default function ChatInterface({ initialCategory = "general" }) {
           <div className="overflow-x-auto flex-1 mr-4">
              <QuickActionsCompact onActionClick={setSelectedCategory} activeCategory={selectedCategory} />
           </div>
-          <div className={`px-3 py-1 rounded-full text-[9px] font-bold uppercase tracking-widest ${isOnline ? "text-green-500 bg-green-500/10" : "text-red-500 bg-red-500/10"}`}>
+          <div className={`px-3 py-1 rounded-full text-[9px] font-bold uppercase tracking-widest ${isOnline ? "text-white bg-green-600 shadow-sm" : "text-white bg-[#a81c1c] shadow-sm"}`}>
             {isOnline ? "System Online" : "Connecting..."}
           </div>
         </div>
@@ -205,7 +205,6 @@ export default function ChatInterface({ initialCategory = "general" }) {
       <div className="flex-shrink-0 p-4 md:p-6 pb-8">
         <div className="max-w-4xl mx-auto">
           <form onSubmit={(e) => { e.preventDefault(); if (input.trim()) sendMessage(input); }} className="relative group animate-slideUp">
-            <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-red-900 rounded-[2.5rem] blur opacity-10 group-focus-within:opacity-25 transition duration-500"></div>
             <div className="relative glass rounded-[2.5rem] p-2 flex gap-2">
               <input
                 value={input}
@@ -217,7 +216,7 @@ export default function ChatInterface({ initialCategory = "general" }) {
               <button
                 type="submit"
                 disabled={!input.trim() || !isOnline}
-                className="bg-gradient-to-br from-[#a81c1c] to-[#7a1212] text-white px-6 md:px-10 py-3 rounded-[2rem] font-extrabold text-[10px] md:text-sm tracking-widest shadow-xl hover:scale-[1.02] active:scale-95 transition-all disabled:opacity-50 uppercase"
+                className="bg-[#a81c1c] text-white px-6 md:px-10 py-3 rounded-[2rem] font-extrabold text-[10px] md:text-sm tracking-widest shadow-sm hover:scale-[1.02] active:scale-95 transition-all disabled:opacity-50 uppercase"
               >
                 Send 🚀
               </button>

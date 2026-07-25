@@ -4,19 +4,19 @@ export default function QuickActions({ onActionClick }) {
       icon: "📝",
       label: "Admissions",
       category: "admissions",
-      color: "from-blue-500 to-blue-600",
+      color: "bg-[#a81c1c]",
     },
     {
       icon: "🗺️",
       label: "Campus Map",
       category: "campus-navigation",
-      color: "from-purple-500 to-purple-600",
+      color: "bg-[#d4af37]",
     },
     {
       icon: "🎯",
       label: "Student Life",
       category: "general",
-      color: "from-pink-500 to-pink-600",
+      color: "bg-[#002b5c]",
     },
   ];
 
@@ -26,7 +26,7 @@ export default function QuickActions({ onActionClick }) {
         <button
           key={idx}
           onClick={() => onActionClick(action.category)}
-          className={`bg-gradient-to-r ${action.color} text-white rounded-xl p-6 flex flex-col items-center justify-center space-y-2 shadow-md hover:shadow-xl hover:-translate-y-1 active:scale-95 transition-all duration-200`}
+          className={`${action.color} text-white rounded-xl p-6 flex flex-col items-center justify-center space-y-2 shadow-sm hover:shadow-md border border-[#E5E5E5] hover:-translate-y-1 active:scale-95 transition-all duration-200`}
         >
           <span className="text-4xl">{action.icon}</span>
           <span className="text-base font-semibold text-center">

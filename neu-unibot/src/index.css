@@ -14,7 +14,7 @@
 
 @layer base {
   body {
-    @apply font-sans antialiased text-gray-900 bg-gray-50 transition-colors duration-500;
+    @apply font-sans antialiased text-gray-900 bg-[#F5F5F5] transition-colors duration-500;
     font-family: 'Outfit', 'Inter', sans-serif;
   }
   
@@ -25,11 +25,11 @@
 
 @layer components {
   .glass {
-    @apply backdrop-blur-xl bg-white/70 border border-white/20 shadow-xl;
+    @apply bg-[#FFFFFF] border border-[#E5E5E5] shadow-sm;
   }
 
   .dark .glass {
-    @apply bg-gray-900/70 border-white/10;
+    @apply bg-gray-900 border-gray-800 shadow-sm;
   }
 
   .btn-premium {

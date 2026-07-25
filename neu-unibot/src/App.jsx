@@ -52,8 +52,7 @@ function App() {
             {/* Premium Icon Surround */}
             <div className="flex justify-center mb-8">
               <div className="relative group">
-                <div className="absolute -inset-1 bg-red-600 to-red-900 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-                <div className="relative w-20 h-20 bg-gradient-to-br from-[#a81c1c] to-[#7a1212] rounded-2xl flex items-center justify-center shadow-2xl hover:scale-105 transition-transform duration-500 cursor-default">
+                <div className="relative w-20 h-20 bg-[#a81c1c] rounded-2xl flex items-center justify-center shadow-sm border border-[#E5E5E5] dark:border-gray-800 hover:scale-105 transition-transform duration-500 cursor-default">
                   <span className="text-4xl drop-shadow-lg">🎓</span>
                 </div>
               </div>
@@ -89,14 +88,13 @@ function App() {
             {/* Search Input Upgrade */}
             <div className="max-w-3xl mx-auto mb-24 animate-slideUp" style={{ animationDelay: '400ms' }}>
               <div className="relative cursor-text group" onClick={() => goToChat("general")}>
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-red-500/50 to-red-900/50 rounded-2xl blur opacity-0 group-hover:opacity-100 transition duration-500"></div>
                 <div className="relative flex items-center">
                   <input
                     readOnly
                     placeholder="Ask me anything about NEU..."
-                    className="w-full p-6 bg-white dark:bg-gray-900 rounded-2xl shadow-xl text-xl text-gray-700 dark:text-gray-200 border border-gray-100 dark:border-gray-800 focus:outline-none transition-all duration-300"
+                    className="w-full p-6 bg-white dark:bg-gray-900 rounded-2xl shadow-sm text-xl text-gray-700 dark:text-gray-200 border border-[#E5E5E5] dark:border-gray-800 focus:outline-none transition-all duration-300"
                   />
-                  <div className="absolute right-4 p-3 bg-[#a81c1c] rounded-xl text-white shadow-lg">
+                  <div className="absolute right-4 p-3 bg-[#a81c1c] rounded-xl text-white shadow-sm border border-[#7a1212]">
                     <span>⚡ Ask AI</span>
                   </div>
                 </div>
