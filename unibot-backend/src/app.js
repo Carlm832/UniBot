@@ -74,6 +74,8 @@ app.get('/api/health/diagnostics', async (req, res) => {
     dirname: __dirname,
     node_version: process.version,
     store_docs_count: searchService.documents.length,
+    groq_api_key_set: !!process.env.GROQ_API_KEY,
+    groq_api_key_prefix: process.env.GROQ_API_KEY ? process.env.GROQ_API_KEY.substring(0, 7) + '...' : 'NOT SET',
     paths_checked: searchService.possiblePaths.map(p => ({
       path: p,
       exists: fs.existsSync(p)
