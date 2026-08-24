@@ -23,6 +23,8 @@ class ChatController {
 
       // ============ INPUT VALIDATION ============
 
+      // Bug fix #7: check type BEFORE calling .trim() — a non-string message
+      // (e.g. a number) passes the !message guard but throws on .trim().
       if (!message) {
         return res.status(400).json({
           success: false,
@@ -141,8 +143,10 @@ class ChatController {
         });
       }
 
-      // Validate limit
-      if (typeof limit !== 'number' || limit < 1 || limit > 20) {
+      // Bug fix #8: limit from req.body may arrive as a string "5" when sent
+      // as JSON — parseInt normalises it so the typeof check doesn't reject it.
+      const parsedLimit = parseInt(limit, 10);
+      if (isNaN(parsedLimit) || parsedLimit < 1 || parsedLimit > 20) {
         return res.status(400).json({
           success: false,
           error: 'Limit must be a number between 1 and 20'
@@ -155,7 +159,7 @@ class ChatController {
         await vectorService.initialize();
       }
 
-      const results = await vectorService.search(query, limit);
+      const results = await vectorService.search(query, parsedLimit);
 
       res.json({
         success: true,

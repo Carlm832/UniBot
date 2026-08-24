@@ -4,19 +4,25 @@ export default function QuickActions({ onActionClick }) {
       icon: "📝",
       label: "Admissions",
       category: "admissions",
-      color: "bg-[#a81c1c]",
+      accent: "bg-[#a81c1c]",
+      iconBg: "bg-red-50 dark:bg-red-900/20",
+      description: "Fees, applications & requirements",
     },
     {
       icon: "🗺️",
       label: "Campus Map",
       category: "campus-navigation",
-      color: "bg-[#d4af37]",
+      accent: "bg-amber-600",
+      iconBg: "bg-amber-50 dark:bg-amber-900/20",
+      description: "Buildings, offices & directions",
     },
     {
       icon: "🎯",
       label: "Student Life",
       category: "general",
-      color: "bg-[#002b5c]",
+      accent: "bg-[#002b5c]",
+      iconBg: "bg-blue-50 dark:bg-blue-900/20",
+      description: "Services, clubs & campus life",
     },
   ];
 
@@ -26,12 +32,25 @@ export default function QuickActions({ onActionClick }) {
         <button
           key={idx}
           onClick={() => onActionClick(action.category)}
-          className={`${action.color} text-white rounded-xl p-6 flex flex-col items-center justify-center space-y-2 shadow-sm hover:shadow-md border border-[#E5E5E5] hover:-translate-y-1 active:scale-95 transition-all duration-200`}
+          className="group relative card rounded-xl p-5 flex items-center gap-4 text-left hover:shadow-md hover:-translate-y-0.5 active:scale-95 transition-all duration-200 overflow-hidden"
         >
-          <span className="text-4xl">{action.icon}</span>
-          <span className="text-base font-semibold text-center">
-            {action.label}
-          </span>
+          {/* Left color accent bar */}
+          <div className={`absolute left-0 top-0 h-full w-1 ${action.accent} rounded-l-xl transition-all duration-200 group-hover:w-1.5`} />
+
+          {/* Icon */}
+          <div className={`w-12 h-12 ${action.iconBg} rounded-xl flex items-center justify-center text-2xl flex-shrink-0`}>
+            {action.icon}
+          </div>
+
+          {/* Text */}
+          <div>
+            <span className="block text-sm font-bold text-[var(--text-primary)] mb-0.5">
+              {action.label}
+            </span>
+            <span className="block text-xs text-[var(--text-muted)] font-medium">
+              {action.description}
+            </span>
+          </div>
         </button>
       ))}
     </div>

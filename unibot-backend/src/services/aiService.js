@@ -79,7 +79,9 @@ class AIService {
         // Create proper Google Maps URL
         let mapsUrl = null;
         if (coords) {
-          const [lng, lat] = coords.split(',').map(c => c.trim());
+          // Bug fix #9: coordinates are stored as "lat,lng" — the original
+          // destructuring had them swapped, generating a wrong Maps URL.
+          const [lat, lng] = coords.split(',').map(c => c.trim());
           mapsUrl = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
         }
 

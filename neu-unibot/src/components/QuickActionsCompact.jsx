@@ -1,34 +1,34 @@
-export default function QuickActionsCompact({ onActionClick }) {
+// Bug fix: activeCategory was accepted as a prop but never used inside this
+// component, so the selected tab was never visually highlighted.
+export default function QuickActionsCompact({ onActionClick, activeCategory }) {
   const actions = [
-    {
-      icon: "📝",
-      label: "Admissions",
-      category: "admissions",
-    },
-    {
-      icon: "🗺️",
-      label: "Campus",
-      category: "campus-navigation",
-    },
-    {
-      icon: "ℹ️",
-      label: "Services",
-      category: "general",
-    },
+    { icon: "📝", label: "Admissions",  category: "admissions"         },
+    { icon: "🗺️", label: "Campus",      category: "campus-navigation"  },
+    { icon: "ℹ️",  label: "Services",   category: "general"            },
   ];
 
   return (
-    <div className="flex justify-center gap-2 flex-wrap">
-      {actions.map((action, idx) => (
-        <button
-          key={idx}
-          onClick={() => onActionClick(action.category)}
-          className="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all hover:scale-105 active:scale-95 shadow-sm"
-        >
-          <span className="text-lg">{action.icon}</span>
-          <span className="hidden sm:inline">{action.label}</span>
-        </button>
-      ))}
+    <div className="flex items-center gap-2 flex-wrap">
+      {actions.map((action, idx) => {
+        const isActive = activeCategory === action.category;
+        return (
+          <button
+            key={idx}
+            onClick={() => onActionClick(action.category)}
+            className={`
+              flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold
+              border transition-all duration-150 hover:scale-105 active:scale-95
+              ${isActive
+                ? "bg-[#a81c1c] text-white border-[#a81c1c] shadow-sm"
+                : "card text-[var(--text-secondary)] hover:border-[var(--border-strong)] hover:text-[var(--text-primary)]"
+              }
+            `}
+          >
+            <span className="text-base leading-none">{action.icon}</span>
+            <span className="hidden sm:inline">{action.label}</span>
+          </button>
+        );
+      })}
     </div>
   );
 }

@@ -14,8 +14,19 @@ const rateLimit = (() => {
   const MAX_REQUESTS = 30;
   const WINDOW_MS = 60 * 1000; // 1 minute
 
+  // Bug fix #10 (part 2): periodically evict expired entries so the Map
+  // doesn't grow unbounded on long-running servers.
+  setInterval(() => {
+    const now = Date.now();
+    for (const [ip, entry] of hits.entries()) {
+      if (now - entry.start > WINDOW_MS) hits.delete(ip);
+    }
+  }, WINDOW_MS);
+
   return (req, res, next) => {
-    const ip = req.ip || req.connection.remoteAddress;
+    // Bug fix #10 (part 1): req.connection is deprecated in Node 18+;
+    // use req.socket instead.
+    const ip = req.ip || req.socket?.remoteAddress || 'unknown';
     const now = Date.now();
     const entry = hits.get(ip) || { count: 0, start: now };
 

@@ -6,7 +6,7 @@ import Header from "./components/Header";
 import "./App.css";
 
 function App() {
-  const [view, setView] = useState("home"); 
+  const [view, setView] = useState("home");
   const [selectedCategory, setSelectedCategory] = useState("general");
 
   // Handle browser back button
@@ -23,8 +23,6 @@ function App() {
   const goToChat = (category = "general") => {
     setSelectedCategory(category);
     setView("chat");
-
-    // Push state for browser back functionality
     window.history.pushState({ page: "chat" }, "", "#chat");
   };
 
@@ -35,103 +33,116 @@ function App() {
   };
 
   return (
-    <div className="relative h-screen flex flex-col transition-colors duration-500 overflow-hidden">
-      
-      {/* Premium Mesh Background */}
-      <div className="mesh-gradient" />
-
-
+    <div className="relative h-screen flex flex-col overflow-hidden page-bg transition-colors duration-300">
       <Header showBack={view === "chat"} onBack={goHome} />
 
-      <main className="flex-1 overflow-y-auto relative z-10">
+      <main className="flex-1 overflow-y-auto">
         {/* HOME SCREEN */}
         {view === "home" && (
-          <div className="container mx-auto px-4 py-10 md:py-16 text-center">
-          
-          <div className="max-w-4xl mx-auto animate-fadeIn">
-            {/* Premium Icon Surround */}
-            <div className="flex justify-center mb-8">
-              <div className="relative group">
-                <div className="relative w-20 h-20 bg-[#a81c1c] rounded-2xl flex items-center justify-center shadow-sm border border-[#E5E5E5] dark:border-gray-800 hover:scale-105 transition-transform duration-500 cursor-default">
-                  <span className="text-4xl drop-shadow-lg">🎓</span>
+          <div className="container mx-auto px-4 py-12 md:py-20 text-center animate-fadeIn">
+            <div className="max-w-4xl mx-auto">
+
+              {/* Logo Icon */}
+              <div className="flex justify-center mb-8">
+                <div className="w-20 h-20 bg-[#a81c1c] rounded-2xl flex items-center justify-center shadow-lg hover:scale-105 transition-transform duration-300 cursor-default">
+                  <span className="text-4xl">🎓</span>
                 </div>
               </div>
-            </div>
 
-            {/* Title */}
-            <h1 className="text-4xl md:text-6xl font-extrabold mb-5 tracking-tight leading-tight">
-              <span className="bg-gradient-to-r from-[#a81c1c] via-[#d63232] to-[#7a1212] bg-clip-text text-transparent">
-                Near East University
-              </span>
-              <br />
-              <span className="text-gray-900 dark:text-white drop-shadow-sm text-3xl md:text-5xl">
-                Campus Assistant
-              </span>
-            </h1>
+              {/* Title */}
+              <h1 className="text-4xl md:text-6xl font-extrabold mb-4 tracking-tight leading-tight">
+                <span className="bg-gradient-to-r from-[#a81c1c] via-[#d63232] to-[#7a1212] bg-clip-text text-transparent">
+                  Near East University
+                </span>
+                <br />
+                <span className="text-[var(--text-primary)] text-3xl md:text-5xl">
+                  Campus Assistant
+                </span>
+              </h1>
 
-            {/* Subtitle */}
-            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-xl mx-auto mb-12 leading-relaxed font-medium">
-              Your intelligent companion for student life, 
-              <span className="text-[#a81c1c] dark:text-red-400 font-bold"> simplified.</span>
-            </p>
+              {/* Subtitle */}
+              <p className="text-lg md:text-xl text-[var(--text-secondary)] max-w-xl mx-auto mb-12 leading-relaxed font-medium">
+                Your intelligent companion for student life,{" "}
+                <span className="text-[#a81c1c] font-bold">simplified.</span>
+              </p>
 
-            {/* Quick Actions Grid */}
-            <div className="max-w-5xl mx-auto mb-20 animate-slideUp" style={{ animationDelay: '200ms' }}>
-              <div className="glass rounded-[2rem] p-8 md:p-12">
-                <p className="text-sm text-gray-400 dark:text-gray-500 mb-8 font-bold uppercase tracking-widest">
-                  Quick Topics
-                </p>
-                <QuickActions onActionClick={goToChat} />
+              {/* Quick Actions Grid */}
+              <div className="max-w-5xl mx-auto mb-10 animate-slideUp" style={{ animationDelay: "150ms" }}>
+                <div className="card rounded-2xl p-8 md:p-10">
+                  <p className="text-xs text-[var(--text-muted)] mb-7 font-bold uppercase tracking-widest">
+                    Quick Topics
+                  </p>
+                  <QuickActions onActionClick={goToChat} />
+                </div>
               </div>
-            </div>
 
-            {/* Search Input Upgrade */}
-            <div className="max-w-3xl mx-auto mb-24 animate-slideUp" style={{ animationDelay: '400ms' }}>
-              <div className="relative cursor-text group" onClick={() => goToChat("general")}>
-                <div className="relative flex items-center">
-                  <input
-                    readOnly
-                    placeholder="Ask me anything about NEU..."
-                    className="w-full p-6 bg-white dark:bg-gray-900 rounded-2xl shadow-sm text-xl text-gray-700 dark:text-gray-200 border border-[#E5E5E5] dark:border-gray-800 focus:outline-none transition-all duration-300"
-                  />
-                  <div className="absolute right-4 p-3 bg-[#a81c1c] rounded-xl text-white shadow-sm border border-[#7a1212]">
-                    <span>⚡ Ask AI</span>
+              {/* Search / Chat CTA */}
+              <div className="max-w-3xl mx-auto mb-14 animate-slideUp" style={{ animationDelay: "300ms" }}>
+                <div
+                  className="relative cursor-text group"
+                  onClick={() => goToChat("general")}
+                >
+                  <div className="relative flex items-center card rounded-2xl p-2 hover:shadow-md transition-shadow duration-200">
+                    <input
+                      readOnly
+                      placeholder="Ask me anything about NEU..."
+                      className="w-full px-5 py-4 bg-transparent text-lg text-[var(--text-secondary)] focus:outline-none cursor-text font-medium"
+                    />
+                    <div className="flex-shrink-0 mr-1">
+                      <button className="btn-crimson px-5 py-3 text-sm whitespace-nowrap">
+                        ⚡ Ask AI
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
+
+              {/* Feature Cards */}
+              <div
+                className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-5 animate-slideUp"
+                style={{ animationDelay: "450ms" }}
+              >
+                <div className="feature-card p-6 rounded-2xl text-left">
+                  <div className="w-11 h-11 bg-red-50 dark:bg-red-900/20 rounded-xl flex items-center justify-center text-2xl mb-4">
+                    🚀
+                  </div>
+                  <h3 className="text-base font-bold mb-1.5 text-[var(--text-primary)]">
+                    Smart Engine
+                  </h3>
+                  <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                    Instant, context-aware answers to all your university queries.
+                  </p>
+                </div>
+
+                <div className="feature-card p-6 rounded-2xl text-left">
+                  <div className="w-11 h-11 bg-blue-50 dark:bg-blue-900/20 rounded-xl flex items-center justify-center text-2xl mb-4">
+                    📍
+                  </div>
+                  <h3 className="text-base font-bold mb-1.5 text-[var(--text-primary)]">
+                    Live Maps
+                  </h3>
+                  <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                    Interactive directions to every building, faculty, and dorm.
+                  </p>
+                </div>
+
+                <div className="feature-card p-6 rounded-2xl text-left">
+                  <div className="w-11 h-11 bg-green-50 dark:bg-green-900/20 rounded-xl flex items-center justify-center text-2xl mb-4">
+                    ✨
+                  </div>
+                  <h3 className="text-base font-bold mb-1.5 text-[var(--text-primary)]">
+                    Reliable Info
+                  </h3>
+                  <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                    Verified data synced directly from the university database.
+                  </p>
+                </div>
+              </div>
+
+              <p className="mt-16 text-xs text-[var(--text-muted)] font-semibold tracking-widest uppercase">
+                Powered by Advanced Neural AI • Near East University 2026
+              </p>
             </div>
-
-            {/* Premium Stat-like features */}
-            <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 animate-slideUp" style={{ animationDelay: '600ms' }}>
-              <div className="glass p-6 rounded-[1.5rem] hover:scale-[1.02] transition-transform duration-300">
-                <div className="w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-xl flex items-center justify-center text-2xl mb-4 mx-auto">🚀</div>
-                <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white">Smart Engine</h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed font-medium">
-                  Instant, context-aware answers to all your university queries.
-                </p>
-              </div>
-
-              <div className="glass p-6 rounded-[1.5rem] hover:scale-[1.02] transition-transform duration-300 border-red-200/50 dark:border-red-900/50">
-                <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center text-2xl mb-4 mx-auto">📍</div>
-                <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white">Live Maps</h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed font-medium">
-                  Interactive directions to every building, faculty, and dorm.
-                </p>
-              </div>
-
-              <div className="glass p-6 rounded-[1.5rem] hover:scale-[1.02] transition-transform duration-300">
-                <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-xl flex items-center justify-center text-2xl mb-4 mx-auto">✨</div>
-                <h3 className="text-lg font-bold mb-2 text-gray-900 dark:text-white">Reliable Info</h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed font-medium">
-                  Verified data synced directly from the university database.
-                </p>
-              </div>
-            </div>
-
-            <p className="mt-20 text-sm text-gray-400 dark:text-gray-600 font-medium tracking-wide">
-              POWERED BY ADVANCED NEURAL AI • NEAR EAST UNIVERSITY 2026
-            </p>
-          </div>
           </div>
         )}
 

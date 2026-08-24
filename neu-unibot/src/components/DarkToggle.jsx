@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react";
 
 export default function DarkToggle() {
-  // Load saved preference OR detect system default
   const getInitialMode = () => {
-    const stored = localStorage.getItem("theme");
-    if (stored) return stored === "dark";
-    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+    try {
+      const stored = localStorage.getItem("theme");
+      if (stored) return stored === "dark";
+      return window.matchMedia("(prefers-color-scheme: dark)").matches;
+    } catch {
+      return false;
+    }
   };
 
   const [dark, setDark] = useState(getInitialMode);
 
-  // Apply theme & save preference
   useEffect(() => {
     document.documentElement.classList.toggle("dark", dark);
     localStorage.setItem("theme", dark ? "dark" : "light");
@@ -19,25 +21,19 @@ export default function DarkToggle() {
   return (
     <button
       onClick={() => setDark(!dark)}
+      title={dark ? "Switch to light mode" : "Switch to dark mode"}
       className="
-        group
-        w-10 h-10 
-        flex items-center justify-center 
-        rounded-full
-        cursor-pointer
-        transition-all
-        bg-[#F5F5F5] dark:bg-gray-800 text-gray-800 dark:text-yellow-300
-        border border-[#E5E5E5] dark:border-gray-700
-        shadow-sm hover:shadow-md
-        hover:scale-110 active:scale-95
+        w-9 h-9
+        flex items-center justify-center
+        rounded-xl cursor-pointer
+        card
+        text-[var(--text-secondary)]
+        hover:border-[var(--border-strong)]
+        hover:scale-105 active:scale-95
+        transition-all duration-150
       "
     >
-      <span
-        className="
-          text-xl transition-transform duration-300 
-          group-hover:rotate-180
-        "
-      >
+      <span className="text-lg leading-none">
         {dark ? "🌙" : "☀️"}
       </span>
     </button>
